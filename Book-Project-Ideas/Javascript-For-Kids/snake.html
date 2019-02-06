@@ -32,8 +32,47 @@ Update the direction of the snake
 }
  -->
 <body>
+  <canvas id="canvas" height="400" width="400"></canvas>
 <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
   <script>
+  var canvas = document.querySelector('#canvas'),
+      ctx = canvas.getContext("2d"),
+      width = canvas.width,
+      height = canvas.height,
+      blockSize = 10,
+      widthInBlocks = width / blockSize,
+      heightInBlocks = height / blockSize,
+      score = 0;
+  var drawScore = () => {
+    ctx.font = "20px Courier";
+    ctx.fillStyle = "Black";
+    ctx.textAlign = "left";
+    ctx.textBaseLine = "top";
+    ctx.fillText("Score: " + score , blockSize, BlockSize);
+  };
+  var gameOver = () => {
+    clearInterval(intervalID);
+    ctx.font = "60px Courier";
+    ctx.fillStyle = "Black";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("Game Over", width / 2, height / 2);
+  };
+  var drawBorder = () => {
+    ctx.fillStyle = "Gray";
+    ctc.fillRect(0, 0, width, blockSize);
+    ctc.fillRect(0, height - blockSize, width, blockSize);
+    ctc.fillRect(0, 0, blockSize, height);
+    ctc.fillRect(width - blockSize, 0, blockSize, height);
+  };
+  var intervalId = setInterval(function () {
+    ctx.clearRect(0, 0, width, height);
+    drawScore();
+    snake.move();
+    snake.draw();
+    apple.draw();
+    drawBorder();
+  }, 100);
   </script>
 </body>
 </html>
