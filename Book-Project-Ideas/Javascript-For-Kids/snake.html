@@ -65,7 +65,7 @@ var drawScore = () => {
 };
   // Ends the game if player loses
   var gameOver = () => {
-    clearInterval(intervalID);
+    clearInterval(intervalId);
     ctx.font = "60px Courier";
     ctx.fillStyle = "Black";
     ctx.textAlign = "center";
@@ -73,7 +73,7 @@ var drawScore = () => {
     ctx.fillText("Game Over", width / 2, height / 2);
   };
   // Draw a circle (Apple)
-  var circle = function (x, y, radus, fillCircle) {
+  var circle = function (x, y, radius, fillCircle) {
     ctx.beginPath();
     ctx.arc(x, y, radius, 0, Math.PI * 2, false);
     if (fillCircle) {
