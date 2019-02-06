@@ -117,7 +117,7 @@ Update the direction of the snake
   Snake.prototype.checkCollision = function (head) {
     var leftCollision = (head.col === 0),
         topCollision = (head.row === 0),
-        rightCollision = (head.col === widthInBlock - 1),
+        rightCollision = (head.col === widthInBlocks - 1),
         bottomCollision = (head.col === heightInBlocks - 1);
         var wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
         var selfCollision = false;
