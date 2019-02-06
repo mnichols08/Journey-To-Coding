@@ -98,7 +98,7 @@ var drawScore = () => {
   Block.prototype.drawCircle = function (color) {
     var centerX = this.col * blockSize + blockSize / 2,
         centerY = this.row * blockSize + blockSize / 2;
-    ctc.fillStyle = color;
+    ctx.fillStyle = color;
     circle(centerX, centerY, blockSize / 2, true);
   };
   // Equal Method
