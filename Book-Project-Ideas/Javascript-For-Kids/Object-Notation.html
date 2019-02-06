@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<html>
+<head>
+  <title>Object Notation</title>
+  </head>
+
+  <body>
+  <script src="https://code.jquery.com/jquery-2.1.0.js"></script>
+  <script>
+  // Speak Method [eg dog.speak() will return "Woof! My name is Mupps!"]
+  var speak = function() {
+    console.log(this.sound +  "! My name is " + this.name + "!");
+  };
+  // Animal Objects
+  var dog = {
+    sound: "Woof",
+    name: "Mupps",
+    speak: speak
+  },
+  cat = {
+    sound: "Meow",
+    name: "Scar",
+    speak: speak
+  },
+  pig = {
+    sound: "Oink",
+    name: "Porky",
+    speak: speak
+  },
+  horse = {
+    sound: "Neigh",
+    name: "Marie",
+    speak: speak
+  };
+</script>
+  </body>
+</html>

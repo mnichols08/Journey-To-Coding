@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<html>
+<head>
+  <title>A Bouncing Ball</title>
+<body>
+  <canvas id="canvas" width="1920" height="1080"></canvas>
+  <script>
+  var canvas = document.querySelector("#canvas"),
+      ctx = canvas.getContext("2d");
+      var circle = function (x, y, radius, fillCircle) {
+        ctx.beginPath();
+        ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+        if (fillCircle) {
+          ctx.fill();
+        } else {
+          ctx.stroke();
+        }
+      };
+      var Ball = function () {
+        this.x = 100;
+        this.y = 100;
+        this.xSpeed = -2;
+        this.ySpeed = 3;
+      };
+      var ball = new Ball();
+      setInterval(function () {
+        ctx.clearRect(0, 0, 1920, 1080);
+        ball.draw();
+        ball.move();
+        ball.checkCollision();
+        ctx.strokeRect(0, 0, 1920, 1080);
+      }, 30);
+
+
+  Ball.prototype.draw = function () {
+    circle(this.x, this.y, 20, true);
+  }
+  Ball.prototype.move = function () {
+    this.x += this.xSpeed;
+    this.y += this.ySpeed;
+  };
+  Ball.prototype.checkCollision = function () {
+    if (this.x < 0 || this.x > 1920) {
+      this.xSpeed = -this.xSpeed;
+    }
+    if (this.y < 0 || this.y > 1080) {
+      this.ySpeed = -this.ySpeed;
+    }
+  };
+  </script>
+</body>
+</html>
