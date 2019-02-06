@@ -118,12 +118,12 @@ Update the direction of the snake
     var leftCollision = (head.col === 0),
         topCollision = (head.row === 0),
         rightCollision = (head.col === widthInBlock - 1),
-        bottomCollision = (head.col === heightInBlocks - 1),
-        wallCollision = leftCollision || topCollision || rightCollision || bottomCollision,
-        selfCollision = false;
+        bottomCollision = (head.col === heightInBlocks - 1);
+        var wallCollision = leftCollision || topCollision || rightCollision || bottomCollision;
+        var selfCollision = false;
 
         for (var i = 0; i < this.segments.length; i++) {
-          if (head.equal(this.segments[i]) {
+          if (head.equal(this.segments[i])) {
             selfCollision = true;
           }
         }
@@ -169,6 +169,9 @@ Update the direction of the snake
           randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
           this.position = new Block(randomCol, randomRow)
     }
+    // Create the snake and apple objects
+    var snake = new Snake(),
+        apple = new Apple();
     // Updates the Score
   var drawScore = () => {
     ctx.font = "20px Courier";
