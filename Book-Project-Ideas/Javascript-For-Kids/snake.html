@@ -48,12 +48,12 @@ Update the direction of the snake
   // Sets Score to 0
       score = 0;
   // Creates a border around the game
-  var drawBorder = () => {
+  var drawBorder = function () {
     ctx.fillStyle = "Gray";
-    ctc.fillRect(0, 0, width, blockSize);
-    ctc.fillRect(0, height - blockSize, width, blockSize);
-    ctc.fillRect(0, 0, blockSize, height);
-    ctc.fillRect(width - blockSize, 0, blockSize, height);
+    ctx.fillRect(0, 0, width, blockSize);
+    ctx.fillRect(0, height - blockSize, width, blockSize);
+    ctx.fillRect(0, 0, blockSize, height);
+    ctx.fillRect(width - blockSize, 0, blockSize, height);
   };
   // Updates the Score
 var drawScore = () => {
