@@ -13,9 +13,9 @@
       var canvas = document.querySelector("#canvas"),
           ctx = canvas.getContect("2d"),
           width = canvas.width,
-          height = canvas.height,
+          height = canvas.height;
           // Defines a circle
-          circle = (x, y, radius, fillCircle) => {
+    var circle = (x, y, radius, fillCircle) => {
             ctx.beginPath();
             ctx.arc(x, y, radius, 0, Math.PI * 2, false);
             if (fillCircle) {
@@ -69,8 +69,9 @@
          this.xSpeed = 0;
          this.ySpeed = 0;
        };
+     }
        // Creates a ball
-       var Ball = new Ball();
+       var ball = new Ball();
         //Keyboard mapping
        var keyActions = {
          32: "stop",
