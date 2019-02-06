@@ -5,11 +5,15 @@
 </head>
 
 <body>
-
+<div class="cat-container">
+</div>
   <script>
-  var drawCats = (howManyTimes) => {
+    var catFace = '=^.^=';
+    var catContainer = document.querySelector('.cat-container');
+    var drawCats = (howManyTimes) => {
     for (var i = 0; i < howManyTimes; i++) {
-      console.log(i + " =^.^=");
+            console.log(catFace)
+            catContainer.innerHTML = 'The JavaScript console has drawn ' + howManyTimes + " Cat Faces that look like " + catFace;
     }
   };
   drawCats(5)
