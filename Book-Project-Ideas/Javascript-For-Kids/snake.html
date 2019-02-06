@@ -38,12 +38,50 @@ Update the direction of the snake
   // Defines the Canvas
   var canvas = document.querySelector('#canvas'),
       ctx = canvas.getContext("2d"),
+      // Gets the width and height of canvas
       width = canvas.width,
       height = canvas.height,
+      // Width and Height in Blocks
       blockSize = 10,
       widthInBlocks = width / blockSize,
       heightInBlocks = height / blockSize,
+  // Sets Score to 0
       score = 0;
+  // Creates a border around the game
+  var drawBorder = () => {
+    ctx.fillStyle = "Gray";
+    ctc.fillRect(0, 0, width, blockSize);
+    ctc.fillRect(0, height - blockSize, width, blockSize);
+    ctc.fillRect(0, 0, blockSize, height);
+    ctc.fillRect(width - blockSize, 0, blockSize, height);
+  };
+  // Updates the Score
+var drawScore = () => {
+  ctx.font = "20px Courier";
+  ctx.fillStyle = "Black";
+  ctx.textAlign = "left";
+  ctx.textBaseline = "top";
+  ctx.fillText("Score: " + score , blockSize, blockSize);
+};
+  // Ends the game if player loses
+  var gameOver = () => {
+    clearInterval(intervalID);
+    ctx.font = "60px Courier";
+    ctx.fillStyle = "Black";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText("Game Over", width / 2, height / 2);
+  };
+  // Draw a circle (Apple)
+  var circle = function (x, y, radus, fillCircle) {
+    ctx.beginPath();
+    ctx.arc(x, y, radius, 0, Math.PI * 2, false);
+    if (fillCircle) {
+      ctx.fill();
+    } else {
+      ctx.stroke();
+    }
+  }
   // Block Constructor
   const Block = function (col, row) {
     this.col = col;
@@ -78,13 +116,13 @@ Update the direction of the snake
     this.direction = "right";
     this.nextDirection = "right";
   }
-  //Drawing the snake
+  // Drawing a square for each segment of snakes body
   Snake.prototype.draw = function () {
     for (var i = 0; i < this.segments.length; i++) {
       this.segments[i].drawSquare("Green");
     }
   };
-  //Moving the snake
+  // Creates a new head and adds to beginning of snake
   Snake.prototype.move = function() {
     var head = this.segments[0],
         newHead;
@@ -112,7 +150,7 @@ Update the direction of the snake
     } else {
       this.segments.pop();
     }
-  }
+  };
   // Check Collision Method
   Snake.prototype.checkCollision = function (head) {
     var leftCollision = (head.col === 0),
@@ -129,75 +167,37 @@ Update the direction of the snake
         }
         return wallCollision || selfCollision;
   };
-  // Changing the snakes position with the Keyboard
-    var directions = {
-      37: "left",
-      38: "up",
-      39: "right",
-      40: "down"
-    };
-    $("body").keydown(function (event) {
-      var newDirection = directions[event.keyCode];
-      if (newDirection !== undefined) {
-        snake.setDirection(newDirection)
-      }
-    });
-    //Set Direction Method
-    Snake.prototype.setDirection = function (newDirection) {
-      if (this.direction === "up" && newDirection === "down") {
-        return;
-      } else if (this.direction === "right" && newDirection === "left") {
-        return;
-      } else if (this.direction === "down" && newDirection === "up") {
-        return;
-      } else if (this.direction === "left" && newDirection === "right") {
-        return;
-      }
-      this.nextDirection = newDirection;
-    };
-    // Apple Constuctor
-    const Apple = function () {
-      this.position = new Block(10, 10);
-    };
-    // Drawing the apple
-    Apple.prototype.draw = function () {
-      this.position.drawCircle("Red");
+  //Set Direction Method
+  Snake.prototype.setDirection = function (newDirection) {
+    if (this.direction === "up" && newDirection === "down") {
+      return;
+    } else if (this.direction === "right" && newDirection === "left") {
+      return;
+    } else if (this.direction === "down" && newDirection === "up") {
+      return;
+    } else if (this.direction === "left" && newDirection === "right") {
+      return;
     }
-    // Moving the apple
-    Apple.prototype.move = function () {
-      var randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1,
-          randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
-          this.position = new Block(randomCol, randomRow)
-    }
-    // Create the snake and apple objects
-    var snake = new Snake(),
-        apple = new Apple();
-    // Updates the Score
-  var drawScore = () => {
-    ctx.font = "20px Courier";
-    ctx.fillStyle = "Black";
-    ctx.textAlign = "left";
-    ctx.textBaseline = "top";
-    ctx.fillText("Score: " + score , blockSize, blockSize);
+    this.nextDirection = newDirection;
   };
-  // Ends the game if player loses
-  var gameOver = () => {
-    clearInterval(intervalID);
-    ctx.font = "60px Courier";
-    ctx.fillStyle = "Black";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText("Game Over", width / 2, height / 2);
+  // Apple Constuctor
+  const Apple = function () {
+    this.position = new Block(10, 10);
   };
-  // Creates a border around the game
-  var drawBorder = () => {
-    ctx.fillStyle = "Gray";
-    ctc.fillRect(0, 0, width, blockSize);
-    ctc.fillRect(0, height - blockSize, width, blockSize);
-    ctc.fillRect(0, 0, blockSize, height);
-    ctc.fillRect(width - blockSize, 0, blockSize, height);
+  // Drawing the apple
+  Apple.prototype.draw = function () {
+    this.position.drawCircle("Red");
+  }
+  // Moving the apple to a random location
+  Apple.prototype.move = function () {
+    var randomCol = Math.floor(Math.random() * (widthInBlocks - 2)) + 1,
+        randomRow = Math.floor(Math.random() * (heightInBlocks - 2)) + 1;
+        this.position = new Block(randomCol, randomRow);
   };
-  // Sets interval for game to change
+  // Create the snake and apple objects
+  var snake = new Snake(),
+      apple = new Apple();
+  // Pass animation function on Interval
   var intervalId = setInterval(function () {
     ctx.clearRect(0, 0, width, height);
     drawScore();
@@ -206,6 +206,20 @@ Update the direction of the snake
     apple.draw();
     drawBorder();
   }, 100);
+// Coverts Key Codes to words
+    var directions = {
+      37: "left",
+      38: "up",
+      39: "right",
+      40: "down"
+    };
+// Function to lisen for Key Presses
+  $("body").keydown(function (event) {
+    var newDirection = directions[event.keyCode];
+    if (newDirection !== undefined) {
+      snake.setDirection(newDirection)
+    }
+  });
   </script>
 </body>
 </html>
