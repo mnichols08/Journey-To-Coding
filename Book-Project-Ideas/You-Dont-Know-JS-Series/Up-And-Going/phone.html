@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<html>
+<head>
+  <title>You Don't Know JS Series - Up & Going</title>
+<body>
+  <h1>Up & Going</h1>
+  <p><strong>by Kyle Simpson</strong>.</p>
+  <h2>Calculate Phone</h2>
+  <button onclick="generateBank()">Generate Bank Account</button><br />
+  <p>
+    Bank Account: $0.00
+  </p>
+  <div class="phone0">
+  <h1></h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <button onclick="buyPhone(0)">Buy iPhone</button>
+  </div>
+  <div class="phone1">
+  <h1></h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <button onclick="buyPhone(1)">Buy Samsung</button>
+  </div>
+  <div class="phone3">
+  <h1></h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <button onclick="buyPhone(2)">Buy Moto G5S Plus</button>
+  </div>
+  <div class="phone3">
+  <h1></h1>
+  <p></p>
+  <p></p>
+  <p></p>
+  <p></p>
+  <button onclick="buyPhone(3)">Buy ZTE Flip Phone</button>
+  </div>
+  <!--
+  Calculate Total Price of Phone Purchase
+  Keep Purchasing Phones until Bank Account < Price of Phone
+  Also buy accessory for each phone as long as purchase price to bank ratio is high enough
+  After purchase, add in tax and print out calculated purchase amount, properly formatted
+  const tax rate, phone price, accessory price, spending threshold, bank account balance
+  define functions for calculating tax and formatting the value
+  -->
+  <script>
+  const TAX_RATE = .06; // Maryland State Sales Tax
+  const threshHold = .5;
+  var wallet = [],
+      phones = [
+{
+  name: "Apple iPhone",
+  price: 1099.00,},
+  {
+  name: "Samsung Galaxy S9",
+  price: 449.99},
+    {
+  name: "Moto G5S Plus",
+  price: 279.99},
+      {
+  name: "ZTE Flip Phone",
+  price: 19.99}
+] // Array of Phones to Possibly Buy
+for (var i = 0; i < phones.length; i++){
+  var taxAmount = phones[i].price * TAX_RATE,
+      accAmount = phones[i].price * .1;
+  phones[i].tax = taxAmount;
+  phones[i].accesory = accAmount;
+} // Loops through the phones to add the tax and accesory cost
+var generateBank = () => {
+var rateOfPay = prompt ("How Much Do You Earn Per Hour?"),
+    hoursPerWeek = prompt("How Many Hours Do You Work Per Week?"),
+    rentPerMonth = prompt("How Much Do You Pay In Rent or Mortgage Each Month?"),
+    anyOtherBills = prompt("Please say how much you spend on bills each month"),
+    accountBalance = -((rateOfPay * hoursPerWeek * 4) * .11) + ((rateOfPay * hoursPerWeek * 4) - rentPerMonth - anyOtherBills);
+    wallet.push(accountBalance)
+    return accountBalance;
+    } // Function to determine how much spending money the user has to spend each Month
+var buyPhone = (x) => {
+    var leftOver = wallet[0];
+    if (leftOver >= (phones[x].price + phones[x].tax)){
+     leftOver = leftOver - (phones[x].price + phones[x].tax);
+     console.log("Purchased a " + phones[x].name + " for $" + String(phones[x].price) + " and $" + String(phones[x].tax + " tax."));
+     if (leftOver > (phones[x].price * threshHold)) {
+       leftOver = leftOver - phones[x].accesory;
+     console.log("Purchased an accesory for " + phones[x].name + " for $" + String(phones[x].accesory))
+   } else {
+     console.log("Sorry, you cannot afford an accesory for this device")
+   }
+     wallet.pop();
+     wallet.push(leftOver)
+    console.log(wallet[0])
+  } else {
+    console.log("Sorry, you cannot afford this phone.")
+  }
+  return leftOver;
+  console.log("You have another $" + String(leftOver) + "left over to spend." );
+},
+    addPhones = () => {
+      var p = document.querySelectorAll('p'),
+          h1 = document.querySelectorAll('h1')
+    }
+document.body.onload = "addPhones()";
+  </script>0
+</body>
+</html>
