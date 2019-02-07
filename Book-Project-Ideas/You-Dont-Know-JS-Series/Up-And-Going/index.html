@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC"-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<html>
+<head>
+  <title>You Don't Know JS Series - Up & Going</title>
+<body>
+  <h1>Up & Going</h1>
+  <p><strong>by Kyle Simpson</strong>.</p>
+  <h2>Calculate Phone</h2>
+  <!--
+  Calculate Total Price of Phone Purchase
+  Keep Purchasing Phones until Bank Account < Price of Phone
+  Also buy accessory for each phone as long as purchase price to bank ratio is high enough
+  After purchase, add in tax and print out calculated purchase amount, properly formatted
+  const tax rate, phone price, accessory price, spending threshold, bank account balance
+  define functions for calculating tax and formatting the value
+  -->
+  <script>
+  const TAX_RATE = .06,
+        ACCESORY_PRICE = PHONE_PRICE * .1;
+var phones = [
+{
+  name: "Apple iPhone",
+  price: "1099.00",},
+  {
+  name: "Samsung Galaxy S9",
+  price: "449.99"},
+    {
+  name: "Moto G5S Plus",
+  price: "279.99"},
+      {
+  name: "ZTE Flip Phone",
+  price: "19.99"},
+
+]
+var rateOfPay = prompt ("How Much Do You Earn Per Hour?"),
+    hoursPerWeek = prompt("How Many Hours Do You Work Per Week?"),
+    bankAccountBalance = rateOfPay * hoursPerWeek * 4;
+    console.log(bankAccountBalance)
+  </script>
+</body>
+</html>
