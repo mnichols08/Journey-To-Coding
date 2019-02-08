@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>YDKJS - Scope & Closures</title>
+</head>
+
+<body>
+  <script>
+(function () {
+  console.log('this function ran because it was supposed to run immediately after being declared. This is called IIFE or Immediately-Invoked Function Expression');
+})(); // () Tells the function to run immediately after transpiling
+for (let i = 1; i <= 5; i++) {
+  (function(j) {
+    setTimeout( function timer() {
+      console.log(j);
+    }, j * 1000);
+  })(i);
+};
+
+  </script>
+</body>
+
+</html>
