@@ -1,9 +1,9 @@
-console.log("hello world!");
+// console.log("hello world!");
 
 /*****************************
 * Variables and data types
 */
-
+/*
 var firstName = 'John';
 console.log(firstName);
 
@@ -20,9 +20,13 @@ job = 'Teacher';
 console.log(job);
 
 // Variable naming rules
-var _3years = 3;
+// var 3years = 3; // returns (SyntaxError: identifier starts immediately after numeric literal)
+var $3years = 3; // works
+var _3years = 3; // works as well
+
 var johnMark = 'John and MArk';
-var if = 23;
+
+// var if = 23; // returns (SyntaxError: identifier starts immediately after numeric literal)
 
 
 
@@ -41,7 +45,13 @@ var job, isMarried;
 job = 'teacher';
 isMarried = false;
 
-console.log(firstName + ' is a ' + age + ' year old ' + job + '. Is he married? ' + isMarried);
+if (isMarried == false) {
+  isMarried = "He is not married"
+} else {
+  isMarried = "He is married."
+}
+
+console.log(firstName + ' is a ' + age + ' year old ' + job + '. ' + isMarried);
 
 // Variable mutation
 age = 'twenty eight';
@@ -59,16 +69,16 @@ console.log(firstName + ' ' + lastName);
 * Basic operators
 */
 /*
-var year, yearJohn, yearMark;
-now = 2018;
-ageJohn = 28;
-ageMark = 33;
+var now, yearMikey, yearManthi;
+now = 2019;
+ageMikey = 29;
+ageManthi = 26;
 
 // Math operators
-yearJohn = now - ageJohn;
-yeahMark = now - ageMark;
+yearMikey = now - ageMikey;
+yeahManthi = now - ageManthi;
 
-console.log(yearJohn);
+console.log(yearMikey);
 
 console.log(now + 2);
 console.log(now * 2);
@@ -76,13 +86,13 @@ console.log(now / 10);
 
 
 // Logical operators
-var johnOlder = ageJohn < ageMark;
+var johnOlder = ageMikey < ageManthi;
 console.log(johnOlder);
 
 
 // typeof operator
 console.log(typeof johnOlder);
-console.log(typeof ageJohn);
+console.log(typeof ageMikey);
 console.log(typeof 'Mark is older tha John');
 var x;
 console.log(typeof x);
@@ -94,23 +104,23 @@ console.log(typeof x);
 * Operator precedence
 */
 /*
-var now = 2018;
-var yearJohn = 1989;
-var fullAge = 18;
+var now = 2019;
+var yearMikey = 1989;
+var fullAge = 21;
 
 // Multiple operators
-var isFullAge = now - yearJohn >= fullAge; // true
+var isFullAge = now - yearMikey >= fullAge; // true
 console.log(isFullAge);
 
 // Grouping
-var ageJohn = now - yearJohn;
-var ageMark = 35;
-var average = (ageJohn + ageMark) / 2;
+var ageMikey = now - yearMikey;
+var ageManthi = 26;
+var average = (ageMikey + ageManthi) / 2;
 console.log(average);
 
 // Multiple assignments
-var x, y;
-x = y = (3 + 5) * 4 - 6; // 8 * 4 - 6 // 32 - 6 // 26
+var x, y = x = (3 + 5) * 4 - 6; // 8 * 4 - 6 // 32 - 6 // 26
+x /= 2;
 console.log(x, y);
 
 
@@ -121,9 +131,8 @@ x += 10;
 console.log(x);
 x--;
 console.log(x);
+
 */
-
-
 
 /*****************************
 * CODING CHALLENGE 1
@@ -152,9 +161,8 @@ console.log(BMIMark, BMIJohn);
 
 var markHigherBMI = BMIMark > BMIJohn;
 console.log('Is Mark\'s BMI higher than John\'s? ' + markHigherBMI);
-*/
 
-
+//*/
 
 /*****************************
 * If / else statements
@@ -220,22 +228,23 @@ if (age < 13) {
 */
 /*
 var firstName = 'John';
-var age = 14;
+var age = 21;
 
 // Ternary operator
-age >= 18 ? console.log(firstName + ' drinks beer.') : console.log(firstName + ' drinks juice.');
+age >= 21 ? console.log(firstName + ' drinks beer.') : console.log(firstName + ' drinks juice.');
 
 var drink = age >= 18 ? 'beer' : 'juice';
 console.log(drink);
 
-(if (age >= 18) {
-    var drink = 'beer';
+if (age <= 55) {
+    var drink = 'junior';
 } else {
-    var drink = 'juice';
+    var drink = 'senior';
 }
+console.log(drink)
 
 // Switch statement
-var job = 'instructor';
+var job = 'dfesigner';
 switch (job) {
     case 'teacher':
     case 'instructor':
@@ -251,7 +260,7 @@ switch (job) {
         console.log(firstName + ' does something else.');
 }
 
-age = 56;
+age = 100;
 switch (true) {
     case age < 13:
         console.log(firstName + ' is a boy.');
@@ -262,12 +271,16 @@ switch (true) {
     case age >= 20 && age < 30:
         console.log(firstName + ' is a young man.');
         break;
+    case age >= 55 && age < 100:
+        console.log(firstName + ' is a senior.');
+        break;
+    case age >= 100:
+        console.log(firstName + ' is an old fuck!');
+        break;
     default:
         console.log(firstName + ' is a man.');
 }
 */
-
-
 
 /*****************************
 * Truthy and Falsy values and equality operators
@@ -276,9 +289,9 @@ switch (true) {
 // falsy values: undefined, null, 0, '', NaN
 // truthy values: NOT falsy values
 
-var height;
+var height = 23;
 
-height = 23;
+height;
 
 if (height || height === 0) {
     console.log('Variable is defined');
@@ -343,13 +356,13 @@ if (scoreJohn > scoreMike) {
 */
 /*
 function calculateAge(birthYear) {
-    return 2018 - birthYear;
+    return 2019 - birthYear;
 }
 
-var ageJohn = calculateAge(1990);
-var ageMike = calculateAge(1948);
-var ageJane = calculateAge(1969);
-console.log(ageJohn, ageMike, ageJane);
+var ageMikey = calculateAge(1989);
+var ageManthi = calculateAge(1993);
+var ageJane = calculateAge(1953);
+console.log(ageMikey, ageManthi, ageJane);
 
 
 function yearsUntilRetirement(year, firstName) {
@@ -364,12 +377,10 @@ function yearsUntilRetirement(year, firstName) {
 
 }
 
-yearsUntilRetirement(1990, 'John');
-yearsUntilRetirement(1948, 'Mike');
-yearsUntilRetirement(1969, 'Jane');
+yearsUntilRetirement(1989, 'Mikey');
+yearsUntilRetirement(1993, 'Manthi');
+yearsUntilRetirement(1956, 'Sandi');
 */
-
-
 
 /*****************************
 * Function Statements and Expressions
@@ -475,7 +486,7 @@ var finalValues = [bills[0] + tips[0],
                    bills[2] + tips[2]];
 
 console.log(tips, finalValues);
-*/
+//*/
 
 
 
@@ -492,8 +503,9 @@ var john = {
     job: 'teacher',
     isMarried: false
 };
-
+john.middleName = "Jacob";
 console.log(john.firstName);
+console.log(john.middleName)
 console.log(john['lastName']);
 var x = 'birthYear';
 console.log(john[x]);
@@ -516,6 +528,8 @@ console.log(jane);
 * Objects and methods
 */
 /*
+var today = new Date();
+var year = today.getFullYear();
 var john = {
     firstName: 'John',
     lastName: 'Smith',
@@ -524,7 +538,7 @@ var john = {
     job: 'teacher',
     isMarried: false,
     calcAge: function() {
-        this.age = 2018 - this.birthYear;
+        this.age = year - this.birthYear;
     }
 };
 
@@ -583,8 +597,8 @@ if (john.calcBMI() > mark.calcBMI()) {
 /*****************************
 * Loops and iteration
 */
-
 /*
+
 // for loop
 for (var i = 1; i <= 20; i += 2) {
     console.log(i);
@@ -625,6 +639,7 @@ for (var i = 0; i < john.length; i++) {
 
 // Looping backwards
 for (var i = john.length - 1; i >= 0; i--) {
+    if (typeof john[i] !== 'string') continue;
     console.log(john[i]);
 }
 */
