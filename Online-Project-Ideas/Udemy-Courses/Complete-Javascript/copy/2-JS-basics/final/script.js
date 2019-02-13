@@ -148,7 +148,7 @@ Mark and John are trying to compare their BMI (Body Mass Index), which is calcul
 
 GOOD LUCK 😀
 */
-/*
+
 var massMark = 78; // kg
 var heightMark = 1.69; // meters
 
@@ -323,7 +323,7 @@ John and Mike both play basketball in different teams. In the latest 3 games, Jo
 
 GOOD LUCK 😀
 */
-/*
+
 var scoreJohn = (189 + 120 + 103) / 3;
 var scoreMike = (129 + 94 + 123) / 3;
 var scoreMary = (97 + 134 + 105) / 3;
@@ -347,7 +347,7 @@ if (scoreJohn > scoreMike) {
 } else {
     console.log('There is a draw');
 }
-*/
+
 
 
 
@@ -463,7 +463,7 @@ In the end, John would like to have 2 arrays:
 
 GOOD LUCK 😀
 */
-/*
+
 function tipCalculator(bill) {
     var percentage;
     if (bill < 50) {
@@ -562,7 +562,7 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 
 GOOD LUCK 😀
 */
-/*
+
 var john = {
     fullName: 'John Smith',
     mass: 110,
@@ -590,7 +590,7 @@ if (john.calcBMI() > mark.calcBMI()) {
 } else {
     console.log('They have the same BMI');
 }
-*/
+
 
 
 
@@ -674,7 +674,7 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 GOOD LUCK 😀
 */
 
-/*
+
 var john = {
     fullName: 'John Smith',
     bills: [124, 48, 268, 180, 42],
@@ -750,4 +750,3 @@ if (john.average > mark.average) {
 } else if (mark.average > john.average) {
     console.log(mark.fullName + '\'s family pays higher tips, with an average of $' + mark.average);
 }
-*/

@@ -1,17 +1,19 @@
 /////////////////////////////////////
 // Lecture: Hoisting
 
-/*
+console.log('Lesson 3: How JS Works - Final Script Loaded');
 // functions
+
+console.log('Functions - Begin');
 calculateAge(1965);
 
 function calculateAge(year) {
-    console.log(2016 - year);
+    console.log(2019 - year);
 }
 
 // retirement(1956);
 var retirement = function(year) {
-    console.log(65 - (2016 - year));
+    console.log(65 - (2019 - year));
 }
 
 
@@ -27,14 +29,15 @@ function foo() {
 }
 foo();
 console.log(age);
-*/
 
+console.log('functions end');
 
 
 /////////////////////////////////////
 // Lecture: Scoping
 
-/*
+
+console.log('Lecture: Scoping - Begin');
 // First scoping example
 var a = 'Hello!';
 first();
@@ -69,7 +72,8 @@ function third() {
     //console.log(c);
     console.log(a+d);
 }
-*/
+console.log('Lecture: Scoping - End')
+
 
 
 
@@ -82,7 +86,7 @@ function third() {
 calculateAge(1985);
 
 function calculateAge(year) {
-    console.log(2016 - year);
+    console.log(2019 - year);
     console.log(this);
 }
 
@@ -91,8 +95,8 @@ var john = {
     yearOfBirth: 1990,
     calculateAge: function() {
         console.log(this);
-        console.log(2016 - this.yearOfBirth);
-        
+        console.log(2019 - this.yearOfBirth);
+
         function innerFunction() {
             console.log(this);
         }
@@ -111,3 +115,4 @@ var mike = {
 mike.calculateAge = john.calculateAge;
 mike.calculateAge();
 */
+console.log('Lesson 3: How JS Works - Final Script Ended');

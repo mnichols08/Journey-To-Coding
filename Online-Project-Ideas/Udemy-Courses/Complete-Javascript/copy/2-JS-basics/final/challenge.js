@@ -1,3 +1,9 @@
+const arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length;
+const arrSum = arr => arr.reduce((a,b) => a + b, 0);
+function getPrompt(val,valu) {
+var getValu = prompt(val,valu);
+return getValu;
+}
 /*****************************
 * CODING CHALLENGE 1
 */
@@ -70,7 +76,7 @@ for (let i = 1; i <= gamesPlayed; i++){
     score3.push(_score3);
   }
 }
-const arrAvg = arr => arr.reduce((a,b) => a + b, 0) / arr.length
+
 var avg1 = arrAvg(score1),
     avg2 = arrAvg(score2);
     if (player3) {
@@ -185,22 +191,21 @@ Remember: BMI = mass / height^2 = mass / (height * height). (mass in kg and heig
 
 GOOD LUCK 😀
 */
-function getValue(val,valu) {
-var getValue = prompt(val,valu);
-return getValue;
-}
+
+
+
 var user1 = {
-  fullName: getValue("What is your full name?", "John Smith"),
-  weight: getValue("How much do you weigh?", "110"),
-  height: getValue("How tall are you?", "1.95"),
+  fullName: getPrompt("What is your full name?", "John Smith"),
+  weight: getPrompt("How much do you weigh?", "110"),
+  height: getPrompt("How tall are you?", "1.95"),
   bmi: function() {
     return this.weight / (this.height * this.height);
   }
 };
 var user2 = {
-  fullName: getValue("Who are you comparing with?", "Mark Miller"),
-  weight: getValue("How much does he/she weigh?", "78"),
-  height: getValue("How tall is he/her?", "1.69"),
+  fullName: getPrompt("Who are you comparing with?", "Mark Miller"),
+  weight: getPrompt("How much does he/she weigh?", "78"),
+  height: getPrompt("How tall is he/her?", "1.69"),
   bmi: function() {
     return this.weight / (this.height * this.height);
   }
@@ -241,9 +246,134 @@ Mark likes to tip 20% of the bill when the bill is less than $100, 10% when the 
 
 GOOD LUCK 😀
 */
-var john = {
-  name: prompt("What is your name?")
+var basArr1 = [],
+    tipArr1 = [],
+    finArr1 = [],
+    basArr2 = [],
+    tipArr2 = [],
+    finArr2 = [],
+    firstUser = {
+      name: getPrompt("What is your name?","John Smith"),
+      howManyReceipts: getPrompt("How Many Receipts Do You Have?", "5"),
+      percentage200: getPrompt("What Percentage do you like to tip on bills over $200?", ".10"),
+      percentage50: getPrompt("What Percentage do you like to tip on bills between $50 and $200?", ".15"),
+      percentage50Below: getPrompt("What percentage do you like to tip on bills below $50?", ".20")
+    },
+    secondUser = {
+      name: getPrompt("Who are you comparing your receipts with?","Mark Miller"),
+      howManyReceipts: getPrompt("How Many Receipts does he/she have?", "4"),
+      percentage300: getPrompt("What percentage does this person tip on bills over $300?", ".25"),
+      percentage100: getPrompt("What Percentage does this person tip on bills between $100 and $300?", ".10"),
+      percentage100Below: getPrompt("What percentage does this person tip on bills below $100?", ".20")
+    },
+      query3 = parseInt(firstUser.howManyReceipts);
+    if (query3 >= 0){
+(function() {
+for (let i = 1; i <= query3; i++) {
+if (i === 1){
+var rcpt3 = prompt("How much was " + firstUser.name + "'s first receipt for?","124"),
+    _rcpt3 = parseInt(rcpt3);
+    basArr1.push(_rcpt3);
+    if (_rcpt3 >= 200) {
+      tipArr1.push((_rcpt3 * firstUser.percentage200))
+      finArr1.push(_rcpt3 + (_rcpt3 * firstUser.percentage200));
+    } else if ( _rcpt3 < 200 && _rcpt3 > 50){
+      tipArr1.push((_rcpt3 * firstUser.percentage50));
+      finArr1.push(_rcpt3 + (_rcpt3 * firstUser.percentage50));
+    } else {
+      tipArr1.push(( _rcpt3 * firstUser.percentage50Below));
+      finArr1.push(_rcpt3 + (_rcpt3 * firstUser.percentage50Below));
+      }
+} else {
+var rcpt4 = prompt("How much was " + firstUser.name + "'s next receipt for?","48"),
+    _rcpt4 = parseInt(rcpt4);
+    basArr1.push(_rcpt4);
+    if (_rcpt4 >= 200) {
+      tipArr1.push((_rcpt4 * firstUser.percentage200))
+      finArr1.push(_rcpt4 + (_rcpt4 * firstUser.percentage200));
+    } else if ( _rcpt4 < 200 && _rcpt4 >= 50){
+      tipArr1.push((_rcpt4 * firstUser.percentage50));
+      finArr1.push(_rcpt4 + (_rcpt4 * firstUser.percentage50));
+    } else {
+      tipArr1.push((_rcpt4 * firstUser.percentage50Below));
+      finArr1.push(_rcpt4 + (_rcpt4 * firstUser.percentage50Below));
+  }
 }
-(function () {
-
-})()
+}
+//  console.log(firstUser.name + "'s family spent a total of: $" + arrSum(basArr1) + " on food.");
+//  console.log(firstUser.name + "'s family spent a total of: $" + arrSum(tipArr1) + " on tips.");
+//  console.log(firstUser.name + "'s family spent a total of: $" + arrSum(finArr1) + " in overall spending");
+})();
+} else {
+  alert("Please type in a number value instead.")
+  query4 = prompt("How many receipts does " + secondUser.name + " have from restaurants?");
+  query4 = parseInt(query3);
+}
+query4 = parseInt(secondUser.howManyReceipts);
+if (query4 >= 0){
+(function() {
+for (let i = 1; i <= query4; i++) {
+if (i === 1){
+var rcpt3 = prompt("How much was " + secondUser.name + "'s first receipt for?","77"),
+_rcpt3 = parseInt(rcpt3);
+basArr2.push(_rcpt3);
+if (_rcpt3 >= 300) {
+tipArr2.push((_rcpt3 * secondUser.percentage300))
+finArr2.push(_rcpt3 + (_rcpt3 * secondUser.percentage300));
+} else if ( _rcpt3 < 300 && _rcpt3 > 100){
+tipArr2.push((_rcpt3 * secondUser.percentage100));
+finArr2.push(_rcpt3 + (_rcpt3 * secondUser.percentage100));
+} else {
+tipArr2.push(( _rcpt3 * secondUser.percentage100Below));
+finArr2.push(_rcpt3 + (_rcpt3 * secondUser.percentage100Below));
+}
+} else {
+var rcpt4 = prompt("How much was " + secondUser.name + "'s next receipt for?","375"),
+_rcpt4 = parseInt(rcpt4);
+basArr2.push(_rcpt4);
+if (_rcpt4 >= 300) {
+tipArr2.push((_rcpt4 * secondUser.percentage300))
+finArr2.push(_rcpt4 + (_rcpt4 * secondUser.percentage300));
+} else if ( _rcpt4 < 300 && _rcpt4 >= 100){
+tipArr2.push((_rcpt4 * secondUser.percentage100));
+finArr2.push(_rcpt4 + (_rcpt4 * secondUser.percentage100));
+} else {
+tipArr2.push((_rcpt4 * secondUser.percentage100Below));
+finArr2.push(_rcpt4 + (_rcpt4 * secondUser.percentage100Below));
+}
+}
+}
+console.log(firstUser,secondUser);
+//console.log(secondUser.name + "'s family spent a total of: $" + arrSum(basArr2) + " on food.");
+//console.log(secondUser.name + "'s family spent a total of: $"+ arrSum(tipArr2) + " on tips.");
+//console.log(secondUser.name + "'s family spent a total of: $" + arrSum(finArr2) + " in overall spending");
+if (arrAvg(tipArr1) > arrAvg(tipArr2)) {
+  console.log(firstUser.name + "'s family pays higher tips, with an average of $" + arrAvg(tipArr1));
+} else if (arrAvg(tipArr2) > arrAvg(tipArr1)) {
+  console.log(secondUser.name + "'s family pays higher tips, with an average of $" + arrAvg(tipArr2));
+} else {
+  console.log("Both " + firstUser.name + " and " + secondUser.name + "'s family pays the equal amount of tips, with an average of $" + arrAvg(tipArr1) );
+}
+/*if (arrSum(finArr1) > arrSum(finArr2)) {
+  var moreOverall = arrSum(finArr1) - arrSum(finArr2),
+      moreTips = arrSum(tipArr1) - arrSum(tipArr2),
+      moreBase = arrSum(basArr1) - arrSum(basArr2);
+  console.log(firstUser.name + "'s family spent $"+ moreOverall + " more money than " + secondUser.name + "'s family in overall spending.");
+  console.log(firstUser.name + "'s family spent $"+ moreTips + " more money than " + secondUser.name + "'s family in tips.");
+  console.log(firstUser.name + "'s family spent $"+ moreBase + " more money than " + secondUser.name + "'s family in base spending.");
+} else if (arrSum(finArr2) > arrSum(finArr1)) {
+  var moreOverall = arrSum(finArr2) - arrSum(finArr1),
+      moreTips = arrSum(tipArr2) - arrSum(tipArr1),
+      moreBase = arrSum(basArr2) - arrSum(basArr1);
+  console.log(secondUser.name + "'s family spent $"+ moreOverall + " more money than " + firstUser.name + "'s family in overall spending.");
+  console.log(secondUser.name + "'s family spent $"+ moreTips + " more money than " + firstUser.name + "'s family in tips.");
+  console.log(secondUser.name + "'s family spent $"+ moreBase + " more money than " + firstUser.name + "'s family in base spending.");
+} else {
+  console.log(firstUser.name + " and " + secondUser.name + "spent the same amount in overall spending.")
+}*/
+})();
+} else {
+alert("Please type in a number value instead.")
+var query5 = prompt("How many receipts do you have from restaurants?", "3");
+    query4 = parseInt(query5);
+};

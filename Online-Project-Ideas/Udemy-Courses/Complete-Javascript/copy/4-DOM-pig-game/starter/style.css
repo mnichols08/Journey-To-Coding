@@ -2,11 +2,29 @@
 *** GENERAL
 **********************************************/
 
+.final-score {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top:520px;
+  color: #555;
+  font-size: 18px;
+  font-family: 'Lato';
+  text-align:center;
+  padding: 10px;
+  width: 160px;
+  text-transform: uppercase;
+}
+
+.final-score: focus { outline: none}
+
+#dice-0 { top: 120px;}
+#dice-1 {top: 250px;}
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    
+
 }
 
 .clearfix::after {
@@ -16,7 +34,7 @@
 }
 
 body {
-    background-image: linear-gradient(rgba(62, 20, 20, 0.4), rgba(62, 20, 20, 0.4)), url(back.jpg);
+    background-image: linear-gradient(rgba(44, 237, 108, 0.4), rgba(14, 243, 235, 0.4)), url(back.jpg);
     background-size: cover;
     background-position: center;
     font-family: Lato;
@@ -65,8 +83,8 @@ body {
 .player-score {
     text-align: center;
     font-size: 80px;
-    font-weight: 100;
-    color: #EB4D4D;
+    font-weight: 500;
+    color: #30E1C8;
     margin-bottom: 130px;
 }
 
@@ -80,11 +98,11 @@ body {
     color: #EB4D4D;
     top: -7px;
     right: 10px;
-    
+
 }
 
 .player-current-box {
-    background-color: #EB4D4D;
+    background-color: #16EC4699;
     color: #fff;
     width: 40%;
     margin: 0 auto;
@@ -148,6 +166,7 @@ i {
     transform: translateX(-50%);
     height: 100px;
     box-shadow: 0px 10px 60px rgba(0, 0, 0, 0.10);
+    -webkit-filter: #000000;
 }
 
 .winner { background-color: #f7f7f7; }
