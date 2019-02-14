@@ -38,3 +38,7 @@ if(set === 'yes'){
 } else {
   document.body.append(' unset is now defined as ' + unset);
 }
+
+if (b === undefined) {
+  console.log(b + " is undefined")
+}
