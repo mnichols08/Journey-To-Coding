@@ -27,11 +27,11 @@ function Question(q, a, c) {
   this.question = q;
   this.answers = a;
   this.correctAnswer = c;
-}
+};
 var questions = [];
 questions.push(new Question("What is the answer to the most important question?", ["42","21","11","77"],0));
 questions.push(new Question("Is JavaScript worth the trouble?", ["no","yes"],1));
-questions.push(new Question("What came first, the chicken of the egg?", ["the egg","salmonella","It depends on where it is within the scope and closure of the code.","the chicken"],2));
+questions.push(new Question("What came first, the chicken of the egg?", ["Are you sure that you didn't mean to type or?","salmonella","It depends on where it is within the scope and closure of the code.","the chicken"],2));
 questions.push(new Question("A Tornado is coming. What do you do?",["Get to the cellar or basement","Drive towards it!","Call your neighbor.","Apply for home insurance."],0));
 questions.push(new Question("There’s a fight in the Break room. What do you do?", ["Pitch in and make some popcorn","Organize a betting pool","Run and tell your boss","Shove somebody into the people fighting."],3));
 
@@ -42,22 +42,59 @@ Question.prototype.logQuestion = function() {
   }
 }
 
-Question.prototype.checkAnswer = function(ans) {
+Question.prototype.checkAnswer = function(ans, callback) {
+  var sc;
+
   if (ans === this.correctAnswer) {
     console.log("Correct Answer!");
+    sc = callback(true);
   } else {
-    console.log("Wrong Answer. Try again :)")
+    console.log("Wrong Answer. You lose a point");
+    sc = callback(false);
+  }
+
+  this.logScore(sc);
+}
+
+Question.prototype.logScore = function(score) {
+  console.log("Your current score is: " + score);
+  console.log("-----------------------------");
+}
+
+function score() {
+  var sc = 0;
+  return function(correct) {
+    if (correct) {
+      sc++;
+      currentScore = sc;
+    }else {
+      sc--;
+      currentScore = sc;
+    }
+    return sc;
   }
 }
 
-var ranNum = Math.floor(Math.random() * questions.length);
-var randomNumber = () => { return ranNum};
-for (let i = 0; i < questions.length; i++) {
-var n = randomNumber();
-questions[n].logQuestion();
-var answer = parseInt(prompt(questions[n].question));
-questions[n].checkAnswer(answer);
+var keepScore = score();
+
+function alertFunc () {
+
 }
 
+function nextQuestion() {
+var n = Math.floor(Math.random() * questions.length);
 
+questions[n].logQuestion();
+
+var answer = prompt(questions[n].question);
+
+if (answer !== 'exit' && answer != undefined && answer < 4) {
+questions[n].checkAnswer(parseInt(answer),keepScore);
+  nextQuestion();
+} else {
+  console.log("Player exited the game.");
+}
+
+}
+nextQuestion();
 })();
