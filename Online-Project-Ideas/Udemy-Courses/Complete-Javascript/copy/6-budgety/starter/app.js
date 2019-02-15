@@ -60,10 +60,10 @@ var budgetController = (function() {
       ID = 0;
       }
       // Create new item based on 'inc' or 'exp' type
-      if (typ === 'exp' /*|| val.charAt(0) == '-'*/) {
-        newItem = new Expense(ID, des, val);
-      } else if (typ === 'inc' || val.charAt(0) == '+') {
-        newItem = new Income(ID, des, val);
+      if (typ == 'exp') {
+          newItem = new Expense(ID, des, val);
+      } else if (typ == 'inc') {
+          newItem = new Income(ID, des, val);
       }
       // Push it into our data structure
       data.allItems[typ].push(newItem);
@@ -108,13 +108,30 @@ var uIController = (function() {
 
         // Replace the placeholder text with data
         newHtml = html.replace('%id%', obj.id);
-        newHtml = html.replace('%value%', obj.value);
-        newHtml = html.replace('%description%', obj.description);
+        if(obj.value.charAt(0) === '+' || obj.value.charAt(0) === '-'){
+        newHtml = newHtml.replace('%value%', obj.value.slice(1));
+      } else {
+        newHtml = newHtml.replace('%value%', obj.value)
+      }
+        newHtml = newHtml.replace('%description%', obj.description);
 
         // Insert the HTML into the DOM
         document.querySelector(element).insertAdjacentHTML('beforeend', newHtml);
-
     },
+    clearFields: function() {
+      var fields,fieldsArr;
+
+      fields = document.querySelectorAll(DOMstrings.inputDesc + ', ' + DOMstrings.inputVal);
+
+      fieldsArr = Array.prototype.slice.call(fields);
+
+      fieldsArr.forEach(function(cur, ind, arr){
+        cur.value = "";
+      });
+
+      fieldsArr[0].focus();
+    },
+
     getDOMstrings: function() {
       return DOMstrings;
     }
@@ -145,6 +162,9 @@ var controller = (function(budgetCtrl, UICtrl) {
 
     // 3. Add the new item to the user interface
     UICtrl.addListItem(newItem, input.type);
+
+    // 4. Clear the fields
+    UICtrl.clearFields();
 
     // 4. Calculate the budget__title
 
