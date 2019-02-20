@@ -1,0 +1,42 @@
+/* ---------------------------
+	Global Styles
+   --------------------------- */
+
+input {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+
+input[type="text"], input[type="email"] {
+	position: relative;
+	padding: 11px 10px;
+	border: solid 1px #ccc;
+	width: 220px;
+	margin: 0 -5px 0 0;
+}
+
+
+.column {
+	float: left;
+	margin-right: 20px;
+}
+
+.four {
+	width: 220px;
+}
+
+.last {
+	margin-right: 0;
+}
+
+.clearfix:before,
+.clearfix:after {
+	content: "";
+	display: table;
+}
+.clearfix:after {
+	clear: both;
+}
+.clearfix {
+	zoom: 1; /* For IE6/7 (trigger hasLayout) */
+}

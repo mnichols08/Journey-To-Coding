@@ -1,0 +1,33 @@
+/* 
+
+	style.css
+	
+	Colours
+	=======
+	
+	Black:			#000000
+	Darker Gray:	#222222
+	Dark Gray:		#333333
+	Gray:			#444444
+	Light Gray:		#eeeeee
+	Light Blue:		#00c0ff
+	Dark Blue:		#0090bf
+
+*/
+
+
+/* ---------------------------
+	General Styles
+   --------------------------- */
+
+html {
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizelegibility;
+}
+
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 20px;
+	color: #444444;
+}
