@@ -1,0 +1,467 @@
+Report options
+--------------
+Using report format 1
+Show table description = Y
+Show table description note = Y
+Word wrap table description note = Y
+Show column description = N
+Word wrap column description = Y
+Use Custom Data Dictionary is ON.
+
+================================================================================
+
+Table [IM_INV] (description "Inventory")
+
+This table contains inventory records.  Inventory records indicate which items
+are stocked (available for sale) from each location.
+
+Column name                    Display label
+------------------------------ ------------------------------
+
+ITEM_NO                        Item number
+LOC_ID                         Location
+BIN_1                          Bin-1
+BIN_2                          Bin-2
+BIN_3                          Bin-3
+BIN_4                          Bin-4
+MIN_QTY                        Min qty
+MAX_QTY                        Max qty
+QTY_COMMIT                     Qty committed
+QTY_ON_HND                     Qty on hand
+QTY_ON_PO                      Qty on PO's
+QTY_ON_BO                      Qty on BO
+QTY_ON_XFER_OUT                Qty on transfer out
+QTY_ON_XFER_IN                 Qty on transfer in
+LST_AVG_COST                   Last avg cost
+LST_COST                       Last cost
+STD_COST                       Standard cost
+COST_OF_SLS_PCT                Cost of sales percent
+FST_RECV_DAT                   First recv date
+LST_RECV_DAT                   Last recv date
+FST_SAL_DAT                    First sale date
+LST_SAL_DAT                    Last sale date
+LST_CNT_DAT                    Last count date
+LST_ORD_DAT                    Last PO date
+NXT_EXPECTD_DAT                Next expected date
+NXT_EXPECTD_PO                 Next expected PO
+GL_VAL                         G/L value
+QTY_ON_ORD                     Qty on order
+QTY_ON_LWY                     Qty on layaway
+QTY_ON_SO                      Qty on SO
+RS_UTC_DT                      DataSync datetime
+LST_MAINT_DT                   Last maintained
+LST_MAINT_USR_ID               Last maintained by
+LST_LCK_DT                     Last lock
+ROW_TS                         Row timestamp
+AVG_COST                       Average cost
+NET_QTY                        Net quantity
+QTY_AVAIL                      Qty available
+STK_STAT_PER_QTY_ON_HND        Stock status per qty on hnd
+STK_STAT_PER_QTY_AVAIL         Stock status per qty avail
+STK_STAT_PER_NET_QTY           Stock status per net qty
+REORD_PNT                      Reorder point
+EOQ                            EOQ
+SFTY_STK                       Safety stock
+SRVC_LEVL                      Service level (future)
+ANNL_HLD_COST                  Annual holding cost amount
+ANNL_HLD_COST_PERC             Annual holding cost percentage
+ORD_COST_PER_ORDER             Ordering cost per order
+EOQ_CALC_ON                    EOQ calculated on
+RS_STAT                        DataSync replication status
+DROPSHIP_QTY_ON_CUST_ORD       Qty on drop-ship cust orders
+DROPSHIP_QTY_ON_PO             Qty on drop-ship PO
+================================================================================
+
+Table [IM_ITEM] (description "Item")
+
+This table contains items - goods and services you have for sale.
+
+The table is virtual because we have several views that look "almost like"
+items (and users could possibly create custom views that similarly resemble
+items).
+
+
+Column name                    Display label
+------------------------------ ------------------------------
+
+ITEM_NO                        Item number
+DESCR                          Description
+DESCR_UPR                      Description (upper)
+LONG_DESCR                     Long description
+LONG_DESCR_UPR                 Long description (upper)
+SHORT_DESCR                    Short description
+ADDL_DESCR_1                   Additional description 1
+ADDL_DESCR_2                   Additional description 2
+ADDL_DESCR_3                   Additional description 3
+ITEM_TYP                       Item type
+CATEG_COD                      Category
+SUBCAT_COD                     Sub-category
+ACCT_COD                       Account code
+LBL_COD                        Label code
+ATTR_COD_1                     Attr Category
+ATTR_COD_2                     Attr Sub Cat
+ATTR_COD_3                     Attr Description
+ATTR_COD_4                     Attr Sub Desc
+ATTR_COD_5                     Item attribute 5
+ATTR_COD_6                     Gender
+TRK_METH                       Tracking method
+STAT                           Status
+STAT_DAT                       Status date
+IS_TXBL                        Taxable
+TAX_CATEG_COD                  Tax category
+QTY_DECS                       Qty decimals
+PRC_DECS                       Price decimals
+STK_UNIT                       Stocking unit
+ITEM_VEND_NO                   Primary vendor
+WEIGHT                         Weight
+TARE_COD                       Tare weight code
+CUBE                           Cube
+IS_WEIGHED                     Weighed
+ALT_1_UNIT                     Alt-1 unit
+ALT_1_NUMER                    Alt-1 multiply by
+ALT_1_DENOM                    Alt-1 divide by
+ALT_1_WEIGHT                   Alt-1 weight
+ALT_1_CUBE                     Alt-1 cube
+ALT_1_PRC_1                    Alt-1 price-1
+ALT_2_UNIT                     Alt-2 unit
+ALT_2_NUMER                    Alt-2 multiply by
+ALT_2_DENOM                    Alt-2 divide by
+ALT_2_WEIGHT                   Alt-2 weight
+ALT_2_CUBE                     Alt-2 cube
+ALT_2_PRC_1                    Alt-2 price-1
+ALT_3_UNIT                     Alt-3 unit
+ALT_3_NUMER                    Alt-3 multiply by
+ALT_3_DENOM                    Alt-3 divide by
+ALT_3_WEIGHT                   Alt-3 weight
+ALT_3_CUBE                     Alt-3 cube
+ALT_3_PRC_1                    Alt-3 price-1
+ALT_4_UNIT                     Alt-4 unit
+ALT_4_NUMER                    Alt-4 multiply by
+ALT_4_DENOM                    Alt-4 divide by
+ALT_4_WEIGHT                   Alt-4 weight
+ALT_4_CUBE                     Alt-4 cube
+ALT_4_PRC_1                    Alt-4 price-1
+ALT_5_UNIT                     Alt-5 unit
+ALT_5_NUMER                    Alt-5 multiply by
+ALT_5_DENOM                    Alt-5 divide by
+ALT_5_WEIGHT                   Alt-5 weight
+ALT_5_CUBE                     Alt-5 cube
+ALT_5_PRC_1                    Alt-5 price-1
+PREF_UNIT                      Preferred unit
+PROMPT_FOR_PRC                 Prompt for price
+PROMPT_FOR_COST                Prompt for cost
+PROMPT_FOR_DESCR               Prompt for description
+WARR_PRD_1                     Warranty period 1
+WARR_UNIT_1                    Unit (Disp)
+WARR_PRD_2                     Warranty period 2
+WARR_UNIT_2                    Unit
+SER_NO_REQ_FOR_SAL             Required when selling/returnin
+SER_PROMPT_COD_1               Serial prompt 1 code
+SER_PROMPT_COD_2               Serial prompt 2 code
+SER_PROMPT_COD_3               Serial prompt 3 code
+PROF_ALPHA_1                   GTIN/UPC
+PROF_ALPHA_2                   Brand
+PROF_ALPHA_3                   MPN
+PROF_ALPHA_4                   eBay/Swap
+PROF_ALPHA_5                   Country of Manufacture
+PROF_COD_1                     Google Availability
+PROF_COD_2                     Clearance
+PROF_COD_3                     Google Condition
+PROF_COD_4                     Google Age
+PROF_COD_5                     Google Gender
+PROF_DAT_1                     Date profile 1
+PROF_DAT_2                     Date profile 2
+PROF_DAT_3                     Date profile 3
+PROF_DAT_4                     Date profile 4
+PROF_DAT_5                     Date profile 5
+PROF_NO_1                      Height
+PROF_NO_2                      Width
+PROF_NO_3                      Length
+PROF_NO_4                      Numeric profile 4
+PROF_NO_5                      Numeric profile 5
+GRID_DIM_1_TAG                 Grid dimension &1 tag
+GRID_DIM_2_TAG                 Grid dimension &2 tag
+GRID_DIM_3_TAG                 Grid dimension &3 tag
+GRID_DIM_1_TAG_UPR             Grid dimension &1 tag
+GRID_DIM_2_TAG_UPR             Grid dimension &2 tag
+GRID_DIM_3_TAG_UPR             Grid dimension &3 tag
+GRID_ENT_1                     Grid dimension 1 entry order
+GRID_ENT_2                     Grid dimension 2 entry order
+GRID_ENT_3                     Grid dimension 3 entry order
+CELL_BARCOD_PRE                Cell barcode prefix
+NXT_CELL_BARCOD_NO             Next cell barcode #
+PRC_1                          Price-1
+BARCOD                         Barcode
+PS_PROMPT_COD_1                Prompt code 1
+PS_PROMPT_COD_2                Prompt code 2
+PS_PROMPT_COD_3                Prompt code 3
+IS_ECOMM_ITEM                  Ecommerce item
+ECOMM_LST_PUB_DT               Date
+ECOMM_LST_PUB_STAT             Status
+ECOMM_ON_SPECL_UNTIL           Until
+ECOMM_IMG_FILE                 Image file
+ECOMM_TXBL_1                   Charge tax-1
+ECOMM_TXBL_2                   Charge tax-2
+ECOMM_TXBL_3                   Charge tax-3
+URL                            URL
+ECOMM_NEW                      New
+ECOMM_NEW_UNTIL                Until
+ECOMM_ON_SPECL                 On special
+ECOMM_CHRG_FRT                 Charge freight
+ECOMM_FRT_AMT                  Freight amount
+VEND_ITEM_NO                   Vendor's item #
+LST_COST                       Last cost
+DFLT_COST_OF_SLS_PCT           COS%
+REG_PRC                        Regular price
+ALT_1_REG_PRC                  Alt-1 regular price
+ALT_2_REG_PRC                  Alt-2 regular price
+ALT_3_REG_PRC                  Alt-3 regular price
+ALT_4_REG_PRC                  Alt-4 regular price
+ALT_5_REG_PRC                  Alt-5 regular price
+LST_RECV_DAT                   Last received date
+IS_FOOD_STMP_ITEM              Food stamp item
+PROMPT_FOR_UNIT                Prompt for unit
+PROMPT_FOR_CUSTOM_FLDS         Prompt for custom fields
+MIX_MATCH_COD                  Mix-and-Match code
+IS_ADM_TKT                     Admission ticket
+IS_BOM_PAR                     Bill of materials parent
+IS_KIT_PAR                     Kit parent
+RS_UTC_DT                      DataSync datetime
+LST_MAINT_DT                   Last maintained
+LST_MAINT_USR_ID               Last maintained by
+LST_LCK_DT                     Last lock
+ROW_TS                         Row timestamp
+CATEG_SUBCAT                   Categ/Subcat
+DIM_COD                        Dimension code
+DIM_COD_LABEL                  Dimension code label
+DIM_COUNT                      Dimension code count
+PREF_UNIT_CUBE                 Preferred unit cube
+PREF_UNIT_DENOM                Preferred unit divide by
+PREF_UNIT_NAM                  Preferred unit
+PREF_UNIT_NUMER                Preferred unit multiply by
+PREF_UNIT_PRC_1                Preferred unit price-1
+PREF_UNIT_REG_PRC              Preferred unit regular price
+PREF_UNIT_WEIGHT               Preferred unit weight
+ITEM_IS_MISC                   Item is miscellaneous
+COPY_FROM_ITEM_NO              Copy from item number
+BARCOD_3_OF_9                  Barcode 3 0f 9
+IS_DISCNTBL                    Discountable
+ECOMM_DISC_ON_SAL              Discount on-sale items
+PS_LIN_CUST_FLD_FRM_ID         Line custom prompts
+ECOMM_LST_CHNG_UTC_DT          Last CPOL-relevant change (fut
+ECOMM_NXT_PUB_TYP              Next publishing mode (future)
+ECOMM_ITEM_IS_DISCNTBL         Discountable
+RS_STAT                        DataSync replication status
+ECOMM_PUB_STAT                 Ecommerce publishing status (f
+USR_MAG_CATEG_TREE             *** No display label ***
+USR_PAR_ITEM_NO                Parent Item #
+USR_GROUPED_POSITION           Grouped Position
+USR_EXCLUDE_GRID_DIM_1         Exclude grid dim 1?
+USR_EXCLUDE_GRID_DIM_2         Exclude grid dim 2?
+USR_EXCLUDE_GRID_DIM_3         Exclude grid dim 3?
+USR_QTY_STOCK_THRESHOLD        Qty Stock Threshold
+USR_ALWAYS_IN_STOCK            Always in Stock
+USR_SPLIT_ITEM                 Split Item
+USR_INCLUDE_STK_UNIT           Include stocking unit?
+USR_INCLUDE_ALT_1_UNIT         Include alt unit 1?
+USR_INCLUDE_ALT_2_UNIT         Include alt unit 2?
+USR_INCLUDE_ALT_3_UNIT         Include alt unit 3?
+USR_INCLUDE_ALT_4_UNIT         Include alt unit 4?
+USR_INCLUDE_ALT_5_UNIT         Include alt unit 5?
+USR_GOOGLE_SHOPPING_FEED       Google Shopping Feed
+USR_GOOGLE_AGE                 Google Age
+USR_GOOGLE_GENDER              Google Gender
+USR_GOOGLE_CATEGORY_ID         Google Category ID
+USR_WEB_BO_METH                Web backorder method
+USR_WEB_STATUS                 Web Status
+USR_WEB_TYPE                   Web Type
+USR_WEB_VISIBILITY             Web Visibility
+USR_WEB_ARCHIVE                Web Archive
+USR_WEB_SHORT_DESCR            Web Short Description
+USR_COLOR                      Color
+USR_COLOR_FILTER               Color Filter
+USR_SIZE                       Size
+USR_SIZE_FILTER                Size Filter
+USR_ATTRIBUTE_SET              Attribute Set
+USR_WEB_NAME                   Web Name
+USR_HIDE_DEFAULT_STOCK_STATUS  Hide Default Stock Status
+USR_CUSTOM_STOCK_STATUS        Custom Stock Status
+USR_CUSTOM_STOCK_STATUS_QTY_BA Custom Stock Status Qty Rule
+USR_CUSTOM_STOCK_STATUS_QTY_RU Custom Stock Status Qty Rule
+USR_MARKETPLACE                Marketplace
+USR_DISABLE_PURCHASE           Disable Purchase
+USR_DISABLE_PURCHASE_TEXT      Disable Purchase Text
+USR_READY_FOR_WEB              Ready for Web
+USR_META_TITLE                 Meta Title
+USR_META_DESCR                 Meta Description
+================================================================================
+
+Table [EC_CATEG_ITEM] (description "Category Assignment")
+
+Assignments of ecommerce categories to items.
+
+A single (ecommerce) item in CounterPoint SQL can be associated with many
+ecommerce categories.  This table holds linking records to relate the item
+(IM_ITEM record) to each assigned ecommerce category (EC_CATEG record).
+
+
+Column name                    Display label
+------------------------------ ------------------------------
+
+ITEM_NO                        Item number
+CATEG_ID                       Category ID
+ENTRY_SEQ_NO                   Entry order
+LST_MAINT_DT                   Last maintained
+LST_MAINT_USR_ID               Last maintained by
+LST_LCK_DT                     Last lock
+ROW_TS                         Row timestamp
+================================================================================
+
+Table [IM_BARCOD] (description "Barcode")
+
+This is the item barcode table. An unlimited number of barcodes may be assigned
+to an inventory item, one for each barcode id. The barcode must be unique and
+may not duplicate an item number. The unique index is made up of 3 fields:
+1) ITEM_NO     2) CELL_COORD     3) BARCOD_IDNote: BARCOD column is also a
+unique index.
+
+Column name                    Display label
+------------------------------ ------------------------------
+
+ITEM_NO                        Item number
+SEQ_NO                         Sequence #
+BARCOD_ID                      Barcode type
+DIM_1_UPR                      Grid dimension 1
+DIM_2_UPR                      Grid dimension 2
+DIM_3_UPR                      Grid dimension 3
+BARCOD                         Barcode
+UNIT                           Associated unit
+LST_MAINT_DT                   Last maintained
+LST_MAINT_USR_ID               Last maintained by
+LST_LCK_DT                     Last lock
+ROW_TS                         Row timestamp
+================================================================================
+
+Table [IM_INV_CELL] (description "Inventory Cell")
+
+This table contains inventory cell records.  Inventory-cell records are the
+analog of inventory records.
+
+Inventory records track, per item and location, whether an item is stocked (by
+record existence) and various quantities (including QOH and committed).
+
+Inventory-cell records track similar information -- but per item, location, AND
+CELL.
+
+
+Column name                    Display label
+------------------------------ ------------------------------
+
+ITEM_NO                        Item number
+LOC_ID                         Location
+DIM_1_UPR                      Grid dimension 1
+DIM_2_UPR                      Grid dimension 2
+DIM_3_UPR                      Grid dimension 3
+MIN_QTY                        Min qty
+MAX_QTY                        Max qty
+QTY_COMMIT                     Qty committed
+QTY_ON_HND                     Qty on hand
+QTY_ON_PO                      Qty on PO's
+QTY_ON_BO                      Qty on BO
+QTY_ON_XFER_OUT                Qty on transfer out
+QTY_ON_XFER_IN                 Qty on transfer in
+QTY_ON_ORD                     Qty on order
+QTY_ON_LWY                     Qty on layaway
+QTY_ON_SO                      Qty on SO
+LST_MAINT_DT                   Last maintained
+LST_MAINT_USR_ID               Last maintained by
+LST_LCK_DT                     Last lock
+ROW_TS                         Row timestamp
+NET_QTY                        Net quantity
+QTY_AVAIL                      Qty available
+STK_STAT_PER_QTY_ON_HND        Stock status per qty on hnd
+STK_STAT_PER_QTY_AVAIL         Stock status per qty avail
+STK_STAT_PER_NET_QTY           Stock status per net qty
+REORD_PNT                      Reorder point
+EOQ                            EOQ
+SFTY_STK                       Safety stock
+EOQ_CALC_ON                    EOQ calculated on
+CELL_STAT                      Status
+IS_ECOMM_ITEM_CELL             Ecommerce item cell (future)
+DROPSHIP_QTY_ON_CUST_ORD       Qty on drop-ship cust orders
+DROPSHIP_QTY_ON_PO             Qty on drop-ship PO
+================================================================================
+
+Table [EC_CATEG] (description "Ecommerce Category")
+
+Ecommerce categories.
+
+Ecommerce categories provide a classification of items used for ecommerce/CPOL.
+ The structure of this category tree provides the skeleton for the layout of
+the CPOnline store.
+
+Each node is assigned a long description and an image file, for use in the
+on-line store.
+
+For easier reporting, we introduce views that flatten the tree --
+VI_EC_CATEG_TREE and VI_EC_LEAF_NODES.  (Note that both views are limited to
+eight levels of depth, though this table itself is not.)
+
+
+Column name                    Display label
+------------------------------ ------------------------------
+
+CATEG_ID                       Category ID
+PARENT_ID                      Parent ID
+DESCR                          Category
+DESCR_UPR                      Description (upper)
+IMG_FILE                       Image file
+HTML_DESCR                     HTML description
+DISP_SEQ_NO                    Sequence #
+LST_MAINT_DT                   Last maintained
+LST_MAINT_USR_ID               Last maintained by
+LST_LCK_DT                     Last lock
+ROW_TS                         Row timestamp
+================================================================================
+
+Table [EC_ITEM_DESCR] (description "Item Ecommerce Description")
+
+This table contains HTML descriptions of items, for use with CPOnline.
+
+The primary key is just ITEM_NO, just like IM_ITEM.  We break this out into a
+separate table to avoid running into the MSSQL7 limit of 8,060 bytes per table
+row.  Unfortunately, this slightly complicates some queries that require both
+item data and the HTML description.
+
+
+Column name                    Display label
+------------------------------ ------------------------------
+
+ITEM_NO                        Item number
+HTML_DESCR                     HTML description
+LST_MAINT_DT                   Last maintained
+LST_MAINT_USR_ID               Last maintained by
+LST_LCK_DT                     Last lock
+ROW_TS                         Row timestamp
+ECOMM_LST_CHNG_UTC_DT          Ecommerce last change (future)
+ECOMM_PUB_STAT                 Ecommerce publishing status (f
+================================================================================
+
+Table [IM_ITEM_NOTE] (description "Item Note")
+
+This is the item notes table. Notes for items may be displayed or printed.The
+unique index is made up of 2 fields:     1) ITEM_NO     2) NOTE_ID
+
+Column name                    Display label
+------------------------------ ------------------------------
+
+ITEM_NO                        Item number
+NOTE_ID                        Note ID
+NOTE_DAT                       Date
+USR_ID                         User
+NOTE                           Note
+NOTE_TXT                       Plain text note
+LST_MAINT_DT                   Last maintained
+LST_MAINT_USR_ID               Last maintained by
+LST_LCK_DT                     Last lock
+ROW_TS                         Row timestamp
