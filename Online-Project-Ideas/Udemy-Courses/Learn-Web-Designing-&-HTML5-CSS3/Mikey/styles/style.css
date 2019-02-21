@@ -1,0 +1,153 @@
+/*
+
+    style.css
+
+    Colours
+    *******
+
+    Black:           #000
+    Darker Gray:     #222
+    Dark Gray:       #333
+    Gray:            #444
+    Light Gray:      #eee
+    Light Blue:      #0090bf
+    Dark Blue:       #00c0ff
+
+*/
+
+/* -------------------------
+        General Styles
+   -------------------------*/
+html {
+-webkit-font-smoothing: antialiased;
+text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: #444;
+}
+
+
+/* -------------------------
+         Typography
+  -------------------------*/
+
+  h1, h2, h3 {
+    font-weight: 300;
+    margin: 0;
+    line-height: 45px;
+  }
+
+  h4, h5, h6 {
+    font-weight: bold;
+    margin: 5px 0 5px 0;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  h3 {
+    font-size: 30px;
+  }
+
+  h4 {
+    font-size: 30px;
+    margin: 10px 0;
+  }
+
+  h5 {
+    font-size:13px;
+    text-transform:uppercase;
+  }
+
+  p {
+    margin: 0 0 10px 0;
+  }
+
+  p.lead {
+    font-size: 18px;
+    font-weight:300;
+    line-height:24px;
+  }
+
+/* -------------------------
+          Layout
+   -------------------------*/
+.container {
+  width: 940px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+header {
+  background: #000;
+}
+
+#logo {
+  display: block;
+  padding: 16px 0 13px 5px;
+  float:left;
+}
+
+#hero {
+  background: linear-gradient(45deg,hsl(160, 100%, 55.9%),hsl(188.5, 65.1%, 44.9%));
+  color:#000;
+}
+
+/* -------------------------
+          Navigation
+   -------------------------*/
+
+   nav ul {
+     margin: 0;
+     padding: 0;
+     float:right;
+   }
+
+   nav ul li {
+     list-style: none;
+     float:left;
+   }
+
+   header nav ul li a {
+     display: block;
+     color: #fff;
+     text-decoration: none;
+     padding: 20px;
+     border-left:solid 1px #333;
+   }
+
+   header nav ul li a:hover{
+     background:#222;
+   }
+
+   header nav ul li a:active{
+     -webkit-box-shadow: 0 0 5px #000000aa;
+        -moz-box-shadow: 0 0 5px #000000aa;
+             box-shadow: 0 0 5px #000000aa;
+
+   }
+
+/* -------------------------
+       Global Styles
+  -------------------------*/
+
+  .clearfix:before,
+  .clearfix:after {
+  	content: "";
+  	display: table;
+  }
+  .clearfix:after {
+  	clear: both;
+  }
+  .clearfix {
+  	zoom: 1; /* For IE6/7 (trigger hasLayout) */
+  }
