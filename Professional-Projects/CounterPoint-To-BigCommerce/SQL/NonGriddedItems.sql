@@ -1,4 +1,5 @@
 SELECT
+IM_ITEM.ITEM_NO AS 'CounterPoint Item Number',
 'SKU' AS "Item Type",
 NULL AS "Product ID",
 IM_ITEM.ADDL_DESCR_1 AS "Product Name",
