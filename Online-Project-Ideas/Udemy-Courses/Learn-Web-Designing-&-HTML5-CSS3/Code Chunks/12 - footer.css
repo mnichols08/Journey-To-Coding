@@ -1,0 +1,32 @@
+/* ---------------------------
+	Footer
+   --------------------------- */
+
+footer {
+	background: #444;
+	color: #fff;
+	padding: 50px 0;
+}
+
+footer #copyright {
+	width: 280px;
+	float: left;
+}
+
+footer nav {
+	width: 340px;
+	float: right;
+}
+
+footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+footer nav a {
+	margin: 0 0 0 15px;
+}
+
+footer a:hover {
+	color: #00c0ff;
+}

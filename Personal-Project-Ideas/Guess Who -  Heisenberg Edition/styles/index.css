@@ -1,0 +1,58 @@
+:root {
+	font-family: "Cabin Condensed", sans-serif;
+	margin-bottom:4em;
+}
+section{
+	margin-top:4em;
+	align-items:center;
+	justify-content:center;
+	display:flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+}
+
+header{
+	top:0;
+	left:0;
+	height:5em;
+	width:100%;
+	position:absolute;
+	background:#0000006f;
+	text-align:center;
+	color:hsl(240,20%,95%);
+}
+.header.container{
+	min-height:4.4em;
+	position:relative;
+	top:-.75em;
+	background:linear-gradient(#00000000,#00000000,#00000000,#0000006f);
+}
+.header.container h1{
+	margin-bottom:0;
+	min-width:180px;
+}
+.header.container p{
+	min-width:180px;
+	margin-top:-.25em;
+}
+footer{
+		display:flex;
+		justify-content:center;
+		position:fixed;
+		bottom:0;
+		left:0;
+		width:100%;
+		height:3em;
+	  background: linear-gradient(#0000006f,#0000005f,#000000f0,#000000f0);
+  color: #d5d5d5;
+  margin: 0;
+}
+.text-yellow{
+	color:yellow;
+}
+.text-red{
+	color:red;
+}
+.text-green{
+	color:green;
+}
