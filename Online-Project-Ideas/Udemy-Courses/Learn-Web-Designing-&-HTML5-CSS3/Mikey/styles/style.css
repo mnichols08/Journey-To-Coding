@@ -10,8 +10,10 @@
     Dark Gray:       #333
     Gray:            #444
     Light Gray:      #eee
-    Light Blue:      #0090bf
-    Dark Blue:       #00c0ff
+    Darker Blue:     #0086b2
+    Dark Blue:       #0090bf
+    Light Blue:      #00c0ff
+    Border:          #1e728c
 
 */
 
@@ -102,6 +104,17 @@ header {
   color:#000;
 }
 
+#hero-title {
+  width: 520px;
+  padding: 60px 0;
+  float:left;
+}
+
+img#hero-image{
+  float:right;
+  margin: 10px 0 -30px 0;
+}
+
 /* -------------------------
           Navigation
    -------------------------*/
@@ -135,7 +148,51 @@ header {
              box-shadow: 0 0 5px #000000aa;
 
    }
+ /* -------------------------
+          Buttons
+   -------------------------*/
 
+.btn {
+  width: auto;
+  background: linear-gradient(45deg,#00c0ff,#0090bf);
+  border: 1px dashed #1e728c;
+  color:#fff;
+  cursor: pointer;
+  display:inline-block;
+  border-radius: .5em;
+
+  /* IE7 Inline-block fix */
+  zoom: 1;
+  *display:inline;
+
+  margin: 0;
+  outline:none;
+  padding: 10px 20px 11px;
+  position: relative;
+  text-decoration: none;
+
+/* Box Shadows */
+      -webkit-box-shadow: 0 0 10px #00000066;
+         -moz-box-shadow: 0 0 10px #00000066;
+              box-shadow: 0 0 10px #00000066;
+
+/* Transitions */
+   -webkit-transition: background 1.15s ease-in;
+      -moz-transition: background 1.15s ease-in;
+        -o-transition: background 1.15s ease-in;
+           transition: background 1.15s ease-in;
+}
+
+.btn:hover {
+    color: #fff;
+    background: #00c0ff;
+}
+
+.btn:active{
+  -webkit-box-shadow: 0 0 20px #00000066;
+     -mox-box-shadow: 0 0 20px #00000066;
+          box-shadow: 0 0 20px #00000066;
+}
 /* -------------------------
        Global Styles
   -------------------------*/
