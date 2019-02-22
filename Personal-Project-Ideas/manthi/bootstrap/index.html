@@ -19,7 +19,7 @@
   <nav class="navbar-expand-md navbar-dark navbar-custom bg-custom fixed-top" id="Home">
     <div class="container-fluid navBarCustom">
       <a class="navbar-brand" href="#">
-        <h1 class="logoWords">mnzen design</h1>
+        <img src="img/logo.png">
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
         <span class="navbar-toggler-icon"></span>
@@ -94,7 +94,7 @@
   <div class="container-fluid padding" id="About">
     <div class="row welcome text-center">
       <div class="col-12">
-        <h1 class="display-4">Hi, I'm Manthi!</h1>
+        <img src="img/greeting.png">
       </div>
       <hr>
       <div class="col-12">
@@ -127,7 +127,7 @@
   <div class="parallax">
     <div class="row welcome text-center">
       <div class="col-12">
-        <h1 class="display-4">Skills</h1>
+        <img src="img/skills.png">
       </div>
       <hr>
     </div>
@@ -209,14 +209,14 @@
   <div class="container-fluid padding" id="Portfolio">
     <div class="row welcome text-center">
       <div class="col-12">
-        <h1 class="diaplay-4">Portfolio</h1>
+        <img src="img/portfolio.png">
       </div>
       <hr>
     </div>
   </div>
 
   <!--- Portfolio Thumbnails Gallery -->
-  <div class='portfolio container'>
+  <div class='portfolio container-fluid'>
     <div class="row">
       <div class="col">
         <a target="_blank" href="img/space_shell.png">
@@ -253,29 +253,47 @@
     </div>
   </div>
   <!--- Two Column Section -->
-
-
-  <!--- Connect -->
-  <div class="container-fluid padding" id="Contact">
-    <div class="row text-center padding">
-      <div class="col-12">
-        <h2>Connect</h2>
-      </div>
-      <div class="col-12 social padding">
-        <a href="https://www.facebook.com/mnzendesign" target="_blank"><i class="fab fa-facebook"></i></a>
-        <a href="https://www.behance.net/mnzen" target="_blank"><i class="fab fa-behance"></i></a>
-        <a href="https://www.youtube.com/channel/UCazF86NbkUt7Jecm0xI8m-A?view_as=subscriber" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="http://www.instagram.com/mnzendesign" target="_blank"><i class="fab fa-instagram"></i></a>
-      </div>
+  <!-- Contact Form -->
+  <div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+          <img src="img/message_me.png">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xs-offset-3">
+            <form id="contact-form" class="form" action="#" method="POST" role="form">
+                <div class="form-group">
+                    <label class="form-label" for="name">Your Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Your name" tabindex="1" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" tabindex="2" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="subject">Subject</label>
+                    <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject" tabindex="3">
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="message">Message</label>
+                    <textarea rows="5" cols="50" name="message" class="form-control" id="message" placeholder="Message..." tabindex="4" required></textarea>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-start-order">Send Message</button>
+                </div>
+            </form>
+        </div>
     </div>
   </div>
+
 
   <!--- Footer -->
   <footer>
     <div class="container-fluid padding">
       <div class="row text-center">
         <div class="col-md-4">
-          <h1 class="logoWords">mnzen design</h1>
+          <img src="img/logo.png">
           <hr class="light">
           <p>301-955-6609</p>
           <p>manthi@mnzen.com</p>
@@ -288,6 +306,20 @@
 
 
           <img src="img/gif/contact.gif" class="img-fluid">
+        </div>
+      </div>
+
+      <!--- Connect -->
+      <div class="container-fluid padding" id="Contact">
+        <div class="row text-center padding">
+          <div class="col-12">
+          </div>
+          <div class="col-12 social padding">
+            <a href="https://www.facebook.com/mnzendesign" target="_blank"><i class="fab fa-facebook"></i></a>
+            <a href="https://www.behance.net/mnzen" target="_blank"><i class="fab fa-behance"></i></a>
+            <a href="https://www.youtube.com/channel/UCazF86NbkUt7Jecm0xI8m-A?view_as=subscriber" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="http://www.instagram.com/mnzendesign" target="_blank"><i class="fab fa-instagram"></i></a>
+          </div>
         </div>
       </div>
 
