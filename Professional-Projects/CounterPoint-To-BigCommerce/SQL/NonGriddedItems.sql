@@ -27,7 +27,7 @@ NULL AS 'Product Availability',
 IM_ITEM.USR_ALWAYS_IN_STOCK AS 'Track Inventory',
 IM_INV.QTY_AVAIL AS 'Stock Level',
 IM_ITEM.USR_QTY_STOCK_THRESHOLD AS 'Low Stock Level',
-IM_ITEM.USR_MAG_CATEG_TREE AS 'Category String',
+IM_ITEM.USR_MAG_CATEG_TREE AS 'Category String', --Not accurate, needs help
 NULL AS 'Product File - 1',
 NULL AS 'Product File Description - 1',
 NULL AS 'Product File Max Downloads - 1',
