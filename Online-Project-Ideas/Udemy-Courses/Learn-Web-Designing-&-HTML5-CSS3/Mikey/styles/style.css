@@ -110,9 +110,117 @@ header {
   float:left;
 }
 
+#call-to-action {
+  margin: 40px 0;
+}
+
 img#hero-image{
   float:right;
   margin: 10px 0 -30px 0;
+}
+
+#lead-in {
+	margin-bottom: 30px;
+}
+
+#content {
+	padding: 100px 0;
+}
+
+#column-content {
+	width: 700px;
+	float: left;
+}
+
+/* ---------------------------
+	Sidebar
+   --------------------------- */
+
+aside {
+	background: #444;
+	width: 160px; /* 220px with 60px of left and right padding */
+	color: #fff;
+	float: left;
+	margin-left: 20px;
+	padding: 30px;
+	font-size: 12px;
+	line-height: 18px;
+}
+
+aside .widget {
+	margin: 10px 0;
+}
+
+aside .widget:nth-child(2) {
+	margin-top: 40px;
+}
+
+aside .widget h4 {
+	font-weight: 200;
+	font-size: 20px;
+	margin: 0 0 10px;
+}
+
+aside .socials a {
+	position: relative;
+	margin-right: 5px;
+}
+
+aside .socials a:hover {
+	top: -1px;
+}
+
+/* ---------------------------
+	Secondary Call-to-action
+   --------------------------- */
+
+#secondary-cta {
+	background: #eee;
+	padding: 30px 0;
+}
+
+#secondary-cta h4 {
+	font-weight: 200;
+	font-size: 24px;
+	float: left;
+}
+
+#secondary-cta form {
+	margin: 0;
+	float: right;
+}
+
+/* ---------------------------
+	Footer
+   --------------------------- */
+
+footer {
+	background: #444;
+	color: #fff;
+	padding: 50px 0;
+}
+
+footer #copyright {
+	width: 280px;
+	float: left;
+}
+
+footer nav {
+	width: 340px;
+	float: right;
+}
+
+footer a {
+	color: #fff;
+	text-decoration: none;
+}
+
+footer nav a {
+	margin: 0 0 0 15px;
+}
+
+footer a:hover {
+	color: #00c0ff;
 }
 
 /* -------------------------
@@ -148,6 +256,7 @@ img#hero-image{
              box-shadow: 0 0 5px #000000aa;
 
    }
+
  /* -------------------------
           Buttons
    -------------------------*/
@@ -192,10 +301,70 @@ img#hero-image{
   -webkit-box-shadow: 0 0 20px #00000066;
      -mox-box-shadow: 0 0 20px #00000066;
           box-shadow: 0 0 20px #00000066;
+               color: #fff;
 }
+
+.btn-large {
+  padding: 22px 30px;
+  font-size:24px;
+  font-weight: 200;
+}
+
+.btn-secondary {
+	font-size: 20px;
+}
+
+.btn-small {
+	font-weight: bold;
+}
+
+.btn-secondary, .btn-secondary:hover, .btn-secondary:active {
+	background: none;
+	border: none;
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	        box-shadow: none;
+}
+
+.btn-secondary:hover {
+	text-decoration: underline;
+}
+
+.btn-secondary:active {
+	position: relative;
+	top: 1px;
+}
+
 /* -------------------------
        Global Styles
   -------------------------*/
+
+  input {
+  	-webkit-font-smoothing: antialiased;
+  	text-rendering: optimizelegibility;
+  }
+
+  input[type="text"], input[type="email"] {
+  	position: relative;
+  	padding: 11px 10px;
+  	border: solid 1px #ccc;
+  	width: 220px;
+  	margin: 0 -5px 0 0;
+  }
+
+
+  .column {
+  	float: left;
+  	margin-right: 20px;
+  }
+
+  .four {
+  	width: 220px;
+  }
+
+  .last {
+  	margin-right: 0;
+  }
 
   .clearfix:before,
   .clearfix:after {
