@@ -1,6 +1,1 @@
-* linguist-vendored
-*.js JavaScript
-*.html HTML
-*.css CSS3
-*.sql SQL
-
+*.* linguist-language=<language>
