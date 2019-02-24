@@ -71,14 +71,13 @@ var budgetController = (function() {
         ID = 0;
       }
 
-      // Create new item based on 'inc' or 'exp' type and also check to add or subtract
-var findInt = parseFloat(val.toString().charAt(0));
-      if (isNaN(findInt)) {
+      // Create new item based on 'inc' or 'exp' type
+      if (typ === 'exp') {
         newItem = new Expense(ID, des, val);
-        typ = 'exp';
-      } else if (!isNaN(findInt)){
+        typ === 'exp';
+      } else if (typ === 'inc') {
         newItem = new Income(ID, des, val);
-        typ = 'inc'
+        typ === 'inc'
       }
 
       // Push it into our data structure
@@ -86,6 +85,18 @@ var findInt = parseFloat(val.toString().charAt(0));
       // Return the new element
       return newItem;
     },
+
+    deleteItem: function(type, id) {
+      var ids, index;
+          ids = data.allItems[type].map(function(current) {
+          return current.id;
+        });
+
+        index = ids.indexOf(id);
+        if (index !=== -1) {
+          data.allItems[type].splice(index, 1);
+        }
+    }
 
     calculateBudget: function() {
 
@@ -147,34 +158,17 @@ var uIController = (function() {
     addListItem: function(obj, type) {
       var html, newHtml, element;
       // Create HTML string with placeholder text
-      /*
-      if (type === 'exp' && ((isNaN(parseFloat(obj.value.toString().charAt(0)))))) {
-        element = DOMstrings.incomeContainer;
-        html = '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">%value%</div> <div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
-      } else if (type === 'inc' && ((!isNaN(parseFloat(obj.value.toString().charAt(0)))))) {
-        element = DOMstrings.incomeContainer;
-        html = '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">%value%</div> <div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
-      } else if (type === 'exp' && ((isNaN(parseFloat(obj.value.toString().charAt(0)))))) {
-        element = DOMstrings.expensesContainer;
-        html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div> <div class="item__percentage">21%</div><div class="item__delete"> <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
-      } else {
-        element = DOMstrings.expensesContainer;
-        html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div> <div class="item__percentage">21%</div><div class="item__delete"> <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
-      }
-      */
-
       if (type === 'inc') {
         element = DOMstrings.incomeContainer;
-        html = '<div class="item clearfix" id="income-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">%value%</div> <div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
+        html = '<div class="item clearfix" id="inc-%id%"><div class="item__description">%description%</div><div class="right clearfix"> <div class="item__value">%value%</div> <div class="item__delete"><button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
       } else if (type === 'exp') {
         element = DOMstrings.expensesContainer;
-        html = '<div class="item clearfix" id="expense-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div> <div class="item__percentage">21%</div><div class="item__delete"> <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
+        html = '<div class="item clearfix" id="exp-%id%"><div class="item__description">%description%</div><div class="right clearfix"><div class="item__value">%value%</div> <div class="item__percentage">21%</div><div class="item__delete"> <button class="item__delete--btn"><i class="ion-ios-close-outline"></i></button></div></div></div>'
       }
 
       // Replace the placeholder text while checking if they are a negative or positive integer
-
       newHtml = html.replace('%id%', obj.id);
-      if ((isNaN(parseFloat(obj.value.toString().charAt(0))))) {
+      if (isNaN(obj.value.toString().charAt(0))) {
         newHtml = newHtml.replace('%value%', obj.value.toString().slice(1));
       } else {
         newHtml = newHtml.replace('%value%', obj.value);
@@ -231,6 +225,7 @@ var controller = (function(budgetCtrl, UICtrl) {
     });
 
     document.querySelector(DOM.container).addEventListener('click', ctrlDeleteItem);
+
   };
 
   var updateBudget = function() {
@@ -247,17 +242,16 @@ var controller = (function(budgetCtrl, UICtrl) {
     var input, newItem;
     // 1. Get the field input Data
     input = UICtrl.getInput();
-
+    // Add event listener for the plus key
     if (input.description !== "" && isNaN(input.description) && !isNaN(input.value) && input.value != 0) {
-      if (input.type == "exp" && isNaN(parseFloat(input.value.toString().charAt(0)))){
-        input.type = 'inc';
-        input.value = parseFloat(input.value.toString().slice(1));
-      } else if (input.type == "inc" && isNaN(parseFloat(input.value.toString().charAt(0)))){
+      // Check for a negative
+      if (input.type == 'inc' && input.value.toString().charAt(0) === '-') {
         input.type = 'exp';
-        input.value = parseFloat(input.value.toString().slice(1));
-      }
-
-
+      } else if (input.type == 'exp' && input.value.toString().charAt(0) === '-') {
+        input.type = 'inc'
+      };
+      // Keep the value a positive Integer to balance the budget
+      input.value = Math.abs(input.value)
       // 2. Add the item to the budget controller
       newItem = budgetCtrl.addItem(input.type, input.description, input.value);
 
@@ -274,13 +268,21 @@ var controller = (function(budgetCtrl, UICtrl) {
   };
 
   var ctrlDeleteItem = function(e) {
-    var itemID;
+    var itemID, splitID, type;
 
     itemID = e.target.parentNode.parentNode.parentNode.id;
 
-    // 1. Get the target element to delete
+    if (itemID) {
+      splitID = itemID.split('-');
+      type = splitID[0];
+      ID = splitID[1];
 
-    // 2.
+      // 1. delete the item from the data structure
+
+      // 2. Delete the item from the UI
+
+      // 3. Update and show the new budget
+    }
   }
 
   return {
