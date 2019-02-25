@@ -1,9 +1,10 @@
 SELECT
+IM_ITEM.IS_ECOMM_ITEM AS 'Enabled',
 IM_INV_CELL.ITEM_NO AS 'CounterPoint Item Number',
 IM_ITEM.TRK_METH AS 'CounterPoint Tracking Method',
 'SKU' AS 'Item Type',
 NULL AS 'Product ID',
-IM_ITEM.ADDL_DESCR_1 AS 'Product Name',
+REPLACE(REPLACE(IM_ITEM.TRK_METH,'G','SKU'),'N','PRODUCT') AS 'Item Type',
 'P' AS 'Product Type',
 IM_BARCOD.BARCOD AS 'Product Code/SKU',
 --IM_INV.BIN_1 AS 'Bin Picking Number',
@@ -34,15 +35,17 @@ IM_ITEM.CATEG_SUBCAT AS 'Category', --Not accurate, needs help
 --NULL AS 'Product File Max Downloads - 1',
 --NULL AS 'Product File Expires After - 1',
 --NULL AS 'Product Image ID - 1', --BigCommerce System Generated
-'https://high-mountain-sports4.mybigcommerce.com/dav/product_images/' + REPLACE((IM_ITEM.ITEM_NO + '^' + IM_INV_CELL.DIM_1_UPR + '^' + IM_INV_CELL.DIM_2_UPR + '^' + IM_INV_CELL.DIM_3_UPR + '.JPG'),'^*','') AS
+'https://high-mountain-sports4.mybigcommerce.com/dav/product_images/' + REPLACE((IM_ITEM.ITEM_NO
++ '^' + IM_INV_CELL.DIM_1_UPR + '^' + IM_INV_CELL.DIM_2_UPR + '^' + IM_INV_CELL.DIM_3_UPR +
+'.JPG'),'^*','') AS
 'Product Image Path (File) - 1',
 IM_ITEM.ADDL_DESCR_1 AS 'Product Image Description - 1',
 'N' AS 'Product Image Is Thumbnail - 1',
 --NULL AS 'Product Image Index (Sort) - 1',
 IM_ITEM_NOTE.NOTE AS 'Search Keywords',
---IM_ITEM.USR_META_TITLE AS 'Page Title',
+IM_ITEM.USR_META_TITLE AS 'Page Title',
 IM_ITEM_NOTE.NOTE AS 'Meta Keywords',
---IM_ITEM.USR_META_DESCR AS 'Meta Description',
+IM_ITEM.USR_META_DESCR AS 'Meta Description',
 --NULL AS 'MYOB Asset Acct',
 --NULL AS 'MYOB Income Acct',
 --NULL AS 'MYOB Expense Acct',
@@ -83,7 +86,7 @@ JOIN EC_ITEM_DESCR
 ON EC_ITEM_DESCR.ITEM_NO = IM_BARCOD.ITEM_NO
 
 WHERE
-IM_BARCOD.BARCOD_ID = 'BIGCOM' AND
+IM_BARCOD.BARCOD_ID = 'ITEM' AND
 IM_ITEM_NOTE.NOTE_ID = 'METAKEY' AND
 IM_INV_CELL.LOC_ID = 'MAIN' AND
 IM_INV_CELL.QTY_AVAIL > 0 AND
