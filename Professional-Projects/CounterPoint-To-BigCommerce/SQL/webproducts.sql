@@ -1,13 +1,14 @@
 SELECT
 IM_BARCOD.ITEM_NO AS 'CounterPoint Item Number',
-IM_ITEM.TRK_METH AS 'CounterPoint Tracking Method',
+REPLACE(REPLACE(IM_ITEM.TRK_METH,'G','Gridded'),'N','Simple') AS 'CounterPoint Tracking Method',
 NULL AS 'Product ID',
 'PRODUCT' AS 'Item Type',
 'P' AS 'Product Type',
 IM_BARCOD.BARCOD AS 'Product Code/SKU',
+IM_ITEM.ADDL_DESCR_1 AS 'Product Name',
 --IM_INV.BIN_1 AS 'Bin Picking Number',
 IM_ITEM.PROF_ALPHA_2 AS 'Brand Name',
-IM_ITEM.DIM_COD_LABEL AS 'Option Set',
+IM_ITEM.ITEM_VEND_NO + ' / ' + IM_ITEM.DIM_COD_LABEL AS 'Option Set',
 --NULL AS 'Option Set Align',
 EC_ITEM_DESCR.HTML_DESCR AS 'Product Description',
 IM_ITEM.PRC_1 AS 'Price',
@@ -24,7 +25,13 @@ IM_ITEM.PROF_NO_3 AS 'Product Depth',
 REPLACE(IM_ITEM.USR_DISABLE_PURCHASE, 'N','Y') AS 'Allow Purchases?',
 IM_ITEM.USR_WEB_VISIBILITY AS 'Product Visible?',
 --NULL AS 'Product Availability',
-REPLACE(IM_ITEM.USR_ALWAYS_IN_STOCK,'N','Y') AS 'Track Inventory',
+CASE
+    WHEN IM_ITEM.TRK_METH = 'G'
+    THEN
+    'by option' AS 'Track Inventory',
+    ELSE
+    IM_ITEM.TRK_METH
+END,
 IM_INV.QTY_AVAIL AS 'Current Stock Level',
 IM_ITEM.USR_QTY_STOCK_THRESHOLD AS 'Low Stock Level',
 IM_ITEM.CATEG_SUBCAT AS 'Category', --Not accurate, needs help
@@ -84,15 +91,18 @@ ON IM_BARCOD.ITEM_NO = IM_ITEM_NOTE.ITEM_NO
 
 WHERE
 
+--IM_BARCOD.BARCOD = IM_BARCOD.ITEM_NO + '000' OR
+
 IM_INV.LOC_ID = 'MAIN' AND
 
+IM_ITEM_NOTE.NOTE_ID = 'METAKEY' AND
 
-
-
-IM_BARCOD.BARCOD_ID = 'ITEM' AND
-
-IM_BARCOD.DIM_1_UPR = '*' AND
+IM_BARCOD.BARCOD_ID = 'ONLINE' AND
 
 IM_ITEM.IS_ECOMM_ITEM = 'Y' AND
 
+IM_BARCOD.DIM_1_UPR = '*' AND
+
 IM_INV.QTY_AVAIL > 0
+
+ORDER BY IM_BARCOD.BARCOD
