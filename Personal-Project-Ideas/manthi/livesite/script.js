@@ -3,7 +3,7 @@
   var portfolioImgs = document.querySelector('.modalpopups')
   portfolioImgs.addEventListener('contextmenu',function(e){
     e.preventDefault();
-    alert('Do you have any idea how long that it took for me to make this art?!');
+    alert('I hope ur not doing what I think youre doing😉');
     return false;
   }, false)
   entireSite.addEventListener('contextmenu',function(e){

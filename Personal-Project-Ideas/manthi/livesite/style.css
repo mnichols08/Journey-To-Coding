@@ -342,6 +342,32 @@ figure {
           transform: translateZ(0);
   will-change: transform;
 }
+
+img.img-fluid[src="img/mia_wallace.jpg"] {width: max-content;}
+
+
+
+div#miamodal.modal-dia {
+    /* background: transparent; */
+}
+
+.modal-backdrop.fade.show {}
+
+img.img-fluid[src="img/delarge.jpg"] {
+    width: 68%;
+}
+
+/*div#miamodal*/ .modal-content {
+    background: none;
+}
+
+
+.modal-dialog.modal-lg img {
+    border-radius: 1em;
+    box-shadow: 0px 0px 20px 0px #0f0f0f0f;
+}
+
+
 /*--- Bootstrap Padding Fix --*/
 [class*="col-"] {
     padding: 1rem;
