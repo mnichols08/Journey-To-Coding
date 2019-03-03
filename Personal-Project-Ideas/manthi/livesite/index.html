@@ -11,15 +11,14 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
   <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
   <link href="test.css" rel="stylesheet">
-  Click <a href="http://www.mnzen.com">here</a> to go to mnzen.
 </head>
 
 <body>
 
-
+<div class="my_container">
   <!-- Navigation -->
   <!-- Navigation -->
-  <nav class="navbar-expand-md navbar-dark navbar-custom bg-custom fixed-top" id="Home">
+  <nav class="navbar-expand-md navbar-dark navbar-custom bg-custom fixed-top" >
     <div class="container-fluid navBarCustom">
       <a class="navbar-brand" href="#">
         <img src="img/logo.png">
@@ -39,13 +38,18 @@
             <a class="nav-link" href="#Portfolio" id="portb">Portfolio</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#Skills" id="skillsb">Skills</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#Contact" id="contactb">Contact</a>
           </li>
         </ul>
       </div>
     </div>
   </nav>
+<div id="Home">
 
+</div>
   <!--- Image Slider -->
   <div id="slides" class="carousel slide carousel-fade" data-ride="carousel">
     <ul class="carousel-indicators">
@@ -76,6 +80,8 @@
 
   </div>
 
+
+
   <!--- Jumbotron -->
   <div class="container-fluid">
     <div class="row jumbotron">
@@ -89,24 +95,27 @@
   </div>
 
   <!--- Welcome Section -->
-  <div class="container-fluid padding" id="About">
+  <div class="container-fluid padding">
     <div class="row welcome text-center">
       <div class="col-12">
-        <img src="img/greeting.png">
+        <img class="img-fluid" src="img/greeting.png">
       </div>
       <hr>
       <div class="col-12">
-        <p class="lead">I draw, I paint, I take pictures, I design.</p>
+        <p class="lead" id="About">I draw, I paint, I take pictures, I design.</p>
       </div>
     </div>
   </div>
 
 
   <!--- Two Column Section -->
+  <div id="Portfolio">
+
+  </div>
   <div class="container-fluid padding">
     <div class="row padding">
       <div class="col-lg-6">
-        <h2>Art is about experimentation.</h2>
+        <h2>Art for me is about experience.</h2>
         <p> Hey there! My name is Manthana (Manthi for short). I am a visual artist.✌
           <p> In May 2015 I obtained a B.F.A. from Radford University.</p>
           <p>I love experimenting with all kinds of art ever since I was young. Throughout my years, I've dabbled in various art mediums such as drawing, watercolor painting, photography, plush making and many more. </p>
@@ -160,6 +169,9 @@
   </div>
   -->
   <!--- Portfolio -->
+  <div id="Skills">
+
+  </div>
   <a data-toggle="collapse" data-target="#portfolio_button" href="#">
     <div class="container-fluid padding" id="example1">
       <div class="row welcome text-center">
@@ -173,6 +185,8 @@
       </div>
     </div>
   </a>
+
+
   <!-- Large modal -->
 
   <div class="modalpopups">
@@ -467,16 +481,17 @@
     <div id="metalworkmodal" tabindex="-1" role="dialog" aria-labelledby="metalworkmodal" class="modal fade bd-example-modal-lg" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          <img class="img-fluid" src="img/metalwork.jpeg" alt="">
+          <img class="img-fluid" src="">
         </div>
       </div>
     </div>
   </div>
-  </div>
+
   <!--- Portfolio Thumbnails Gallery -->
-  <div id="Portfolio">
+  <div id="Skills">
   </div>
-  <div class='portfolio container collapse' id="portfolio_button">
+
+  </div>  <div class='portfolio container collapse' id="portfolio_button">
     <div class="row text-center">
       <div class="col">
         <p>
@@ -536,6 +551,7 @@
         <hr>
 
         <p>
+
           * * *Flower photography* * *
         </p>
         <a data-toggle="modal" data-target="#bluerosemodal">
@@ -574,7 +590,7 @@
         <p>
           * * *Nature photography* * *
         </p>
-      </a><a data-toggle="modal" data-target="#palmmodal">
+        </a><a data-toggle="modal" data-target="#palmmodal">
           <img class="img-fluid" src="img/palm.jpg" alt="Palm">
 
         </a><a data-toggle="modal" data-target="#hawaiimodal">
@@ -642,9 +658,7 @@
       </div>
     </div>
   </div>
-  <div id="Contact">
 
-  </div>
 
 
   <!--- Skills -->
@@ -657,58 +671,48 @@
       </div>
       <hr>
     </div>
+    <div id="Skills">
 
-
+    </div>
     <div class="container-fluid padding">
       <div class="row text-center padding">
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/photoshop_button.png">
-          <h3>Adobe Photoshop</h3>
-          <p>
-            Built with the latest version of Bootstrap, Bootstrap 4.</p>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <img src="img/illustrator_button.png">
-          <h3>Adobe Illustrator</h3>
-          <p>
-            Built with the latest version of CSS, CSS3.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/indesign_button.png">
-          <h3>Adobe inDesign</h3>
-          <p>
-            Built with the latest version of HTML, HTML5.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/html_button.png">
-          <h3>Basic HTML</h3>
-          <p>
-            Built with the latest version of HTML, HTML5.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/camera_button.png">
-          <h3>Photography</h3>
-          <p>
-            Built with the latest version of HTML, HTML5.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/paint_button.png">
-          <h3>Painting</h3>
-          <p>
-            Built with the latest version of HTML, HTML5.</p>
+        <div class="col">
+          <ul>
+            <li>
+            Adobe Photoshop
+            </li>
+            <li>
+            Adobe Illustrator</li>
+            <li>
+            Adobe inDesign
+            </li>
+            <li>
+              Photography
+            </li>
+            <li>
+              Photoeditting
+            </li>
+            <li>
+              Watercolor
+            </li>
+          </ul>
         </div>
       </div>
-      <hr class="my-4">
-    </div>
 
+
+    </div>
+  </div>
   </div>
   <!-- Contact Form -->
-  <div class="container" id="move-form">
+
+<div class="parallax contact">
+
+  <div class="container-fluid" id="move-form">
 
     <div class="row">
 
-      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+      <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4" id="Contact">
+
 
         <form id="contact-form" class="form" action="#" method="POST" role="form">
           <div class="form-group">
@@ -735,7 +739,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
   <!--- Footer -->
   <footer>
@@ -768,7 +772,7 @@
         </div>
       </div>
     </div>
-
+</div>
     <!--- Connect -->
 
 
