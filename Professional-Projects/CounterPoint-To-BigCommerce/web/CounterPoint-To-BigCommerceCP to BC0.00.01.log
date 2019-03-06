@@ -1,0 +1,66 @@
+
+2019-02-25 17:15:35 : Program Started
+			Computer:	MARKETING: Marketing
+			OS:		WIN_7 X64
+2019-02-25 17:15:37 : Program Finish
+
+2019-02-25 17:15:45 : Program Started
+			Computer:	MARKETING: Marketing
+			OS:		WIN_7 X64
+2019-02-25 17:15:58 : GUI Read.  User: mn
+2019-02-25 17:15:58 : Item SQL created
+2019-02-25 17:15:58 : Barcode SQL created
+2019-02-25 17:16:22 : Item Info Exported
+2019-02-25 17:16:45 : Barcode Info Exported
+2019-02-25 17:16:45 : Array Created
+2019-02-25 17:16:45 : Barcode Seq. Array Created
+2019-02-25 17:16:45 : Barcodes Generated
+2019-02-25 17:16:45 : CSV File written
+2019-02-25 17:17:01 : Barcodes uploaded to CP
+2019-02-25 17:17:01 : Standard SQL created
+2019-02-25 17:17:01 : Grid SQL created
+2019-02-25 17:17:24 : Standard Item Info Exported
+2019-02-25 17:17:46 : Grid Item Info Exported
+2019-02-25 17:17:46 : Standard Array Created
+2019-02-25 17:17:46 : Grid Array Created
+2019-02-25 17:17:46 : Grid Exchange Array Created
+2019-02-25 17:17:46 : Variation Mapping Error: Color had no matches for eBay category 45238 for CP item # ROX1153
+2019-02-25 17:17:46 : Array Edited
+2019-02-25 17:17:46 : Error: ROX1153 could not be found in grid array
+2019-02-25 17:17:46 : Variation images added/corrected
+2019-02-25 17:17:46 : Shipping preset updated
+2019-02-25 17:17:46 : Payment preset updated
+2019-02-25 17:17:46 : Negative values removed
+2019-02-25 17:17:46 : CSV File Created
+2019-02-25 17:17:58 : Imported items into SixBit
+2019-02-25 17:18:20 : Update items in CounterPoint to 'SB'
+2019-02-25 17:18:21 : Program Finish
+
+2019-02-25 22:31:31 : Program Started
+			Computer:	MARKETING: Marketing
+			OS:		WIN_7 X64
+2019-02-25 22:32:37 : GUI Read.  User: MN
+2019-02-25 22:32:37 : Item SQL created
+2019-02-25 22:32:37 : Barcode SQL created
+2019-02-25 22:33:01 : Item Info Exported
+2019-02-25 22:33:24 : Barcode Info Exported
+2019-02-25 22:33:24 : Array Created
+2019-02-25 22:33:24 : Barcode Seq. Array Created
+2019-02-25 22:33:24 : Barcodes Generated
+2019-02-25 22:33:24 : CSV File written
+
+2019-02-26 14:24:58 : Program Started
+			Computer:	MARKETING: Marketing
+			OS:		WIN_7 X64
+2019-02-26 14:25:05 : GUI Read.  User: MN
+2019-02-26 14:25:05 : Item SQL created
+2019-02-26 14:25:05 : Barcode SQL created
+2019-02-26 14:25:28 : Item Info Exported
+2019-02-26 14:25:51 : Barcode Info Exported
+2019-02-26 14:25:51 : Array Created
+2019-02-26 14:25:51 : Barcode Seq. Array Created
+2019-02-26 14:25:51 : Barcodes Generated
+2019-02-26 14:25:51 : CSV File written
+2019-02-26 14:26:15 : Barcodes uploaded to CP
+2019-02-26 14:26:15 : Standard SQL created
+2019-02-26 14:26:15 : Grid SQL created
