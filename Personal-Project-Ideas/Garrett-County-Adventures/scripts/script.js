@@ -96,16 +96,4 @@ $(document).ready(function() {
   		document.querySelector(".well.quote .blockquote-footer").innerHTML = currentAuthor;
   	});
 })
-
-
-
-
-
-
-
-
-
-
-
-
 });
