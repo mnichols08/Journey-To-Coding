@@ -1,3 +1,4 @@
 *.DS_Store
 *.ftpconfig
 deployment-config.json
+*.psd
