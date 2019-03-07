@@ -1,12 +1,18 @@
+#thelastsuppermodal .modal-content {
+    width: 177%;
+    left: -18em;
+}
+
 .col li {
     list-style: none;
     text-align:center;
+    color:#fff;
 }
 
 #example1 {
-  background: #c3c3c3;
+  background: #ff8d00;
   margin-top: -3em;
-  height: 11em;
+  height: 16em;
 }
 
 img.img-fluid[src="img/mia_wallace.jpg"] {width: max-content;}
@@ -139,7 +145,7 @@ ul.navbar-nav {
   padding-top: 2rem;
 }
 .welcome hr {
-  border-top: 2px solid #b4b4b4;
+  border-top: 37px dotted #ff8600;
   width: 95%;
   margin-top: .3rem;
   margin-bottom: 1rem;
@@ -239,7 +245,6 @@ div#move-form {
     background: url('img/postcard_contact.png');
     background-size: contain;
     background-repeat: no-repeat;
-    background-position-x: 0em;
 }
 .js-hide-label {
 	opacity: 0;
@@ -275,26 +280,20 @@ div#move-form {
   box-shadow: 0 0 2px 1px #black;
 }
 
-.parallax {
-
-  padding:2em;
-  color: white;
-  background-image: url("img/moon.jpeg");
+.parallax {padding:2em;color: black; background:linear-gradient(#ff8d00,transparent);
 
   /* Set a specific height */
 
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
+  /* Create the parallax scrolling effect */background-attachment: fixed;background-position: center;background-repeat: no-repeat;background-size: 100%;}
 
 .parallax.contact {
-  background-image: url("img/me_message.jpeg");
+  background-image: url("img/me_me.png");
   background-position: 0em;
-  background-position-y: -39em;
+  background-position-y: 12em;
+  background-position-x: 12em;
+  height: 33em;
+  padding-top: 0em;
 }
 
 /*---Media Queries --*/

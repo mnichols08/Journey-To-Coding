@@ -1,3 +1,8 @@
+#thelastsuppermodal .modal-content {
+    width: 177%;
+    left: -18em;
+}
+
 .col li {
     list-style: none;
     text-align:center;
