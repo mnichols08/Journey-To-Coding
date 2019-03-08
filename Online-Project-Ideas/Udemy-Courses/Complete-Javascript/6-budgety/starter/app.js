@@ -153,8 +153,6 @@ var budgetController = (function() {
 	};
 })();
 
-// Seperation of Concerns....Seperating Modules so that they no longer know that they are in the same universe.
-
 // UI Controller
 var UIController = (function() {
 	var DOMstrings = {
@@ -339,13 +337,9 @@ var controller = (function(budgetCtrl, UICtrl) {
 			}
 		});
 
-		document
-			.querySelector(DOM.container)
-			.addEventListener("click", ctrlDeleteItem);
+		document.querySelector(DOM.container).addEventListener("click", ctrlDeleteItem);
 
-		document
-			.querySelector(DOM.inputType)
-			.addEventListener("change", UICtrl.changedType);
+		document.querySelector(DOM.inputType).addEventListener("change", UICtrl.changedType);
 	};
 
 	var updateBudget = function() {
