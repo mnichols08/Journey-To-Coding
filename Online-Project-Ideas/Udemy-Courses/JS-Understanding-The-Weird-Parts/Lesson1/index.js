@@ -65,3 +65,33 @@
   }
   */
   // Objects may contain any combination of Name / Value Pairs, and that is just what an object is: A collection or name / value pairs.
+
+
+// Invocation: Running or calling a function by using () within JavaScript. ex. doThis()
+function doThis(){
+  console.log(`Doing This`);
+  doThat();
+  let c;
+};
+function doThat(){
+  console.log(`Doing That`);
+  let d;
+};
+doThis();
+let d;
+
+function b() {
+  var myVar;
+  console.log(myVar)
+}
+
+function a() {
+  var myVar = 2;
+  b();
+}
+
+a();
+
+var myVar = 1;
+
+a();
