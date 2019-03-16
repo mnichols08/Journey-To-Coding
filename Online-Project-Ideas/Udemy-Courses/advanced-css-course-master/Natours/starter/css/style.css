@@ -47,13 +47,13 @@ body {
   */
 }
 
-.logo-box {
+.header__logo-box {
   position: absolute;
   top: 4rem;
   left: 4rem;
 }
 
-.logo {
+.header__logo {
   height: 3;
 }
 
@@ -61,7 +61,7 @@ body {
   animation: fadeOut 1s ease-out;
 }
 
-.text-box {
+.header__text-box {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -76,7 +76,7 @@ body {
   backface-visibility: hidden;
 }
 
-.heading-primary-main {
+.heading-primary--main {
   display: block;
   font-size: 6rem;
   -webkit-text-stroke: 1px black;
@@ -92,7 +92,7 @@ animation-iteration-count:3;
 */
 }
 
-.heading-primary-sub {
+.heading-primary--sub {
   padding:2em;
   display: block;
   font-size: 2rem;
@@ -180,7 +180,7 @@ animation-iteration-count:3;
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
 }
 
-.btn-white {
+.btn--white {
   background: hsla(0, 0%, 100%, 0.35);
   color: hsl(54, 97%, 56%);
 }
@@ -198,7 +198,7 @@ animation-iteration-count:3;
   transition: all .4s;
 }
 
-.btn-white::after {
+.btn--white::after {
   background: hsla(0, 0%, 100%, 0.35);
 }
 
@@ -207,7 +207,7 @@ animation-iteration-count:3;
   opacity: 0;
 }
 
-.btn-animated{
+.btn--animated{
   animation: moveInBottom .5s ease-out .75s;
   animation-fill-mode: backwards;
 }
