@@ -29,24 +29,5 @@ For each of the extensions, read the overview page in order to learn how to use 
 If you want your editor to work and look exactly the same way as mine does in the course videos, you can copy these settings to your own settings file. Just go to settings in VSCode, and on the right side, you can paste this code.
 
 ```
-{
-  "workbench.colorTheme": "Oceanic Next (dimmed bg)",
-  "files.autoSave": "onFocusChange",
-  "editor.minimap.enabled": true,
-  "workbench.statusBar.visible": true,
-  "workbench.activityBar.visible": true,
-  "editor.formatOnSave": false,
 
-  "workbench.colorCustomizations": {
-    "statusBar.background": "#333333",
-    "statusBar.noFolderBackground": "#333333",
-    "statusBar.debuggingBackground": "#263238"
-  },
-  "editor.fontSize": 16,
-
-  "css.validate": false,
-  "scss.validate": false,
-  "less.validate": false,
-  "editor.wordWrap": "on"
-}
 ```
