@@ -4,7 +4,7 @@
   "description": "Natours project by Jonas on Udemy",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass-compile": "node-sass sass/main.scss css/style.css -w"
   },
   "author": "Mikey Nichols",
   "license": "ISC",
