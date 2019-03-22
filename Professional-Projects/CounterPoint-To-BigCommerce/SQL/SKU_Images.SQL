@@ -4,9 +4,14 @@ SELECT
 NULL AS 'Product ID',
 --'SKU' AS 'Item Type',
 --'P' AS 'Product Type',
+CASE
+WHEN IM_INV_CELL.DIM_3_UPR = '*'
+THEN
+IM_ITEM.ITEM_NO + '|' + IM_INV_CELL.DIM_1_UPR + '|' + IM_INV_CELL.DIM_2_UPR
+ELSE
 REPLACE(IM_ITEM.ITEM_NO + '|' + IM_INV_CELL.DIM_1_UPR + '|' + IM_INV_CELL.DIM_2_UPR + '|' +
-IM_INV_CELL.DIM_3_UPR, '|*|*','|*') AS 'Product
-Code/SKU',
+IM_INV_CELL.DIM_3_UPR, '|*|*','|*')
+END AS 'Product Code/SKU',
 --  CASE
 --  WHEN IM_ITEM.GRID_DIM_3_TAG <> '' AND IM_ITEM.GRID_DIM_3_TAG IS NOT NULL
 --  THEN
@@ -33,16 +38,16 @@ Code/SKU',
 --NULL AS 'Free Shipping',
 --NULL AS 'Product Warranty',
 --NULL AS 'Product Weight',
---NULL AS 'Product Width',
---NULL AS 'Product Height',
---NULL AS 'Product Depth',
+NULL AS 'Product Width',
+NULL AS 'Product Height',
+NULL AS 'Product Depth',
 --NULL AS 'Allow Purchases?',
 --NULL AS 'Product Visible?',
 --NULL AS 'Product Availability',
 --'by option' AS 'Track Inventory',
 --IM_INV_CELL.QTY_AVAIL AS 'Current Stock Level',
 --NULL AS 'Low Stock Level',
---NULL AS 'Category', --Not accurate, needs help
+NULL AS 'Category', --Not accurate, needs help
 --NULL AS 'Product File - 1',
 --NULL AS 'Product File Description - 1',
 --NULL AS 'Product File Max Downloads - 1',
@@ -220,7 +225,7 @@ WHERE
 IM_BARCOD.BARCOD_ID = 'ITEM' AND
 IM_ITEM_NOTE.NOTE_ID = 'METAKEY' AND
 IM_INV_CELL.LOC_ID = 'MAIN' AND
-IM_INV_CELL.QTY_AVAIL > 0 AND
+--IM_INV_CELL.QTY_AVAIL > 0 AND
 IM_ITEM.IS_ECOMM_ITEM = 'Y' AND
 IM_BARCOD.DIM_1_UPR = IM_INV_CELL.DIM_1_UPR AND
 IM_BARCOD.DIM_2_UPR = IM_INV_CELL.DIM_2_UPR AND

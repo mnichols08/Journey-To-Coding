@@ -4,7 +4,7 @@ SELECT
 NULL AS 'Product ID',
 --'PRODUCT' AS 'Item Type',
 --'P' AS 'Product Type',
-IM_ITEM.ITEM_NO + '**' AS 'Product Code/SKU',
+IM_ITEM.ITEM_NO + '|*' AS 'Product Code/SKU',
 --IM_ITEM.ADDL_DESCR_1 AS 'Product Name',
 --IM_INV.BIN_1 AS 'Bin Picking Number',
 --IM_ITEM.PROF_ALPHA_2 AS 'Brand Name',
@@ -19,16 +19,16 @@ IM_ITEM.ITEM_NO + '**' AS 'Product Code/SKU',
 --NULL AS 'Free Shipping',
 --IM_ITEM.WARR_PRD_1 AS 'Product Warranty',
 --IM_ITEM.WEIGHT AS 'Product Weight',
---IM_ITEM.PROF_NO_2 AS 'Product Width',
---IM_ITEM.PROF_NO_1 AS 'Product Height',
---IM_ITEM.PROF_NO_3 AS 'Product Depth',
+IM_ITEM.PROF_NO_2 AS 'Product Width',
+IM_ITEM.PROF_NO_1 AS 'Product Height',
+IM_ITEM.PROF_NO_3 AS 'Product Depth',
 --REPLACE(IM_ITEM.USR_DISABLE_PURCHASE, 'N','Y') AS 'Allow Purchases?',
 --IM_ITEM.USR_WEB_VISIBILITY AS 'Product Visible?',
 --NULL AS 'Product Availability',
 --REPLACE(REPLACE(IM_ITEM.TRK_METH,'G','by product'),'N','by option') AS 'Track Inventory?',
 --IM_INV.QTY_AVAIL AS 'Current Stock Level',
 --IM_ITEM.USR_QTY_STOCK_THRESHOLD AS 'Low Stock Level',
---IM_ITEM.CATEG_SUBCAT AS 'Category', --Not accurate, needs help
+IM_ITEM.ATTR_COD_1 + '/' + IM_ITEM.ATTR_COD_2 + '/' + IM_ITEM.ATTR_COD_3 + '/' + IM_ITEM.ATTR_COD_4 + '/' + IM_ITEM.ATTR_COD_5 + '/' + IM_ITEM.ATTR_COD_6 + '/' +  EC_CATEG.DESCR AS 'Category', --Not accurate, needs help, but better than Modern Retails
 --NULL AS 'Product File - 1',
 --NULL AS 'Product File Description - 1',
 --NULL AS 'Product File Max Downloads - 1',
@@ -151,6 +151,12 @@ FROM IM_ITEM
 JOIN EC_ITEM_DESCR
 ON IM_ITEM.ITEM_NO = EC_ITEM_DESCR.ITEM_NO
 
+JOIN EC_CATEG_ITEM
+ON IM_ITEM.ITEM_NO = EC_CATEG_ITEM.ITEM_NO
+
+JOIN EC_CATEG
+ON EC_CATEG.CATEG_ID = EC_CATEG_ITEM.CATEG_ID
+
 JOIN IM_INV
 ON IM_INV.ITEM_NO = IM_ITEM.ITEM_NO
 
@@ -163,6 +169,6 @@ IM_INV.LOC_ID = 'MAIN' AND
 
 IM_ITEM_NOTE.NOTE_ID = 'METAKEY' AND
 
-IM_ITEM.IS_ECOMM_ITEM = 'Y' AND
+IM_ITEM.IS_ECOMM_ITEM = 'Y' --AND
 
-IM_INV.QTY_AVAIL > 0
+--IM_INV.QTY_AVAIL > 0
