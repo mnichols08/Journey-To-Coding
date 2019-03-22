@@ -39,6 +39,9 @@
             <a class="nav-link" href="#Portfolio" id="portb">Portfolio</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="#Skills" id="skillsb">Skills</a>
+          </li>
+          <li class="nav-item">
             <a class="nav-link" href="#Contact" id="contactb">Contact</a>
           </li>
         </ul>
@@ -92,7 +95,7 @@
   <div class="container-fluid padding" id="About">
     <div class="row welcome text-center">
       <div class="col-12">
-        <img src="img/greeting.png">
+        <img class="img-fluid" src="img/greeting.png">
       </div>
       <hr>
       <div class="col-12">
@@ -106,7 +109,7 @@
   <div class="container-fluid padding">
     <div class="row padding">
       <div class="col-lg-6">
-        <h2>Art is about experimentation.</h2>
+        <h2>Art for me is about experience.</h2>
         <p> Hey there! My name is Manthana (Manthi for short). I am a visual artist.✌
           <p> In May 2015 I obtained a B.F.A. from Radford University.</p>
           <p>I love experimenting with all kinds of art ever since I was young. Throughout my years, I've dabbled in various art mediums such as drawing, watercolor painting, photography, plush making and many more. </p>
@@ -173,10 +176,19 @@
       </div>
     </div>
   </a>
+
+
   <!-- Large modal -->
 
   <div class="modalpopups">
 
+    <div id="thelastsuppermodal" tabindex="-1" role="dialog" aria-labelledby="thelastsuppermodal" class="modal fade bd-example-modal-lg" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <img class="img-fluid" src="img/thelastsupper.png" alt="The Last Supper">
+        </div>
+      </div>
+    </div>
     <div id="spaceshellmodal" tabindex="-1" role="dialog" aria-labelledby="spaceshell" class="modal fade bd-example-modal-lg" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -467,11 +479,10 @@
     <div id="metalworkmodal" tabindex="-1" role="dialog" aria-labelledby="metalworkmodal" class="modal fade bd-example-modal-lg" aria-hidden="true">
       <div class="modal-dialog modal-lg">
         <div class="modal-content">
-          <img class="img-fluid" src="img/metalwork.jpeg" alt="">
+          <img class="img-fluid" src="">
         </div>
       </div>
     </div>
-  </div>
   </div>
   <!--- Portfolio Thumbnails Gallery -->
   <div id="Portfolio">
@@ -482,6 +493,9 @@
         <p>
           * * *Graphic art* * *
         </p>
+        <a data-toggle="modal" data-target="#thelastsuppermodal">
+          <img class="img-fluid" src="img/thelastsupper.png" alt="The Last Supper">
+        </a>
         <a data-toggle="modal" data-target="#spaceshellmodal">
           <img class="img-fluid" src="img/space_shell.png" alt="Space Shell">
         </a>
@@ -533,9 +547,12 @@
           <img class="img-fluid" src="img/sales_hms.png" alt="President's Day Sales Ad for High Mountain Sports">
         </a>
 
+        </a>
+
         <hr>
 
         <p>
+
           * * *Flower photography* * *
         </p>
         <a data-toggle="modal" data-target="#bluerosemodal">
@@ -574,7 +591,7 @@
         <p>
           * * *Nature photography* * *
         </p>
-      </a><a data-toggle="modal" data-target="#palmmodal">
+        </a><a data-toggle="modal" data-target="#palmmodal">
           <img class="img-fluid" src="img/palm.jpg" alt="Palm">
 
         </a><a data-toggle="modal" data-target="#hawaiimodal">
@@ -658,53 +675,40 @@
       <hr>
     </div>
 
-
     <div class="container-fluid padding">
       <div class="row text-center padding">
-
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/photoshop_button.png">
-          <h3>Adobe Photoshop</h3>
-          <p>
-            Built with the latest version of Bootstrap, Bootstrap 4.</p>
-        </div>
-        <div class="col-sm-12 col-md-4">
-          <img src="img/illustrator_button.png">
-          <h3>Adobe Illustrator</h3>
-          <p>
-            Built with the latest version of CSS, CSS3.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/indesign_button.png">
-          <h3>Adobe inDesign</h3>
-          <p>
-            Built with the latest version of HTML, HTML5.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/html_button.png">
-          <h3>Basic HTML</h3>
-          <p>
-            Built with the latest version of HTML, HTML5.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/camera_button.png">
-          <h3>Photography</h3>
-          <p>
-            Built with the latest version of HTML, HTML5.</p>
-        </div>
-        <div class="col-xs-12 col-sm-6 col-md-4">
-          <img src="img/paint_button.png">
-          <h3>Painting</h3>
-          <p>
-            Built with the latest version of HTML, HTML5.</p>
+        <div class="col">
+          <ul>
+            <li>
+            Adobe Photoshop
+            </li>
+            <li>
+            Adobe Illustrator</li>
+            <li>
+            Adobe inDesign
+            </li>
+            <li>
+              Photography
+            </li>
+            <li>
+              Photoeditting
+            </li>
+            <li>
+              Watercolor
+            </li>
+          </ul>
         </div>
       </div>
+
       <hr class="my-4">
     </div>
-
+  </div>
   </div>
   <!-- Contact Form -->
-  <div class="container" id="move-form">
+
+<div class="parallax contact">
+
+  <div class="container-fluid" id="move-form">
 
     <div class="row">
 
@@ -735,7 +739,7 @@
       </div>
     </div>
   </div>
-
+</div>
 
   <!--- Footer -->
   <footer>

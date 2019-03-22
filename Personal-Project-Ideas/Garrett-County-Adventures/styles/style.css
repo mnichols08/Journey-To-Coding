@@ -2,12 +2,13 @@ html {
 -webkit-font-smoothing: antialiased;
 text-rendering: optimizeLegibility;
 }
+
 @import url("https://fonts.googleapis.com/css?family=Poppins:400,500,700");
 html,
 body {
+
   width: 100%;
   height: 100%;
-
   color: #fff;
   background:#000;
 }
@@ -55,7 +56,7 @@ header h1 {
 }
 
 .parallax.thanks{
-  background-image:url('https://scontent.fagc1-1.fna.fbcdn.net/v/t31.0-8/13047760_226420234385746_4904698696764514722_o.jpg?_nc_cat=101&_nc_ht=scontent.fagc1-1.fna&oh=fa370c0a80cc4aa19559a7d97b2d4a5d&oe=5D14367B')
+  background-image:url('/images/bg_1.jpg')
   }
   .parallax.home{
   background-image: url('/images/bg_2.jpg');

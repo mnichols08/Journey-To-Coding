@@ -49,7 +49,7 @@ $("#connectbutton").click(function() {
 $("#homebutton").click(function() {
   $("html, body").animate(
     {
-      scrollTop: $("#home").offset().top + 475
+      scrollTop: $("#home").offset().top + 350
     },
     2000
   );
@@ -86,7 +86,7 @@ $(document).ready(function() {
       $(".home, .connect").click(function() {$(window).scroll();});
 });
 $(document).ready(function() {
-  $(document).scrollTop(475);
+  $(document).scrollTop(350);
   $(document).ready(function() {
   	$.getJSON("https://codepen.io/mnichols08/pen/ZoVZmy.js", function(quotes) {
   		var randomNumber = Math.floor(Math.random() * quotes.length);
