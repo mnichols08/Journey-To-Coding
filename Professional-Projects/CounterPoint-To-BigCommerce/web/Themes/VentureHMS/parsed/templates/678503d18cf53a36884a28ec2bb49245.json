@@ -1,1 +1,0 @@
-{"components/quick-shop/quick-shop-description-block":"<div class=\"quick-shop-product-description has-excerpt\" data-excerpt-length=\"220\">\n  {{{this.product.description}}}\n</div>\n<a class=\"quick-shop-details-link\" href=\"{{this.product.url}}\">\n  {{lang 'product.view_full_details'}}\n  <span class=\"pxu-chevron-rounded-right\" aria-hidden=\"true\"></span>\n</a>\n"}

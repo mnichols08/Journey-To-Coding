@@ -1,1 +1,0 @@
-{"components/amp/styles/footer":".footer-social-media {\n  list-style: none;\n  margin-left: 0;\n}\n\n.social-media-link {\n  display: inline-block;\n  margin-right: 10px;\n}\n\n.social-media-link svg {\n  fill: currentColor;\n}\n"}

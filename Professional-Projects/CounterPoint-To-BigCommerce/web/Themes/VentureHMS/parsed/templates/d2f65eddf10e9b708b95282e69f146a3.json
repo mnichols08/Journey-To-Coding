@@ -1,1 +1,0 @@
-{"components/cart/gift-wrap":"{{#if cart.gift_wrapping_cost}}\n  <div class=\"cart-total-wrapper\">\n    <span class=\"cart-total-label\">{{lang 'cart.gift_wrapping.title'}}</span>\n    <span class=\"cart-total-amount\">{{cart.gift_wrapping_cost.formatted}}</span>\n  </div>\n{{/if}}\n"}

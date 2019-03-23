@@ -1,1 +1,0 @@
-{"components/amp/styles/product":".product-details-name,\n.product-details-value {\n  float: left;\n  margin: 0;\n}\n\n.product-details-name {\n  margin-right: 6px;\n  clear: left;\n}\n\n.amp-product-actions {\n  clear: both;\n}\n"}
