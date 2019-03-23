@@ -112,4 +112,3 @@ document.querySelector("form").addEventListener("submit",function(e){
 });
 getWeather('1225448');
 getWeather('2514815');
-//Test 1234
