@@ -1,0 +1,1 @@
+{"checkout.scss":"/*! Theme: Venture v1.20.1 */\n.header {\n  background-color: stencilColor(\"header_background_color\");\n  border-bottom: 0;\n}\n\n.header-logo img { max-width: 200px; }\n"}

@@ -1,0 +1,30 @@
+<div class="index_block2">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+    <div class="widget widget-static-block"><div class="quote_block_wrapper">
+            
+         <div class="quote_icon"><span class="fa fa-quote-left"></span></div>
+         <p>The true way to render ourselves happy is to love our work and find in it our pleasure.</p>
+         <h3><a href="https://www.highmountainsports.com/about">Francoise de Motteville</a></h3>
+         
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        var $j = jQuery.noConflict();
+        $j(document).ready(function() {
+        $j.getJSON("https://www.highmountainsports.com/skin/frontend/default/theme327k/js/quotes.json", function(quotes) {
+            var randomNumber = Math.floor(Math.random() * quotes.length);
+            currentQuote = quotes[randomNumber].quoteText;
+            currentAuthor = quotes[randomNumber].quoteAuthor;
+            document.querySelector(".quote_block_wrapper p").innerHTML = currentQuote;
+            document.querySelector(".quote_block_wrapper h3 a").innerHTML = currentAuthor;
+        });
+    });
+    </script></div>
+    
+    </div>
+            </div>
+            <div class="clear"></div>
+    </div>
+    </div>

@@ -1,0 +1,17 @@
+
+{{#partial "page"}}
+
+<div class="container">
+  <article class="page-container page-narrow">
+    <h1 class="page-heading">{{lang 'gift_certificate.heading' }}</h1>
+
+    {{> core/gift-certificate/navigation page='balance'}}
+
+    <div class="page-content">
+      {{> core/gift-certificate/balance}}
+    </div>
+  </article>
+</div>
+
+{{/partial}}
+{{> layout/base}}

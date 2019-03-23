@@ -1,0 +1,110 @@
+{{#if product_results.products}}
+  <div class="quick-search-result-list product-result-list">
+    <div class="quick-search-section-title">
+      {{lang 'quick_search.product_results'}}
+    </div>
+    {{#each product_results.products}}
+      <a class="quick-search-result product-result" href="{{url}}">
+        {{#if image}}
+          <div class="quick-search-result-image product-result-image">
+            <img src="{{getImage image 'product-grid-item' (cdn default_image)}}" alt="{{image.alt}}">
+          </div>
+        {{/if}}
+        <div class="quick-search-result-details">
+          <div class="quick-search-result-title">
+            {{name}}
+          </div>
+          {{#if price}}
+            <div class="quick-search-result-price">
+              {{> components/products/price}}
+            </div>
+          {{/if}}
+        </div>
+      </a>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{#if brand_results.length}}
+  <div class="quick-search-result-list brand-result-list">
+    <div class="quick-search-section-title">
+      {{lang 'quick_search.brand_results'}}
+    </div>
+    {{#each (limit brand_results ../theme_settings.quick_search_results_per_section)}}
+      <a class="quick-search-result brand-result" href="{{url}}">
+        <div class="quick-search-result-details">
+          {{name}}
+        </div>
+      </a>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{#if category_results}}
+  <div class="quick-search-result-list category-result-list">
+    <div class="quick-search-section-title">
+      {{lang 'quick_search.category_results'}}
+    </div>
+    {{#each (limit category_results ../theme_settings.quick_search_results_per_section)}}
+      <div class="quick-search-result category-result">
+        {{#each this}}
+          <a href="{{url}}">{{name}}</a>{{#unless @last}}, {{/unless}}
+        {{/each}}
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{#if theme_settings.quick_search_display_content_results}}
+  {{#if content_results}}
+    <div class="quick-search-result-list content-result-list">
+      <div class="quick-search-section-title">
+        {{lang 'quick_search.content_results'}}
+      </div>
+      {{#each content_results}}
+        <a class="quick-search-result content-result" href="{{url}}">
+          <div class="quick-search-result-details">
+            {{title}}
+          </div>
+        </a>
+      {{/each}}
+    </div>
+  {{/if}}
+{{/if}}
+
+{{#any product_results.products brand_results category_results}}
+  {{#any pagination.product_results.next pagination.content_results.next}}
+    {{> components/search/quick-search-show-all}}
+  {{else}}
+    {{#if brand_results.length '>=' ../theme_settings.quick_search_results_per_section}}
+      {{> components/search/quick-search-show-all}}
+    {{else}}
+      {{#if category_results.length '>=' ../theme_settings.quick_search_results_per_section}}
+        {{> components/search/quick-search-show-all}}
+      {{/if}}
+    {{/if}}
+  {{/any}}
+{{else}}
+  {{#unless content_results}}
+    <div class="quick-search-result-list">
+      <a class="quick-search-section-title empty-result">
+        {{lang 'quick_search.empty' term=forms.search.query}}
+      </a>
+    </div>
+  {{else}}
+    {{#if ../../theme_settings.quick_search_display_content_results}}
+      {{#if pagination.content_results.next}}
+        {{> components/search/quick-search-show-all}}
+      {{/if}}
+    {{else}}
+      <div class="quick-search-result-list">
+        <div class="quick-search-section-title empty-result">
+          {{lang 'quick_search.empty_product' term=forms.search.query}}
+        </div>
+        <a class="quick-search-result show-all-result" href="/search.php?search_query={{forms.search.query}}">
+          {{lang 'quick_search.empty_product_content' result_count=content_results.length term=forms.search.query}}
+        </a>
+      </div>
+    {{/if}}
+  {{/unless}}
+{{/any}}

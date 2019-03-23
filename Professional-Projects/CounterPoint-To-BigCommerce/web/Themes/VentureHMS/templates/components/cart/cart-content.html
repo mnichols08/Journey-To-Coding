@@ -1,0 +1,16 @@
+<div class="cart-table-header">
+  <div class="cell cart-header-product">{{lang 'cart.product.product'}}</div>
+  <div class="cart-item-details-header">
+    <div class="cell cart-header-each">{{lang 'cart.product.each'}}</div>
+    <div class="cell cart-header-quantity">{{lang 'cart.product.quantity'}}</div>
+    <div class="cell cart-header-total">{{lang 'cart.product.total'}}</div>
+  </div>
+</div>
+
+<div class="cart-table">
+  {{> components/cart/cart-table-items-list}}
+</div>
+
+<div class="cart-table-footer">
+  {{> components/cart/cart-table-footer}}
+</div>

@@ -1,0 +1,40 @@
+<a
+  class="button button-secondary button-small button-toggle-facets"
+  data-toggled-text="{{lang 'category.sidebar.hide_filters'}}"
+  data-toggle-faceted-search
+>
+  {{lang 'category.sidebar.show_filters'}}
+</a>
+
+<div class="faceted-search">
+  {{#each facets}}
+    {{#if visible}}
+      {{#if items}}
+        <div
+          class="
+            faceted-search-filter
+            filter-type-{{type}}
+            {{#if selected }}is-open{{/if}}
+            {{#unless start_collapsed}}is-open{{/unless}}
+          "
+        >
+          <button class="facet-section-header" data-toggle-facet>
+            <h5 class="facet-section-title">{{title}}</h5>
+            <div class="facet-section-toggle-icon"></div>
+          </button>
+          {{{dynamicComponent 'components/faceted-search/facets'}}}
+        </div>
+      {{/if}}
+
+      {{#compare facet 'price'}}
+        <div class="faceted-search-filter filter-type-{{type}}">
+          <button class="facet-section-header" data-toggle-facet>
+            <h5 class="facet-section-title">{{title}}</h5>
+            <div class="facet-section-toggle-icon"></div>
+          </button>
+          {{{dynamicComponent 'components/faceted-search/facets'}}}
+        </div>
+      {{/compare}}
+    {{/if}}
+  {{/each}}
+</div>

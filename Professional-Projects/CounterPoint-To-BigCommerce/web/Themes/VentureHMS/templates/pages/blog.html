@@ -1,0 +1,28 @@
+---
+blog:
+  posts:
+    limit: {{theme_settings.blogpage_blog_posts_count}}
+    pages: 3
+    summary: 200
+---
+
+{{#partial "page"}}
+
+
+<div class="container">
+  <div class="page-container blog-post-index">
+    <h1 class="page-heading{{#if blog.tag}} page-heading-small{{/if}}">
+      {{#if blog.tag}}
+        {{{lang 'blog.tag_header' name=blog.tag}}}
+      {{else}}
+        {{blog.name}}
+      {{/if}}
+    </h1>
+
+    {{> components/blog/blog-index}}
+  </div>
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

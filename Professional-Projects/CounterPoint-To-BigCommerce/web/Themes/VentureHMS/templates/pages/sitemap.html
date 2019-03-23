@@ -1,0 +1,22 @@
+
+{{#partial "page"}}
+
+<div class="container">
+  <article class="page-container">
+    <h1 class="page-heading">{{lang 'common.sitemap'}}</h1>
+    <div class="page-content rte">
+      <section class="sitemap">
+        {{#each sitemap}}
+          <div class="sitemap-group">
+            <h2 class="sitemap-title">{{title}}</h2>
+            {{> components/sitemap/group items=body}}
+          </div>
+        {{/each}}
+      </section>
+    </div>
+  </article>
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

@@ -1,0 +1,164 @@
+{{#if settings.show_newsletter_box}}
+  {{> components/sections/subscription-form}}
+{{/if}}
+
+{{> components/common/banners banners=banners.bottom class='banners-bottom'}}
+
+<footer class="main-footer">
+  <div class="container">
+    <div class="columns footer-columns">
+      <div class="logo-column">
+        <div class="footer-branding">
+          {{#if settings.store_logo.image.data}}
+            <a class="logo" href="{{urls.home}}">
+              <img class="header-logo-image" src="{{getImage settings.store_logo.image 'logo'}}" alt="{{settings.store_logo.image.alt}}">
+            </a>
+          {{else}}
+            <h1 class="text"><a href="{{urls.home}}">{{settings.store_logo.title}}</a></h1>
+          {{/if}}
+        </div>
+        {{#if theme_settings.geotrust-ssl-common-name}}
+          {{> core/geotrust-ssl-seal}}
+        {{/if}}
+      </div>
+
+      <div class="footer-columns-container">
+
+        {{#if theme_settings.footer_show_contactinfo}}
+          <div class="footer-column">
+            <h4 class="footer-column-heading">{{lang 'footer.contact'}}</h4>
+            <div class="shop-contact">
+              {{#if settings.address}}
+                <div class="shop-contact-item">
+                  <p class="shop-contact-item-details">{{nl2br settings.address}}</p>
+                </div>
+              {{/if}}
+
+              {{#if settings.phone_number.length}}
+                <div class="shop-contact-item">
+                  <p class="shop-contact-item-details">{{settings.phone_number}}</p>
+                </div>
+              {{/if}}
+            </div>
+          </div>
+        {{/if}}
+
+        {{#if theme_settings.footer_show_pages}}
+          <div class="footer-column">
+            <h4 class="footer-column-heading">{{lang 'footer.pages'}}</h4>
+            <nav class="footer-nav">
+              <ul>
+                {{#each pages}}
+                  <li>
+                    <a href="{{url}}">
+                      {{name}}
+                    </a>
+                  </li>
+                {{/each}}
+
+                {{#if urls.sitemap}}
+                  <li>
+                    <a href="{{urls.sitemap}}">{{lang 'common.sitemap'}}</a>
+                  </li>
+                {{/if}}
+              </ul>
+            </nav>
+          </div>
+        {{/if}}
+
+        {{#if theme_settings.footer_show_categories}}
+          <div class="footer-column">
+            <h4 class="footer-column-heading">{{lang 'category.label'}}</h4>
+            <nav class="footer-nav">
+              <ul>
+                {{#each categories}}
+                  <li>
+                    <a href="{{url}}">
+                      {{name}}
+                    </a>
+                  </li>
+                {{/each}}
+              </ul>
+            </nav>
+          </div>
+        {{/if}}
+
+        {{#if theme_settings.footer_show_brands}}
+          <div class="footer-column">
+            <h4 class="footer-column-heading">{{lang 'brand.label'}}</h4>
+            <nav class="footer-nav">
+              <ul>
+                {{#each shop_by_brand}}
+                  {{#compare @index 5 operator="<"}}
+                    <li>
+                      <a href="{{url}}">{{name}}</a>
+                    </li>
+                  {{/compare}}
+                {{/each}}
+                {{#compare shop_by_brand.length 5 operator=">"}}
+                  <li>
+                    <a href="{{urls.brands}}" class="footer-nav-view-all">{{lang 'brand.view_brands'}} &rsaquo;</a>
+                  </li>
+                {{/compare}}
+              </ul>
+            </nav>
+          </div>
+        {{/if}}
+
+      </div>
+    </div>
+
+    <div class="footer-lower">
+
+      {{#if social_media.length}}
+        {{> components/common/social-media-links links=social_media}}
+      {{/if}}
+
+      <div class="footer-lower-left">
+
+        <ul class="footer-lower-nav">
+          {{#if settings.gift_certificates_enabled}}
+            <li class="footer-lower-nav-item">
+              <a href="{{urls.gift_certificate.purchase}}">
+                {{lang 'footer.gift_certificates'}}
+              </a>
+            </li>
+          {{/if}}
+          {{#if settings.account_creation_enabled}}
+            {{#if customer}}
+              <li class="footer-lower-nav-item">
+                <a href="{{urls.account.index}}" title="{{lang 'header.logged_in_as' name=customer.name}}">
+                  <span class="my-account">{{lang 'header.my_account'}}</span>
+                </a>
+              </li>
+              <li class="footer-lower-nav-item">
+                <a href="{{urls.auth.logout}}">{{lang 'header.log_out' }}</a>
+              </li>
+            {{else}}
+              <li class="footer-lower-nav-item">
+                <a href="{{urls.auth.create_account}}">{{lang 'footer.create_account'}}</a>
+              </li>
+              <li class="footer-lower-nav-item">
+                <a href="{{urls.auth.login}}">{{lang 'footer.sign_in'}}</a>
+              </li>
+            {{/if}}
+          {{/if}}
+        </ul>
+        <div class="footer-site-info
+          {{#if theme_settings.hide_copyright}}{{#if theme_settings.hide_theme_credits}}hide-footer-site-info{{/if}}{{/if}}">
+            {{#unless theme_settings.hide_copyright}}
+              <span class="footer-copyright">
+                &copy; <script>document.write(new Date().getFullYear())</script> <a href="{{settings.base_url}}">{{settings.store_name}}</a>
+              </span>
+            {{/unless}}
+            {{#unless theme_settings.hide_theme_credits}}
+              <div class="footer-credits">
+                Powered by <a href="http://bigcommerce.com" target="_blank" rel="nofollow">BigCommerce</a>. Venture theme by <a href="http://pixelunion.net" target="_blank">Pixel Union.</a>
+              </div>
+            {{/unless}}
+        </div>
+        {{> components/common/payment-icons}}
+      </div>
+    </div>
+  </div>
+</footer>

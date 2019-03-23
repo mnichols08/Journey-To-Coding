@@ -1,0 +1,24 @@
+{{> components/products/product-index-header sort=pagination.brand.sort}}
+
+{{> components/products/grid
+  products=brand.products
+  grid_class="three-across"
+  show_compare=brand.show_compare
+  default_image=theme_settings.default_image
+  enable_quick_shop=theme_settings.quick_shop_enabled
+  show_ratings=settings.show_product_rating
+  price_as_low_as=theme_settings.price_as_low_as
+  image_has_aspect=theme_settings.product_grid_image_aspect_ratio
+}}
+
+{{#if brand.products.length}}
+  {{> components/common/pagination pagination=pagination.brand faceted_search=brand.faceted_search_enabled}}
+{{/if}}
+
+<div class="collection-progress-overlay">
+  <div class="inner">
+    {{> components/common/spinner spinner_class='spinner-dark'}}
+    {{lang 'common.loading'}}
+  </div>
+</div>
+

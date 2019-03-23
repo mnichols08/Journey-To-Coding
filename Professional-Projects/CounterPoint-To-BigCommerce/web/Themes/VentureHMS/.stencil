@@ -1,0 +1,12 @@
+{
+  "normalStoreUrl": "http://highmtnsports.mybigcommerce.com/",
+  "port": 3000,
+  "clientId": "4a6qks6oc0iu0w6vor76sn7g3rkwwb54a6qks6oc0iu0w6vor76sn7g3rkwwb5",
+  "accessToken": "iyu02rgkgimaz88v82080lqul4ihufg",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}

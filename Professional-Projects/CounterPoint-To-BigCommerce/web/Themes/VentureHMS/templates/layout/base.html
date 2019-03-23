@@ -1,0 +1,75 @@
+<!doctype html>
+<html class="no-js" lang="{{ locale_name }}">
+<head>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>{{head.title}}</title>
+  {{{head.meta_tags}}}
+  {{{head.config}}}
+  {{#block "head"}} {{/block}}
+  <link href="{{head.favicon}}" rel="shortcut icon">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  {{{stylesheet '/assets/css/theme.css'}}}
+  {{ getFontsCollection }}
+
+  {{{head.scripts}}}
+  {{{head.rsslinks}}}
+
+  {{inject 'themeImageSizes' theme_settings._images}}
+
+  {{> components/common/global-injects}}
+
+  {{{snippet 'html_head'}}}
+
+  {{> core/structured-data/website}}
+</head>
+
+  <body class="{{page_type}} {{#if carousel.slides.length}}has-carousel{{/if}} {{> components/body-classes}}" itemscope itemtype="http://schema.org/WebPage">
+    {{#if page_type '===' 'product'}}
+      {{> components/common/facebook-script}}
+    {{else if page_type '===' 'blog_post'}}
+      {{> components/common/facebook-script}}
+    {{/if}}
+
+    {{{snippet 'header'}}}
+
+    <div class="icon-sprite">{{> components/common/icons/sprite}}</div>
+
+    {{> components/common/header}}
+
+    {{> components/common/shipping-messages}}
+
+    {{#if carousel.slides.length}}
+      {{> components/page/carousel}}
+    {{/if}}
+
+    {{#compare page_type "default" operator="!=="}}
+      {{> components/common/breadcrumbs breadcrumbs}}
+    {{/compare}}
+
+    <main class="main-content">
+
+      {{> components/common/banners banners=banners.top class='banners-top'}}
+
+      {{#block "page"}}{{/block}}
+
+      {{> components/common/footer}}
+    </main>
+
+    {{> core/structured-data/breadcrumbs}}
+
+    <div id="quick-shop-modal" class="quick-shop-modal-container"></div>
+
+    <script type="template" id="loading-spinner">
+      {{> components/common/spinner}}
+    </script>
+
+    <script src="{{cdn '/assets/js/bundle.js'}}"></script>
+    <script>
+        window.stencilBootstrap("{{template_file}}", {{jsContext}}).load();
+    </script>
+
+    {{{footer.scripts}}}
+    {{{snippet 'footer'}}}
+  </body>
+</html>

@@ -1,0 +1,86 @@
+<header class="main-header" role="banner">
+
+  <div class="container">
+    <div class="header-primary-container">
+
+      <a href="#main-navigation" id="menu-open" title="show menu" class="menu-open"><span class="sr-only">skip to menu</span><span class="menu-icon"></span></a>
+
+      <div class="branding">
+        {{#if settings.store_logo.image.data}}
+          <a class="logo" href="/">
+            <img class="header-logo-image" src="{{getImage settings.store_logo.image 'logo'}}" alt="{{settings.store_logo.image.alt}}">
+          </a>
+        {{else}}
+          <h1 class="text"><a href="/">{{settings.store_logo.title}}</a></h1>
+        {{/if}}
+      </div>
+
+      <div class="header-cart-container">
+        <a href="{{urls.cart}}" class="view-cart" title="{{lang 'header.view_cart'}}">
+          <span class="sr-only">{{lang 'header.view_cart'}}</span>
+          <button class="cart-button">
+            <svg class="cart-icon"><use xlink:href="#icon-cart"></svg></li>
+          </button>
+          <span class="cart-count" id="quickcart-count">{{#if cart.quantity}}{{cart.quantity}}{{/if}}</span>
+        </a>
+        <div class="cart-dropdown-container" id="quickcart-container">
+          {{> components/cart/quickcart}}
+        </div>
+      </div>
+
+      <div class="menu-overlay"></div>
+    </div>
+
+    {{{snippet 'forms_search'}}}
+
+    <div class="search-form-container">
+      <form class="search-form-input-wrap" action="/search.php" autocomplete="off">
+        <button class="search-button">
+          <svg class="search-icon"><use xlink:href="#icon-search"></svg></li>
+        </button>
+        <input name="search_query" class="form-input" type="text" placeholder="{{#if forms.search.query}}{{forms.search.query}}{{else}}{{lang 'header.search'}}{{/if}}" data-search-quick>
+      </form>
+
+      {{#if theme_settings.quick_search_enable}}
+        <div class="search-form-quick-search-wrapper">
+          <div class="spinner">
+            {{> components/common/spinner}}
+          </div>
+          <div class="search-form-quick-search-results">
+            {{> components/search/quick-search}}
+          </div>
+        </div>
+      {{/if}}
+    </div>
+
+    <div class="navigation-container">
+
+      <div class="header-tools">
+        {{> components/header/currency-selector}}
+
+        {{#if settings.account_creation_enabled}}
+          <div class="customer-links">
+            {{#if customer }}
+              <a href="{{urls.account.index}}" title="{{lang 'header.logged_in_as' name=customer.name}}">
+                <span class="logged-in-as">{{customer.name}}</span>
+                <span class="my-account">{{lang 'header.my_account'}}</span>
+              </a>
+              <a href="{{urls.auth.logout}}">{{lang 'header.log_out' }}</a>
+            {{else}}
+              <a href="{{urls.auth.create_account}}">{{lang 'header.sign_up'}}</a>
+              <a href="{{urls.auth.login}}">{{lang 'header.log_in'}}</a>
+            {{/if}}
+          </div>
+        {{/if}}
+
+        <a class="mobile-menu-close">&times;</a>
+
+      </div>
+
+      {{> components/header/navigation}}
+
+    </div>
+
+  </div><!-- /.container -->
+
+</header>

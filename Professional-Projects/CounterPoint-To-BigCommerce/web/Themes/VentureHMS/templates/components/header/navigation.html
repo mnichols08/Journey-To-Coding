@@ -1,0 +1,58 @@
+
+<nav class="navigation {{#if theme_settings.categories_display '===' 'categories-in-a-meganav'}}mega-nav{{/if}}"
+     id="main-navigation">
+  <ul class="nav-menu">
+    {{#if theme_settings.show_home_link_in_menu}}
+      <li class="nav-menu-item">
+        <a href="{{urls.home}}">{{lang 'header.home_nav_text'}}</a>
+      </li>
+    {{/if}}
+    {{#if theme_settings.categories_in_menu}}
+      {{#if theme_settings.categories_display '===' 'categories-in-a-dropdown'}}
+        <li class="nav-menu-item menu-dropdown" data-shop-link>
+          <a href="#">{{lang 'header.category_nav_text'}} <span class="caret"></span></a>
+          <button
+            class="open-dropdown"
+            data-heading="{{lang 'header.category_nav_text'}}"
+            data-id="category-nav-0"
+          >
+            <svg class="open-arrow"><use xlink:href="#icon-arrow-right"></svg>
+          </button>
+          <ul class="dropdown categories-dropdown">
+            {{#each categories}}
+              {{> components/header/navigation-item class="nav-menu-item" prefix="sub"}}
+            {{/each}}
+          </ul>
+        </li>
+      {{/if}}
+      {{#if theme_settings.categories_display '===' 'categories-in-a-meganav'}}
+        <li class="nav-menu-item menu-dropdown" data-shop-link>
+          <a href="#">{{lang 'header.category_nav_text'}} <span class="caret"></span></a>
+          <button
+            class="open-dropdown"
+            data-heading="{{lang 'header.category_nav_text'}}"
+            data-id="category-nav-0"
+          >
+            <svg class="open-arrow"><use xlink:href="#icon-arrow-right"></svg>
+          </button>
+          <ul class="dropdown categories-dropdown">
+            {{#each categories}}
+            {{> components/header/navigation-item class="nav-menu-item" prefix="sub"}}
+            {{/each}}
+          </ul>
+        </li>
+      {{/if}}
+      {{#if theme_settings.categories_display '===' 'categories-in-main-navigation'}}
+        {{#each categories}}
+          {{> components/header/navigation-item class="nav-menu-item" caret=true}}
+        {{/each}}
+      {{/if}}
+    {{/if}}
+    {{#if theme_settings.show_pages_in_menu}}
+      {{#each pages}}
+        {{> components/header/navigation-item class="nav-menu-item" caret=true}}
+      {{/each}}
+    {{/if}}
+  </ul>
+</nav>
+<div class="subnavigation-container"></div>
