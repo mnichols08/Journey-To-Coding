@@ -3,3 +3,4 @@
 deployment-config.json
 *.psd
 node_modules
+*.lnk
