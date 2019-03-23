@@ -1,0 +1,19 @@
+/* ---------------------------
+	Secondary Call-to-action
+   --------------------------- */
+
+#secondary-cta {
+	background: #eee;
+	padding: 30px 0;
+}
+
+#secondary-cta h4 {
+	font-weight: 200;
+	font-size: 24px;
+	float: left;
+}
+
+#secondary-cta form {
+	margin: 0;
+	float: right;
+}
