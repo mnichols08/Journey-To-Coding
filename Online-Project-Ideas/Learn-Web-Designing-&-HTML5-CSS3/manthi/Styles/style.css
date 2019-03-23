@@ -1,0 +1,199 @@
+/*
+
+  style.CSS3
+
+  Colours
+  *******
+
+  Black:          #000000
+  Darker Gray:    #222222
+  Dark Gray:      #333333
+  Gray:           #444444
+  Light Gray:     #eeeeee
+  Light Blue:     #00c0ff
+  Dark Blue:      #0090bf
+
+*/
+
+/* ----------------------
+  General Styles
+   ----------------------- */
+html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #444444
+}
+
+/* -----------------------
+    Typography
+    ---------------------- */
+
+h1, h2, h3 {
+  font-weight: 300;
+  margin:0;
+  line-height: 45px
+}
+
+h4, h5, h6 {
+  font-weight: bold;
+  margin: 5px 0 5px 0;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 24px;
+}
+
+h3 {
+  font-size: 30px;
+}
+
+h4 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+h5 {
+  font-size: 13px
+  margin: 0;
+  text-transform: uppercase;
+}
+
+p {
+  margin: 0 0 10px 0;
+}
+
+p.lead {
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+}
+/* ----------------------
+    Layout
+    ---------------------- */
+.container {
+  width: 940px;
+  padding: 0 10px;
+  margin: 0 auto;
+}
+
+header {
+  background: #000;
+}
+
+
+#logo {
+  display: block;
+  padding: 17px 0 16px 5px;
+  float: left;
+}
+#hero {
+  background: #340d92;
+  color: #fff;
+}
+#hero-title {
+  width: 520px;
+  padding: 60px 0;
+  float: left;
+}
+  #hero-image {
+    float: right;
+    margin: 10px 0 -30px 0;
+  }
+
+
+/* ----------------------
+    Navigation
+    ---------------------- */
+    nav ul {
+      margin: 0;
+      padding: 0;
+      float: right;
+    }
+
+    nav ul li {
+      list-style: none;
+      float: left;
+    }
+
+    header nav ul li a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 20px;
+      border-left: solid 1px #333;
+    }
+
+    header nav ul li a:hover {
+      background: #222;
+    }
+    header nav ul li a:active {
+
+      -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0) inset;
+        -moz-box-shadow: 0 0 5px rgba(0, 0, 0, 0) inset;
+          -box-shadow: 0 0 5px rgba(0, 0, 0, 0) inset;
+    }
+
+    /* ----------------------
+        Button
+      ---------------------- */
+.button {
+  width: auto;
+  background: #dde6e8;
+  border: 1px solid #ffffff;
+  color: #fff
+  cursor: pointer;
+  display: inline-block;
+
+  /* IE7 inline-block fix */
+  zoom: 1;
+  *
+  display: inline;
+  margin: 0;
+  outline: none;
+  padding: 10px 20px 11px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+
+/* fancy box shadow */
+  -webkit-box-shadow: 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  -mox-box-shadow: 0 1px 0 0 1px 0 rgba(255, 255, 255, 0.5) inset;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.5) inset;
+
+/* CSS3 transitions */
+  -webkit-transition: background-color 0.15s ease-in-out;
+  -mox-transition: background-color 0.15s ease-in-out;
+  -o-transition: background-color 0.15s ease-in-out;
+  transition: background-color 0.15s ease-in-out;
+}
+.button:hover {
+  color: #fff;
+  background-color: #0086b2;
+
+}
+/* ----------------------
+    Global Styles
+  ---------------------- */
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+.clearfix:after {
+  clear:both;
+}
+.clearfix {
+  zoom: 1; /* For IE6/7 (trigger hasLayout) */
+}
