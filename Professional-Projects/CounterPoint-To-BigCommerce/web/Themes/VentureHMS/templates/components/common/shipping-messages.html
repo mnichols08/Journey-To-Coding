@@ -1,0 +1,21 @@
+{{!-- surfaces on homepage --}}
+{{#if shipping_messages}}
+  <div class="banners alert-banners">
+    {{#each shipping_messages}}
+      <div class="banner">
+      {{{message}}}
+      </div>
+    {{/each}}
+  </div>
+{{/if}}
+
+{{!-- surfaces on product page --}}
+{{#if product.shipping_messages}}
+  <div class="banners alert-banners">
+    {{#each product.shipping_messages}}
+      <div class="banner">
+      {{{message}}}
+      </div>
+    {{/each}}
+  </div>
+{{/if}}

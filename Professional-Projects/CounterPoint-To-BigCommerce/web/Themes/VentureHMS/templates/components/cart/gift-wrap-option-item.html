@@ -1,0 +1,46 @@
+<div class="gift-wrap-option-item" id="gift-wrap-option-item-{{index}}">
+  <div class="form-field">
+    <label class="form-label" for="giftWrapping-select-same">
+      <span class="form-label-text">
+        {{#if quantity "==" 1}}
+          {{lang 'cart.gift_wrapping.item_only'}}
+        {{else}}
+          {{#if index "==" "all"}}
+            {{lang 'cart.gift_wrapping.item_single'}}
+          {{else}}
+            {{lang 'cart.gift_wrapping.item_multiple' index=index}}
+          {{/if}}
+        {{/if}}
+      </span>
+      <select class="form-input form-select gift-wrap-select" name="giftwrapping[{{index}}]" id="giftWrapping-select-same" data-index="{{index}}">
+        <option value="">{{lang 'cart.gift_wrapping.choose_type'}}</option>
+        {{#each gift_wrappings}}
+          <option {{#if selected}}selected{{/if}} value="{{id}}" data-allow-message="{{allow_message}}" data-preview-image="{{#if preview_image}}true{{else}}false{{/if}}">{{name}} - ({{price.formatted}})</option>
+        {{/each}}
+      </select>
+    </label>
+  </div>
+
+  {{#each gift_wrappings}}
+    {{#if preview_image}}
+      <div class="form-field gift-wrap-image-preview image-preview-{{id}}">
+        <div class="gift-wrap-image-label">
+          {{lang 'cart.gift_wrapping.preview'}}
+          <div class="gift-wrap-hover-for-preview">
+            {{lang 'cart.gift_wrapping.hover_for_preview'}}
+          </div>
+        </div>
+        <a class="gift-wrap-image" href="{{getImage preview_image}}" target="_blank" style="background-image: url({{getImage preview_image}})">
+          <img src="{{getImage preview_image}}" alt="{{name}}">
+        </a>
+      </div>
+    {{/if}}
+  {{/each}}
+
+  <div class="form-field gift-wrap-message" data-gift-wrap-message="{{index}}">
+    <label class="form-label" for="giftMessage">
+      <span class="form-label-text">{{lang 'cart.gift_wrapping.gift_message'}}</span>
+      <textarea class="form-input" name="giftmessage[{{index}}]" id="giftMessage" rows="3">{{selected_wrapping.message}}</textarea>
+    </label>
+  </div>
+</div>

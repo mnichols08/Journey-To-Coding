@@ -1,0 +1,1 @@
+{"components/search/quick-search-show-all":"<div class=\"quick-search-result-list\">\n  <a class=\"quick-search-result show-all-result\" href=\"/search.php?search_query={{forms.search.query}}\">\n    {{lang 'quick_search.show_all' term=forms.search.query}}\n  </a>\n</div>\n"}

@@ -1,0 +1,39 @@
+{{inject 'carouselDelay' carousel.swap_frequency}}
+
+<section class="carousel">
+  {{#each carousel.slides}}
+    <figure class="carousel-item {{#if @first}}visible{{/if}}" style="background-image: url({{image}});">
+      <div class="carousel-item-image">
+        <img src="{{image}}" alt="{{{alt_text}}}" />
+      </div>
+      <figcaption class="carousel-item-info">
+        <div class="carousel-item-info-inner">
+          {{#if heading}}
+            <h2 class="carousel-item-title">{{{heading}}}</h2>
+          {{/if}}
+
+          {{#if text}}
+            <p class="carousel-item-caption">{{{text}}}</p>
+          {{/if}}
+
+          {{#if url}}
+            {{#if button_text}}
+              <a class="button button-primary" href="{{url}}">{{{button_text}}}</a>
+            {{/if}}
+          {{/if}}
+        </div>
+      </figcaption>
+
+      {{#if url}}
+        {{#unless button_text}}
+          <a class="carousel-link" href="{{url}}">{{lang 'header.category_nav_text'}}</a>
+        {{/unless}}
+      {{/if}}
+    </figure>
+  {{/each}}
+
+  <div class="carousel-navigation">
+    <span class="carousel-navigation-item carousel-previous">&larr;</span>
+    <span class="carousel-navigation-item carousel-next">&rarr;</span>
+  </div>
+</section>

@@ -1,0 +1,23 @@
+---
+carousel: true
+products:
+  featured:
+    limit: {{theme_settings.homepage_featured_products_count}}
+  new:
+    limit: {{theme_settings.homepage_new_products_count}}
+blog:
+  recent_posts:
+    limit: {{theme_settings.homepage_blog_posts_count}}
+    summary: 150
+---
+
+{{#partial "page"}}
+
+  {{{snippet 'home_content'}}}
+  {{> components/sections/products-new}}
+  {{> components/sections/products-featured}}
+  {{> components/sections/recent-posts}}
+
+{{/partial}}
+
+{{> layout/base}}

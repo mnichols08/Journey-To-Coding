@@ -1,0 +1,18 @@
+<div class="quick-shop-images-container">
+  <div class="quick-shop-images">
+    {{#each images}}
+      <img src="{{getImage this 'product'}}" id="quick-shop-img-{{@index}}" {{#if @first}}class="active"{{/if}} alt="{{this.alt}}">
+    {{/each}}
+  </div>
+  {{#compare images.length 1 operator=">"}}
+    <ul class="quick-shop-images-pagination">
+      {{#each images}}
+        <li class="quick-shop-image-thumb {{#if @first}}active{{/if}}">
+          <a href="#quick-shop-img-{{@index}}">
+            <img src="{{getImage this 'thumbnail'}}" alt="{{this.alt}}">
+          </a>
+        </li>
+      {{/each}}
+    </ul>
+  {{/compare}}
+</div>
