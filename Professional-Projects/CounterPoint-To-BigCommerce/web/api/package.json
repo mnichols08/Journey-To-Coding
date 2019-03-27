@@ -1,0 +1,19 @@
+{
+  "name": "bigcommerce-api",
+  "version": "1.0.0",
+  "description": "CounterPoint to BigCommerce Integration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mikey Nichols",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "node-bigcommerce": "^4.0.1",
+    "webpack-cli": "^3.3.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.29.6"
+  }
+}
