@@ -1,10 +1,22 @@
 // =============================================================================
 // BUTTONS (CSS)
 // =============================================================================
-
+$button-shape: stencilString("button--shape");
 .button {
     line-height: 1rem;
     transition: all 0.15s ease;
+
+    @if ($button-shape == "rounded") {
+        border-radius: 25px;
+    }
+
+    @if ($button-shape == "leaf") {
+        border-radius: 3px 30px;
+    }
+
+    @if ($button-shape == "squared") {
+        border-radius: 0px;
+    }
 
     + .button {
         margin-left: 0;

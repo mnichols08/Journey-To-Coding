@@ -2,6 +2,11 @@
     <li class="tab is-active">
         <a class="tab-title" href="#tab-description">{{lang 'products.description'}}</a>
     </li>
+    {{#if product.size-chart}}
+    <li class="tab">
+        <a class="tab-title" href="#tab-size-chart">{{lang 'products.size_chart'}}</a>
+    </li>
+    {{/if}}
     {{#if product.warranty}}
         <li class="tab">
             <a class="tab-title" href="#tab-warranty">{{lang 'products.warranty'}}</a>
