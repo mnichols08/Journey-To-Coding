@@ -1,0 +1,12 @@
+{
+  "normalStoreUrl": "https://mnzen-sandbox.mybigcommerce.com/",
+  "port": "3000",
+  "clientId": "e7d3n6nbzxf2buq8oc9ikkmx55sohx4",
+  "accessToken": "1l760vp1lutk6ztpka0h1nsop8cgtox",
+  "customLayouts": {
+    "brand": {},
+    "category": {},
+    "page": {},
+    "product": {}
+  }
+}

@@ -16,6 +16,7 @@
     background-color: $footer-background;
     border-top: container("border");
     padding: spacing("double") 0;
+    padding-bottom:0;
 }
 
 .footer-info {
@@ -84,19 +85,29 @@
 // Content
 // -----------------------------------------------------------------------------
 
+  
 .footer-info-heading {
-    color: $footer-heading-fontColor;
+    font-size: fontSize("base"); 
+    font-family: "Speculum";
+    color: black;
     font-size: fontSize("base");
-    text-transform: inherit;
-}
+    text-transform: uppercase;          
+    }
 
+.footer-list-right{
+    color: #000;
+    
+}
 .footer-info-list {
     list-style: none;
     margin-left: 0;
+    color: stencilColor("navPages-subMenu-backgroundColor");
+    font-weight:800;
 
     a {
-        color: stencilColor("color-textSecondary");
+        color: stencilColor("navPages-subMenu-backgroundColor");
         text-decoration: none;
+        font-weight:800;
 
         // scss-lint:disable NestingDepth
         &:hover {
@@ -108,19 +119,21 @@
 
 .footer-copyright {
     text-align: center;
+    font-family: "NK57 Monospace";
+    background-color: stencilColor("navPages-subMenu-backgroundColor");
+    margin:auto;
+    line-height: 5.723;
 
-    @include breakpoint("small") {
-        text-align: left;
-    }
+      
 
     > .powered-by {
-        color: stencilColor("color-textSecondary");
-        font-size: fontSize("tiny");
+        color: stencilColor("navPages-color");
+        font-size: fontSize("large");
         margin: 0;
     }
 
     a {
-        color: stencilColor("color-textSecondary");
+        color: stencilColor("navPages-color");
         text-decoration: none;
 
         // scss-lint:disable NestingDepth
@@ -165,4 +178,25 @@
 
 .footer-newsletter-summary {
     text-align: left;
+}
+
+h5.stayConnected {
+    text-align:right;
+    font-size: 25px;
+    font-family: "Speculum Outline";
+    color: #000;
+}
+.footer-info-list.social{
+    text-align:right;
+    & li{
+        display:inline;
+        font-size:3em;
+        padding-left:1em;
+    }
+    & a{
+    color: #000;
+    }
+    & a:hover{
+        color:stencilColor("navPages-subMenu-backgroundColor");
+    }
 }

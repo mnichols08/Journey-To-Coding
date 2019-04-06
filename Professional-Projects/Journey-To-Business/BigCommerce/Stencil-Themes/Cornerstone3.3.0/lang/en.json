@@ -4,10 +4,12 @@
     },
     "footer": {
         "brands": "Popular Brands",
-        "navigate": "Navigate",
-        "info": "Info",
+        "navigate": "Site Map",
+        "info": "Customer Support",
         "categories": "Categories",
-        "call_us": "Call us at {phone_number}"
+        "call_us": "Call us at {phone_number}",
+        "social": "Stay Connected",
+        "help": "Help Topics"
     },
     "home": {
         "heading": "Home"
