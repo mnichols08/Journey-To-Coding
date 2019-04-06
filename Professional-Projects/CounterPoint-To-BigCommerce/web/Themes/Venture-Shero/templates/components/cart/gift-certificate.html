@@ -1,0 +1,10 @@
+<form class="form gift-certificate-apply-form" method="post" action="{{urls.cart}}">
+  <label class="form-label sr-only" for="cert-code">{{lang 'cart.gift_certificates.cert_code'}}</label>
+  <div class="input-appended">
+    <div class="form-input-wrapper">
+      <input class="form-input" data-error="{{lang 'cart.gift_certificates.empty_error'}}"  id="cert-code" type="text" name="certcode" value="" placeholder="{{lang 'cart.gift_certificates.add_cert_code'}}" data-gift-certificate-input>
+    </div>
+    <input class="button button-small button-secondary" type="submit" value="{{lang 'cart.gift_certificates.apply'}}" data-error="{{lang 'cart.coupon_codes.empty_error'}}" data-gift-card-apply>
+  </div>
+  <input type="hidden" name="action" value="applycoupon">
+</form>

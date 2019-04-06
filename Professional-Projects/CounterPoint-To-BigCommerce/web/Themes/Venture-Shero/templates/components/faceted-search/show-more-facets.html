@@ -1,0 +1,17 @@
+<ul class="nav-list faceted-search-option-columns" data-facet-filter-wrapper>
+  {{#each facets}}
+    {{#if facet '===' ../all_facets}}
+      {{#each items}}
+        <li class="faceted-search-item {{#compare @index 5 operator='>='}}hidden{{/compare}}">
+          <a href="{{url}}" title="{{title}}" rel="nofollow" data-faceted-search-facet>
+            <input type="checkbox" class="facet-checkbox" {{#if selected}}checked{{/if}}>
+            <span class="faceted-search-item-label">
+              {{title}}
+              {{#if ../show_product_counts}}<span class="faceted-search-item-count">({{ count }})</span>{{/if}}
+            </span>
+          </a>
+        </li>
+      {{/each}}
+    {{/if}}
+  {{/each}}
+</ul>

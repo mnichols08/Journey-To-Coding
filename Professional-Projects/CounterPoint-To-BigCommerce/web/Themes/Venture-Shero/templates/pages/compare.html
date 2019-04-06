@@ -1,0 +1,116 @@
+
+{{#partial "page"}}
+
+  <div class="container">
+    <article class="page-container">
+      <h1 class="page-heading page-heading-small">{{lang 'compare.title'}}</h1>
+      <div class="compare-content">
+
+        <table class="compare-table">
+
+          <tr class="compare-row compare-main-row">
+            <th class="header-column compare-empty-cell"></th>
+            {{#each comparisons}}
+              <td class="compare-table-cell">
+                <figure class="product-item-thumbnail">
+                  <a href="{{url}}" title="{{name}}"></a>
+                  <img src="{{getImage image 'product-grid-item' (cdn ../theme_settings.default_image)}}" alt="{{image.alt}}">
+                </figure>
+
+                <a href="{{url}}" title="{{name}}">
+                  <h3 class="product-item-title">{{name}}</h3>
+                </a>
+
+                <div class="product-item-price">
+                  {{#if call_for_price}}
+                    {{call_for_price}}
+                  {{/if}}
+                  {{#if price}}
+                    {{> core/products/price
+                      price=price
+                      show_savings=false
+                      price_range_display=../../../theme_settings.price_range_display
+                      show_sale_badges=false
+                      retail_price_label=../../../theme_settings.retail-price-label
+                      non_sale_price_label=../../../theme_settings.non-sale-price-label
+                      sale_price_label=../../../theme_settings.sale-price-label
+                      price_label=../../../theme_settings.price-label
+                    }}
+                  {{/if}}
+                </div>
+              </td>
+            {{/each}}
+          </tr>
+
+          <tr class="compare-row compare-quickshop-row">
+            <th class="header-column compare-empty-cell"></th>
+            {{#each comparisons}}
+              <td class="compare-table-cell">
+                <a href="{{url}}" class="button button-primary" data-quick-shop data-product-id="{{id}}">{{lang 'product.quick_view'}}</a>
+                {{#compare ../comparisons.length 2 operator=">"}}
+                  <a href="{{remove_url}}" class="compare-remove">{{lang 'compare.remove'}}</a>
+                {{/compare}}
+              </td>
+            {{/each}}
+          </tr>
+
+          <tr class="compare-row compare-rating-row">
+            <th class="header-column compare-table-heading">{{lang 'compare.rating'}}</th>
+            {{#each comparisons}}
+              <td class="compare-table-cell">
+                {{#if rating}}
+                  {{> components/products/ratings rating=rating size="small"}}
+                {{else}}
+                  <div class="compare-no-rating">{{lang 'compare.no_rating'}}</div>
+                {{/if}}
+              </td>
+            {{/each}}
+          </tr>
+
+          <tr class="compare-row compare-description-row">
+            <th class="header-column compare-table-heading">{{lang 'compare.description'}}</td>
+            {{#each comparisons}}
+              <td class="compare-table-cell">
+                {{{summary}}}{{#if summary.length ">=" 120}}&hellip;{{/if}}
+              </td>
+            {{/each}}
+          </tr>
+
+          <tr class="compare-row compare-action-row">
+            <th class="header-column compare-empty-cell"></th>
+            {{#each comparisons}}
+              <td class="compare-table-cell">
+                {{#if has_options}}
+                  <a href="{{url}}" class="button button-primary">{{lang 'product.choose_options'}}</a>
+                {{else}}
+                  {{#if pre_order}}
+                    <a href="{{add_to_cart_url}}" data-product-id="{{id}}" data-product-title="{{name}}" class="button button-primary add-to-cart button-progress" data-progress-text="{{ lang 'product.add_to_cart_progress' }}" data-cart-add>
+                      {{> components/common/spinner}}
+                      <span class="button-text">{{lang 'product.pre_order'}}</span>
+                    </a>
+                  {{else}}
+                    {{#if add_to_cart_url }}
+                      <a href="{{add_to_cart_url}}" data-product-id="{{id}}" data-product-title="{{name}}" class="button button-primary add-to-cart button-progress" data-progress-text="{{ lang 'product.add_to_cart_progress' }}" data-cart-add>
+                        {{> components/common/spinner}}
+                        <span class="button-text">{{lang 'product.add_to_cart'}}</span>
+                      </a>
+                    {{else}}
+                      {{#if out_of_stock_message }}
+                        <a href="{{url}}" class="button button-disabled">{{out_of_stock_message}}</a>
+                      {{else}}
+                        <div class="button button-disabled">{{lang 'compare.unavailable'}}</div>
+                      {{/if}}
+                    {{/if}}
+                  {{/if}}
+                {{/if}}
+              </td>
+            {{/each}}
+          </tr>
+
+        </table>
+      </div>
+    </article>
+  </div>
+
+{{/partial}}
+{{> layout/base}}

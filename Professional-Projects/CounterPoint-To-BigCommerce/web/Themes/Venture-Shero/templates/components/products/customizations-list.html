@@ -1,0 +1,13 @@
+<div class="cart-item-detail product-customizations-summary">
+  {{#if customizations.length ">" 3}}
+    {{#each customizations}}
+      <div class="cart-item-detail-item">
+        {{name}}:&nbsp;{{{value}}}
+      </div>
+    {{/each}}
+  {{else}}
+    {{#each customizations}}
+      {{name}}:&nbsp;{{value}}{{#unless @last}}, {{/unless}}
+    {{/each}}
+  {{/if}}
+</div>

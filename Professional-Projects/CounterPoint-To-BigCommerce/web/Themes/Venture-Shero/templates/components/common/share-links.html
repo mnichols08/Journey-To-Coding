@@ -1,0 +1,79 @@
+<ul class="share-links">
+  {{#each share_buttons}}
+    {{#if service '===' 'facebook_like'}}
+      <li class="share-link facebook-like">
+        <div class="fb-like"
+          data-href="{{../../url}}"
+          data-layout="button_count"
+          data-action="like"
+          data-show-faces="false">
+        </div>
+      </li>
+    {{/if}}
+  {{/each}}
+
+  {{#each share_buttons}}
+    {{#if service '===' 'facebook'}}
+      <li class="share-link">
+        <a target="_blank" href="//www.facebook.com/sharer.php?u={{../../url}}" class="share-facebook" data-share>
+          <span class="sr-only">Facebook</span>
+          <svg class="share-icon"><use xlink:href="#icon-facebook"></use></svg>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if service '===' 'twitter'}}
+      <li class="share-link">
+        <a target="_blank" href="//twitter.com/share?url={{../../url}}" class="share-twitter" data-share>
+          <span class="sr-only">Twitter</span>
+          <svg class="share-icon"><use xlink:href="#icon-twitter"></use></svg>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if service '===' 'pinterest'}}
+      <li class="share-link">
+        <a target="_blank" href="//pinterest.com/pin/create/button/?url={{../../url}}&amp;media={{../../image}}&amp;description={{../../title}}" class="share-pinterest" data-share>
+          <span class="sr-only">Pinterest</span>
+          <svg class="share-icon"><use xlink:href="#icon-pinterest"></use></svg>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if service '===' 'linkedin'}}
+      <li class="share-link">
+        <a target="_blank" href="//www.linkedin.com/cws/share?url={{../../url}}" class="share-linkedin" data-share>
+          <span class="sr-only">LinkedIn</span>
+          <svg class="share-icon"><use xlink:href="#icon-linkedin"></use></svg>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if service '===' 'email'}}
+      <li class="share-link">
+        <a href="mailto:?subject={{../../title}}&amp;body={{../../url}}" class="share-email">
+          <span class="sr-only">{{lang 'common.email'}}</span>
+          <svg class="share-icon"><use xlink:href="#icon-email"></use></svg>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if service '===' 'print'}}
+      <li class="share-link">
+        <a class="share-print" data-share-print>
+          <span class="sr-only">{{lang 'common.print'}}</span>
+          <svg class="share-icon"><use xlink:href="#icon-print"></use></svg>
+        </a>
+      </li>
+    {{/if}}
+
+    {{#if service '===' 'google_plusone'}}
+      <li class="share-link">
+        <a target="_blank" href="//plus.google.com/share?url={{../../url}}" class="share-google" data-share>
+          <span class="sr-only">Google Plus</span>
+          <svg class="share-icon"><use xlink:href="#icon-google-plus"></use></svg>
+        </a>
+      </li>
+    {{/if}}
+  {{/each}}
+</ul>

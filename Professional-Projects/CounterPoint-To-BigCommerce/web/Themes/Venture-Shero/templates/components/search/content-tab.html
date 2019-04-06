@@ -1,0 +1,18 @@
+<div class="search-tab content-search-tab
+  {{#if pagination.product_results.total '===' 0}}
+    {{#if pagination.content_results.total '===' 0}}
+      disabled
+    {{else}}
+      active
+    {{/if}}
+  {{else}}
+    {{#if pagination.content_results.total '===' 0}}
+      disabled
+    {{/if}}
+  {{/if}}"
+  data-search-tab="content">
+  <div class="collection-content-index-column">
+    {{> components/search/content-index}}
+  </div>
+</div>
+

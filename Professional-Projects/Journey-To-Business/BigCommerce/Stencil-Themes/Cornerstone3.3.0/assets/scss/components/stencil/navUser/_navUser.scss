@@ -15,12 +15,49 @@
 //    setting the previous styles to medium breakpoint and adjusts for nudge in (7).
 //
 // -----------------------------------------------------------------------------
+.header_right{
+    
+    float:right;
+    text-align:right;
+    display:none;
+
+
+    & .navUser-item {
+        position:relative;
+        top:2em;
+    }
+
+    & h2{
+        padding:0;
+        margin:0;
+        color: rgb(166, 16, 16);
+        text-transform: uppercase;
+        font-size: 25px;
+        font-family: "AXIS";
+        font-weight: bold;                    
+         }
+
+    & h3{
+        margin: 0;
+        padding: 0;
+        font-size: 16.667px;
+        font-family: "Futura";
+        color: rgb(77, 77, 77);
+        font-weight: bold;
+        }
+    @include breakpoint("medium"){
+        display:block;
+    }
+    
+
+          
+}
 
 .navUser {
     @include nav($style: "navBar", $wrapper: "nav");
     @include verticalPositionMiddle("absolute");
     right: 0;
-    top: 26px; // 2
+    top: -26px; // 2
     width: 100%; // 4
     z-index: zIndex("lowest"); // 5.
 

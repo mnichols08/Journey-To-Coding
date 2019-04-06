@@ -1,0 +1,51 @@
+
+{{#partial "page"}}
+
+<div class="container">
+  <article class="page-container blog-post-single">
+
+    {{#if blog.post.thumbnail}}
+      <figure class="blog-post-image-container">
+        <img src="{{getImage blog.post.thumbnail 'blog-header'}}" alt="{{blog.post.title}}">
+      </figure>
+    {{/if}}
+
+    <div class="page-narrow">
+      <header class="blog-post-header">
+        <div class="blog-post-meta upper">
+          <time class="timestamp">{{blog.post.date_published}}</time>
+          {{#if blog.post.tags.length}}
+            <span class="divider">|</span>
+            <div class="blog-post-tags">
+              {{#each blog.post.tags}}
+                <a href="{{url}}" title="{{lang 'blog.tag_permalink' tag=name}}">{{name}}</a>{{#unless @last}},&nbsp;{{/unless}}
+              {{/each}}
+            </div>
+          {{/if}}
+        </div>
+        <h1 class="blog-post-title">{{blog.post.title}}</h1>
+        {{#if blog.post.author}}
+          <div class="blog-post-meta post-author">
+            {{lang 'blog.posted_by'}} <span>{{blog.post.author}}</span>
+          </div>
+        {{/if}}
+      </header>
+      <div class="blog-post-content rte">
+        {{{blog.post.body}}}
+      </div>
+
+      {{#if settings.add_this.buttons.length}}
+        <aside class="blog-post-share">
+          <h5 class="heading">{{lang 'blog.share_this'}}</h5>
+          {{> components/common/share-links share_buttons=settings.add_this.buttons url=blog.post.url title=blog.post.title image=(getImage blog.post.thumbnail 'share')}}
+        </aside>
+      {{/if}}
+    </div>
+
+  </article>
+</div>
+{{> core/structured-data/blog-post}}
+
+{{/partial}}
+
+{{> layout/base}}

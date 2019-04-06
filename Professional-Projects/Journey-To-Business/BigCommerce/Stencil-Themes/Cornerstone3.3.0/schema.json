@@ -377,7 +377,20 @@
     "settings": [{
         "type": "heading",
         "content": "Header"
-    },{
+    }, {
+        "type": "text",
+        "label": "Logo Heading",
+        "content": "Tuning • Used Parts • Services",
+        "id": "logo-heading",
+        "force_reload": true
+    },  {
+        "type": "text",
+        "label": "Logo Sub Heading",
+        "content": "304-813-2405 | Morgantown, WV",
+        "id": "logo-subheading",
+        "force_reload": true
+    },    
+    {
         "type": "select",
         "label": "Header Background Angle",
         "id": "header-backgroundAngle",

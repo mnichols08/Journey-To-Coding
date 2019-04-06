@@ -10,11 +10,13 @@
 </div>
 {{/if}}
 <header class="header" role="banner">
+        <div class="header_right">
+                {{> components/common/search-only}}
+                {{> components/common/sub-logo}}
+        </div>
     <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
         <span class="mobileMenu-toggleIcon">Toggle menu</span>
     </a>
-    {{> components/common/navigation}}
-
     {{#if page_type '===' 'default'}}
         <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
             {{> components/common/store-logo}}

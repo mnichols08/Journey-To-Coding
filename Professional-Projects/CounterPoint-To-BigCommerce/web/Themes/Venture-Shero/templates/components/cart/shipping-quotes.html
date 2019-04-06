@@ -1,0 +1,47 @@
+{{#if errors}}
+  {{lang 'cart.shipping_calculator.error_failure'}}
+  <ul>
+    {{#each errors}}
+      <li>{{this}}</li>
+    {{/each}}
+  </ul>
+{{else}}
+  <form class="shipping-methods-choice">
+    <div class="shipping-methods-heading">{{lang 'cart.shipping_calculator.choose_a_rate'}}</div>
+    <div class="shipping-methods-container">
+      {{#if quotes.shipping_methods}}
+        {{#each quotes.shipping_methods}}
+          <div class="form-field form-inline form-field-small">
+            <label class="form-label" for="shipping-quote-{{id}}">
+              <input id="shipping-quote-{{id}}" class="form-input input-radio input-shipping-quote" type="radio" name="shipping_method" value="{{id}}" data-shipping-quote>
+              <div class="form-label-text">{{provider_name}} &mdash;<strong> {{cost.formatted}}</strong></div>
+            </label>
+          </div>
+        {{/each}}
+      {{/if}}
+
+      {{#if quotes.ups_shipping_methods}}
+        <div class="shipping-provider-section">
+          {{#each quotes.ups_shipping_methods}}
+            <div class="form-field form-inline form-field-small">
+              <label class="form-label" for="shipping-quote-{{id}}">
+                <input id="shipping-quote-{{type}}-{{id}}" class="form-input input-radio input-shipping-quote" type="radio" name="shipping_method" value="{{id}}" data-shipping-quote>
+                <div class="form-label-text">
+                  {{#if logo_path}}
+                    <img class="shipping-provider-logo" src="{{logo_path}}" alt="{{description}}">
+                  {{/if}}
+                  {{description}}
+                  &mdash;<strong> {{cost.formatted}}</strong>
+                </div>
+              </label>
+            </div>
+          {{/each}}
+        </div>
+      {{/if}}
+    </div>
+    <button class="button button-small button-secondary button-progress button-select-shipping-quote" type="submit" data-progress-text="{{lang 'cart.shipping_calculator.calculating'}}">
+      {{> components/common/spinner}}
+      <span class="button-text">{{lang 'cart.shipping_calculator.select_rate'}}</span>
+    </button>
+  </form>
+{{/if}}

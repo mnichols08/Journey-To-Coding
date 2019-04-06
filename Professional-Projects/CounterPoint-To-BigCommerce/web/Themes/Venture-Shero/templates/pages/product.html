@@ -1,0 +1,184 @@
+---
+product:
+  related_products:
+    limit: {{theme_settings.productpage_related_products_count}}
+  reviews:
+      limit: 999
+  videos: true
+---
+
+{{#partial "page"}}
+  <div
+    class="container single-product product-block"
+    data-product-title="{{product.title}}"
+    data-product-id={{product.id}}
+    data-product-purchasable="{{product.can_purchase}}"
+  >
+
+    <div class="row">
+
+      <!-- begin product images -->
+      {{#if product.images.length}}
+        <div class="product-images-column">
+          {{> components/products/images product}}
+        </div>
+      {{/if}}
+      <!-- end images -->
+
+      <!-- begin sidebar -->
+      {{> components/products/single-product-info-block
+        quick_shop=false
+      }}
+      <!-- end sidebar -->
+
+      <!-- begin extended info -->
+      <div class="product-meta-column">
+        {{{snippet 'product_details'}}}
+
+        <ul class="product-tab-links" data-tabs>
+          {{#if product.description}}
+            <li class="product-tab-link">
+              <a href="#product-description">{{lang 'product.description'}}</a>
+            </li>
+          {{/if}}
+          {{#if product.warranty}}
+            <li class="product-tab-link">
+              <a href="#product-warranty">{{lang 'product.warranty'}}</a>
+            </li>
+          {{/if}}
+          {{#if product.videos.list.length}}
+            <li class="product-tab-link">
+              <a href="#product-videos">{{lang 'product.videos'}}</a>
+            </li>
+          {{/if}}
+        </ul>
+
+        <div class="product-meta product-meta-tabs">
+          {{#if product.description}}
+            <div class="tab-content-panel" id="product-description">
+              <div class="product-description-container rte">
+                {{{ product.description }}}
+
+                {{{snippet 'product_description'}}}
+              </div>
+            </div>
+          {{/if}}
+
+          {{#if product.warranty}}
+            <div class="tab-content-panel" id="product-warranty">
+              <p>{{product.warranty}}</p>
+            </div>
+          {{/if}}
+
+          {{#if product.videos.list.length}}
+            <div class="tab-content-panel" id="product-videos">
+              <div class="product-videos-list">
+                {{#each product.videos.list}}
+                  {{> components/products/video-block
+                    video=this
+                  }}
+                {{/each}}
+              </div>
+            </div>
+          {{/if}}
+        </div>
+
+        {{#if product.related_products.length}}
+          <aside class="product-meta product-meta-product-grid">
+            <div class="product-section-header">
+              <h3 class="product-section-title">
+                {{lang 'product.related_products_heading'}}
+              </h3>
+            </div>
+            <div class="product-grid-scroll-container">
+              <div class="product-grid-container grid-small">
+                {{#each product.related_products}}
+                  {{> components/products/product-item
+                    this
+                    grid_class=grid_class
+                    show_compare=../show_compare
+                    show_sale_badges=../theme_settings.sale-badges
+                    default_image=../theme_settings.default_image
+                    image_has_aspect=../theme_settings.product_grid_image_aspect_ratio
+                    price_range_display=../theme_settings.price_range_display
+                    retail_price_label=../theme_settings.retail-price-label
+                    non_sale_price_label=../theme_settings.non-sale-price-label
+                    sale_price_label=../theme_settings.sale-price-label
+                    price_label=../theme_settings.price-label
+                  }}
+                {{/each}}
+              </div>
+            </div>
+          </aside>
+        {{/if}}
+
+        {{{snippet 'reviews'}}}
+
+        {{#if product.reviews.list.length}}
+          <aside class="product-meta product-meta-reviews" id="write_review">
+            <div class="product-section-header">
+              <h3 class="product-section-title">
+                {{lang 'product.reviews_heading'}}
+              </h3>
+              <div class="product-review-summary">
+                {{#if settings.show_product_rating}}
+                  {{> components/products/ratings
+                    rating=product.rating
+                    size="large"
+                  }}
+                {{/if}}
+
+                  <div class="rating-summary">
+                    {{#if settings.show_product_rating}}
+                      {{{lang 'product.reviews.total_based_on' score=product.rating num_reviews=product.num_reviews}}}
+                    {{else}}
+                      {{{lang 'product.reviews.count' num_reviews=product.num_reviews}}}
+                    {{/if}}
+                  </div>
+                <a href="#modal-review-form" class="review-link">
+                  {{ lang 'product.reviews.leave_review' }}
+                </a>
+              </div>
+            </div>
+            <div class="product-reviews-container">
+              {{#each product.reviews.list}}
+                {{#if @index "<" ../theme_settings.productpage_reviews_count}}
+                  {{> components/products/review-item
+                    class="default"
+                    show_rating=../../settings.show_product_rating
+                  }}
+                {{/if}}
+                {{#if @index ">=" ../theme_settings.productpage_reviews_count}}
+                  {{> components/products/review-item
+                    class="supplementary"
+                    show_rating=../../settings.show_product_rating
+                  }}
+                {{/if}}
+              {{/each}}
+              {{#if product.reviews.list.length ">" theme_settings.productpage_reviews_count}}
+                <button
+                  class="button button-secondary button-small"
+                  data-toggle-extra-reviews
+                  data-toggle-text="{{lang 'product.reviews.view_less'}}"
+                >
+                  {{lang 'product.reviews.view_all' count=product.reviews.list.length}}
+                </button>
+              {{/if}}
+            </div>
+          </aside>
+        {{/if}}
+
+      </div>
+      <!-- end info -->
+
+    </div>
+  </div>
+
+  {{> components/products/review-modal}}
+
+  {{> core/structured-data/product}}
+  {{> core/structured-data/product-reviews}}
+
+{{/partial}}
+
+{{> layout/base}}
