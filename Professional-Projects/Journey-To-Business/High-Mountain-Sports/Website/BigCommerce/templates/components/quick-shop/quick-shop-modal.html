@@ -1,0 +1,28 @@
+<a href="#" class="modal-close pxu-close-thin">
+  <svg class="icon-close">
+    <use xlink:href="#icon-close"></use>
+  </svg>
+</a>
+
+<div class="modal-body">
+  <div class="quick-shop-image-column">
+    {{> components/quick-shop/quick-shop-images
+      images=product.images
+    }}
+  </div>
+
+  <div
+    class="quick-shop-info-column product-block"
+    data-product-title="{{product.title}}"
+    data-product-id={{product.id}}
+    data-product-purchasable="{{product.can_purchase}}"
+  >
+    {{> components/products/single-product-info-block
+      quick_shop=true
+    }}
+  </div>
+</div>
+
+<a class="quick-shop-details-lower" href="{{this.product.url}}">
+  {{lang 'product.view_full_details'}}
+</a>

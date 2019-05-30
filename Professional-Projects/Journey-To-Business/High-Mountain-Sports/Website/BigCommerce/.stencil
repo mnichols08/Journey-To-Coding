@@ -1,0 +1,23 @@
+{
+  "normalStoreUrl": "https://highmtnsports.mybigcommerce.com/",
+  "port": "3000",
+  "clientId": "e7d3n6nbzxf2buq8oc9ikkmx55sohx4",
+  "accessToken": "p0glzgfe5ltkdku0j1grykjjo2ggvij",
+  "customLayouts": {
+    "brand": {},
+    "category": {
+      "rentals": "/rentals.html",
+      "winter-rentals": "/rentals/winter-rentals.html",
+      "summer-rentals": "/rentals/summer-rentals.html"
+    },
+    "page": {
+      "about": "/about/",
+      "events": "/events/",
+      "bike-routes": "/bike-routes.html"
+
+    },
+    "product": {
+      "no-shipping": "bic-11-0-cross-tough-tec-sup-board-2019.html"
+    }
+  }
+}

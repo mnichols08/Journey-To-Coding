@@ -1,0 +1,646 @@
+{
+  "name": "Venture-Shero-MN",
+  "version": "1.20.1",
+  "meta": {
+    "price": 19500,
+    "documentation_url": "http://support.pixelunion.net/category/192-venture",
+    "author_name": "Pixel Union",
+    "author_email": "support@pixelunion.net",
+    "author_support_url": "http://support.pixelunion.net",
+    "composed_image": "venture-composed.png",
+    "features": [
+      "fully_responsive",
+      "frontpage_slideshow",
+      "quick_add_to_cart",
+      "customized_checkout",
+      "switchable_product_view",
+      "product_comparison_table",
+      "complex_search_filtering",
+      "customizable_product_selector",
+      "free_customer_support",
+      "free_theme_upgrades",
+      "high_res_product_images",
+      "product_filtering",
+      "advanced_quick_view",
+      "product_showcase",
+      "persistent_cart",
+      "one_page_check_out",
+      "product_videos",
+      "google_amp",
+      "account_payment_methods",
+      "csrf_protection",
+      "enhanced_ecommerce",
+      "pixel_pop"
+    ]
+  },
+  "css_compiler": "scss",
+  "autoprefixer_cascade": true,
+  "autoprefixer_browsers": [
+    "last 3 versions"
+  ],
+  "resources": {
+    "cart": true,
+    "shop_by_brand": {
+      "limit": 6
+    }
+  },
+  "settings": {
+    "primary-font": "Google_Fira+Sans_300,400,400italic,700",
+    "body_size": 14,
+    "secondary-font": "Google_Poppins_600",
+    "heading_size": 1,
+    "menu_use_headingfont": "false",
+    "price_use_headingfont": "false",
+    "text_color": "#3F3F3F",
+    "headings_color": "#212121",
+    "accent_color": "#DB3E00",
+    "link_color": "#4A90E2",
+    "border_color": "#EFEFEF",
+    "body_background_color": "#E8E9EB",
+    "page_background_color": "#FFFFFF",
+    "sale_text_color": "#DB3E00",
+    "sale_badge_color": "#DB3E00",
+    "error_color": "#D93838",
+    "success_color": "#42B22A",
+    "header_background_color": "#DB3E00",
+    "header_text_color": "#FFFFFF",
+    "style_apple_pay_button": "white-border",
+    "footer_background_color": "#181818",
+    "footer_text_color": "#FFFFFF",
+    "footer_show_brands": true,
+    "footer_show_categories": true,
+    "footer_show_pages": true,
+    "footer_show_contactinfo": true,
+    "payment_visa": true,
+    "payment_mastercard": true,
+    "payment_american_express": true,
+    "payment_discover": true,
+    "payment_paypal": true,
+    "payment_apple_pay": true,
+    "carousel_aspect_ratio": "use-image",
+    "carousel_color": "#FFFFFF",
+    "carousel_font_size": "small",
+    "carousel_font_family": "heading-font",
+    "carousel_text_justify": "center",
+    "sale_tag_style": "rectangle",
+    "products_per_page": 24,
+    "homepage_featured_products_count": 8,
+    "homepage_new_products_count": 8,
+    "homepage_blog_posts_count": 3,
+    "blogpage_blog_posts_count": 9,
+    "brands_per_page": 20,
+    "show_blog_thumbnails": true,
+    "homepage_showCarousel": true,
+    "productpage_reviews_count": 4,
+    "productpage_related_products_count": 4,
+    "hide_theme_credits": false,
+    "hide_copyright": false,
+    "default_image": "/assets/img/no-image.svg",
+    "quick_shop_enabled": true,
+    "categories_in_menu": true,
+    "retina_logo": true,
+    "logo-position": "logo-left",
+    "mega-nav": true,
+    "quick_search_enable": true,
+    "quick_search_display_content_results": true,
+    "quick_search_results_per_section": 3,
+    "show_home_link_in_menu": false,
+    "show_pages_in_menu": true,
+    "categories_display": "categories-in-a-dropdown",
+    "price_as_low_as": "false",
+    "product_grid_image_aspect_ratio": "use-image",
+    "_images": {
+      "core-swatch": {
+        "width": 100,
+        "height": 100
+      },
+      "core-product-picklist": {
+        "width": 80,
+        "height": 200
+      },
+      "core-blog-thumbnail": {
+        "width": 800,
+        "height": 800
+      },
+      "account-product-thumb": {
+        "width": 440,
+        "height": 600
+      },
+      "account-logo": {
+        "width": 200,
+        "height": 200
+      },
+      "logo": {
+        "width": 500,
+        "height": 500
+      },
+      "thumbnail": {
+        "width": 120,
+        "height": 120
+      },
+      "product-grid-item": {
+        "width": 400,
+        "height": 600
+      },
+      "product": {
+        "width": 1000,
+        "height": 1000
+      },
+      "product-x-large": {
+        "width": 2000,
+        "height": 2000
+      },
+      "blog-thumbnail": {
+        "width": 480,
+        "height": 960
+      },
+      "blog-header": {
+        "width": 1500,
+        "height": 1000
+      },
+      "brand-logo": {
+        "width": 200,
+        "height": 80
+      },
+      "category-header": {
+        "width": 1120,
+        "height": 1120
+      },
+      "amp-product-image": {
+        "width": 500,
+        "height": 500
+      }
+    },
+    "optimizedCheckout-header-backgroundColor": "#f7f7f7",
+    "optimizedCheckout-show-backgroundImage": false,
+    "optimizedCheckout-backgroundImage": "",
+    "optimizedCheckout-backgroundImage-size": "1000x400",
+    "optimizedCheckout-show-logo": "none",
+    "optimizedCheckout-logo": "",
+    "optimizedCheckout-logo-size": "250x100",
+    "optimizedCheckout-logo-position": "left",
+    "optimizedCheckout-headingPrimary-color": "#2d2d2d",
+    "optimizedCheckout-headingPrimary-font": "Google_Montserrat_400",
+    "optimizedCheckout-headingSecondary-color": "#2d2d2d",
+    "optimizedCheckout-headingSecondary-font": "Google_Montserrat_400",
+    "optimizedCheckout-body-backgroundColor": "#ffffff",
+    "optimizedCheckout-contentPrimary-color": "#4f4f4f",
+    "optimizedCheckout-contentPrimary-font": "Google_Karla_400",
+    "optimizedCheckout-contentSecondary-color": "#989898",
+    "optimizedCheckout-contentSecondary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonPrimary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonPrimary-color": "#ffffff",
+    "optimizedCheckout-buttonPrimary-colorHover": "#ffffff",
+    "optimizedCheckout-buttonPrimary-backgroundColor": "#454545",
+    "optimizedCheckout-buttonPrimary-backgroundColorHover": "#666666",
+    "optimizedCheckout-buttonPrimary-borderColor": "#454545",
+    "optimizedCheckout-buttonPrimary-borderColorHover": "#666666",
+    "optimizedCheckout-buttonSecondary-font": "Google_Karla_400",
+    "optimizedCheckout-buttonSecondary-color": "#4f4f4f",
+    "optimizedCheckout-buttonSecondary-backgroundColor": "#ffffff",
+    "optimizedCheckout-buttonSecondary-borderColor": "#dfdfdf",
+    "optimizedCheckout-link-color": "#4496f6",
+    "optimizedCheckout-link-font": "Google_Karla_400",
+    "optimizedCheckout-discountBanner-backgroundColor": "#f5f5f5",
+    "optimizedCheckout-discountBanner-textColor": "#333333",
+    "optimizedCheckout-discountBanner-iconColor": "#333333",
+    "optimizedCheckout-orderSummary-backgroundColor": "#ffffff",
+    "optimizedCheckout-step-backgroundColor": "#4f4f4f",
+    "optimizedCheckout-step-textColor": "#ffffff",
+    "optimizedCheckout-formField-backgroundColor": "white",
+    "optimizedCheckout-formField-borderColor": "#989898",
+    "geotrust-ssl-common-name": "",
+    "geotrust-ssl-seal-size": "M",
+    "price_range_display": "both",
+    "sale-badges": true,
+    "sale-price-label": "Now:",
+    "non-sale-price-label": "Was:",
+    "retail-price-label": "MSRP:",
+    "price-label": "",
+    "paymentbuttons-paypal-layout": "horizontal",
+    "paymentbuttons-paypal-color": "gold",
+    "paymentbuttons-paypal-shape": "pill",
+    "paymentbuttons-paypal-size": "small",
+    "paymentbuttons-paypal-label": "checkout",
+    "paymentbuttons-paypal-tagline": true,
+    "paymentbuttons-paypal-fundingicons": false,
+    "supported_card_type_icons": [
+      "american_express",
+      "diners",
+      "discover",
+      "mastercard",
+      "visa"
+    ]
+  },
+  "variations": [
+    {
+      "name": "Bright",
+      "id": "bright",
+      "meta": {
+        "desktop_screenshot": "venture-bright.png",
+        "mobile_screenshot": "venture-bright-mobile.png",
+        "description": "Venture is a theme for fast-growing online stores. It's ultra-powerful, versatile, and easily supports large catalogs with a wide range of products. In-depth filtering and prominent product reviews lend your store an enterprise feel, while Venture's modern design remains stylish and sophisticated.",
+        "demo_url": "http://venture-bright-demo.mybigcommerce.com",
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "wholesale",
+          "large_catalog",
+          "mobile"
+        ],
+        "industries": [
+          "sports_recreation"
+        ],
+        "features": [
+          "fully_responsive",
+          "frontpage_slideshow",
+          "quick_add_to_cart",
+          "customized_checkout",
+          "switchable_product_view",
+          "product_comparison_table",
+          "complex_search_filtering",
+          "customizable_product_selector",
+          "free_customer_support",
+          "free_theme_upgrades",
+          "high_res_product_images",
+          "product_filtering",
+          "advanced_quick_view",
+          "product_showcase",
+          "persistent_cart",
+          "one_page_check_out",
+          "product_videos",
+          "google_amp",
+          "pixel_pop"
+        ]
+      },
+      "settings": {
+      },
+      "images": {
+      }
+    },
+    {
+      "name": "Warm",
+      "id": "warm",
+      "meta": {
+        "desktop_screenshot": "venture-warm.png",
+        "mobile_screenshot": "venture-warm-mobile.png",
+        "description": "Venture is a theme for fast-growing online stores. It's ultra-powerful, versatile, and easily supports large catalogs with a wide range of products. In-depth filtering and prominent product reviews lend your store an enterprise feel, while Venture's modern design remains stylish and sophisticated.",
+        "demo_url": "http://venture-warm-demo.mybigcommerce.com",
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "wholesale",
+          "large_catalog",
+          "mobile"
+        ],
+        "industries": [
+          "books_entertainment"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Crimson+Text_400,400italic,700",
+        "body_size": 17,
+        "secondary-font": "Google_Pathway+Gothic+One",
+        "heading_size": 1.6,
+        "menu_use_headingfont": "true",
+        "price_use_headingfont": "true",
+        "text_color": "#666666",
+        "headings_color": "#333333",
+        "accent_color": "#A49B62",
+        "link_color": "#A49B62",
+        "border_color": "#E6E6E6",
+        "body_background_color": "#F5F4F2",
+        "page_background_color": "#FFFFFF",
+        "sale_text_color": "#D4553D",
+        "sale_badge_color": "#D4553D",
+        "error_color": "#D93838",
+        "success_color": "#42B22A",
+        "header_background_color": "#1E2024",
+        "header_text_color": "#D4D5CA",
+        "footer_background_color": "#1E2024",
+        "footer_text_color": "#D4D5CA",
+        "footer_show_brands": true,
+        "footer_show_categories": true,
+        "footer_show_pages": true,
+        "footer_show_contactinfo": true,
+        "carousel_color": "#FFFFFF",
+        "carousel_font_size": "large",
+        "carousel_font_family": "body-font",
+        "carousel_text_justify": "center",
+        "sale_tag_style": "circle",
+        "categories_in_menu": true
+      }
+    },
+    {
+      "name": "Cool",
+      "id": "cool",
+      "meta": {
+        "desktop_screenshot": "venture-cool.png",
+        "mobile_screenshot": "venture-cool-mobile.png",
+        "description": "Venture is a theme for fast-growing online stores. It's ultra-powerful, versatile, and easily supports large catalogs with a wide range of products. In-depth filtering and prominent product reviews lend your store an enterprise feel, while Venture's modern design remains stylish and sophisticated.",
+        "demo_url": "http://venture-cool-demo.mybigcommerce.com",
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "wholesale",
+          "large_catalog",
+          "mobile"
+        ],
+        "industries": [
+          "electronics_computers"
+        ],
+        "features": [
+          "fully_responsive",
+          "frontpage_slideshow",
+          "quick_add_to_cart",
+          "customized_checkout",
+          "switchable_product_view",
+          "product_comparison_table",
+          "complex_search_filtering",
+          "customizable_product_selector",
+          "free_customer_support",
+          "free_theme_upgrades",
+          "high_res_product_images",
+          "product_filtering",
+          "advanced_quick_view",
+          "product_showcase",
+          "persistent_cart",
+          "one_page_check_out",
+          "product_videos",
+          "google_amp",
+          "pixel_pop"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Crimson+Text_400,400italic,700",
+        "body_size": 16,
+        "secondary-font": "Google_Pathway+Gothic+One",
+        "heading_size": 1.2,
+        "menu_use_headingfont": "true",
+        "price_use_headingfont": "true",
+        "text_color": "#666666",
+        "headings_color": "#212121",
+        "accent_color": "#a12327",
+        "link_color": "#a12327",
+        "border_color": "#E6E6E6",
+        "body_background_color": "#F2F3F5",
+        "page_background_color": "#FFFFFF",
+        "sale_text_color": "#D93F0F",
+        "sale_badge_color": "#344BD5",
+        "error_color": "#D93838",
+        "success_color": "#42B22A",
+        "header_background_color": "#FFFFFF",
+        "header_text_color": "#212121",
+        "style_apple_pay_button": "white-border",
+        "footer_background_color": "#212121",
+        "footer_text_color": "#FFFFFF",
+        "footer_show_brands": true,
+        "footer_show_categories": true,
+        "footer_show_pages": true,
+        "footer_show_contactinfo": true,
+        "payment_visa": true,
+        "payment_mastercard": true,
+        "payment_american_express": true,
+        "payment_discover": true,
+        "payment_paypal": true,
+        "payment_apple_pay": true,
+        "carousel_aspect_ratio": "five-to-two",
+        "carousel_color": "#FFFFFF",
+        "carousel_font_size": "large",
+        "carousel_font_family": "body-font",
+        "carousel_text_justify": "center",
+        "sale_tag_style": "rectangle",
+        "products_per_page": 24,
+        "homepage_featured_products_count": 8,
+        "homepage_new_products_count": 8,
+        "homepage_blog_posts_count": 0,
+        "blogpage_blog_posts_count": 9,
+        "brands_per_page": 20,
+        "show_blog_thumbnails": true,
+        "homepage_showCarousel": true,
+        "productpage_reviews_count": 4,
+        "productpage_related_products_count": 4,
+        "hide_theme_credits": true,
+        "hide_copyright": false,
+        "default_image": "/assets/img/no-image.svg",
+        "quick_shop_enabled": true,
+        "categories_in_menu": true,
+        "retina_logo": true,
+        "logo-position": "logo-center",
+        "mega-nav": true,
+        "quick_search_enable": true,
+        "quick_search_display_content_results": true,
+        "quick_search_results_per_section": 3,
+        "show_home_link_in_menu": false,
+        "show_pages_in_menu": false,
+        "categories_display": "categories-in-main-navigation",
+        "price_as_low_as": "false",
+        "product_grid_image_aspect_ratio": "use-image",
+        "_images": {
+          "core-swatch": {
+            "width": 100,
+            "height": 100
+          },
+          "core-product-picklist": {
+            "width": 80,
+            "height": 200
+          },
+          "core-blog-thumbnail": {
+            "width": 800,
+            "height": 800
+          },
+          "account-product-thumb": {
+            "width": 440,
+            "height": 600
+          },
+          "account-logo": {
+            "width": 200,
+            "height": 200
+          },
+          "logo": {
+            "width": 500,
+            "height": 500
+          },
+          "thumbnail": {
+            "width": 120,
+            "height": 120
+          },
+          "product-grid-item": {
+            "width": 400,
+            "height": 600
+          },
+          "product": {
+            "width": 1000,
+            "height": 1000
+          },
+          "product-x-large": {
+            "width": 2000,
+            "height": 2000
+          },
+          "blog-thumbnail": {
+            "width": 480,
+            "height": 960
+          },
+          "blog-header": {
+            "width": 1500,
+            "height": 1000
+          },
+          "brand-logo": {
+            "width": 200,
+            "height": 80
+          },
+          "category-header": {
+            "width": 1120,
+            "height": 1120
+          },
+          "amp-product-image": {
+            "width": 500,
+            "height": 500
+          }
+        },
+        "optimizedCheckout-header-backgroundColor": "#f7f7f7",
+        "optimizedCheckout-show-backgroundImage": false,
+        "optimizedCheckout-backgroundImage": "",
+        "optimizedCheckout-backgroundImage-size": "1000x400",
+        "optimizedCheckout-show-logo": "none",
+        "optimizedCheckout-logo": "",
+        "optimizedCheckout-logo-size": "250x100",
+        "optimizedCheckout-logo-position": "left",
+        "optimizedCheckout-headingPrimary-color": "#2d2d2d",
+        "optimizedCheckout-headingPrimary-font": "Google_Montserrat_400",
+        "optimizedCheckout-headingSecondary-color": "#2d2d2d",
+        "optimizedCheckout-headingSecondary-font": "Google_Montserrat_400",
+        "optimizedCheckout-body-backgroundColor": "#ffffff",
+        "optimizedCheckout-contentPrimary-color": "#4f4f4f",
+        "optimizedCheckout-contentPrimary-font": "Google_Karla_400",
+        "optimizedCheckout-contentSecondary-color": "#989898",
+        "optimizedCheckout-contentSecondary-font": "Google_Karla_400",
+        "optimizedCheckout-buttonPrimary-font": "Google_Karla_400",
+        "optimizedCheckout-buttonPrimary-color": "#ffffff",
+        "optimizedCheckout-buttonPrimary-colorHover": "#ffffff",
+        "optimizedCheckout-buttonPrimary-backgroundColor": "#a12327",
+        "optimizedCheckout-buttonPrimary-backgroundColorHover": "#942024",
+        "optimizedCheckout-buttonPrimary-borderColor": "#a12327",
+        "optimizedCheckout-buttonPrimary-borderColorHover": "#942024",
+        "optimizedCheckout-buttonSecondary-font": "Google_Karla_400",
+        "optimizedCheckout-buttonSecondary-color": "#4f4f4f",
+        "optimizedCheckout-buttonSecondary-backgroundColor": "#ffffff",
+        "optimizedCheckout-buttonSecondary-borderColor": "#dfdfdf",
+        "optimizedCheckout-link-color": "#a12327",
+        "optimizedCheckout-link-font": "Google_Karla_400",
+        "optimizedCheckout-discountBanner-backgroundColor": "#f5f5f5",
+        "optimizedCheckout-discountBanner-textColor": "#333333",
+        "optimizedCheckout-discountBanner-iconColor": "#333333",
+        "optimizedCheckout-orderSummary-backgroundColor": "#ffffff",
+        "optimizedCheckout-step-backgroundColor": "#4f4f4f",
+        "optimizedCheckout-step-textColor": "#ffffff",
+        "optimizedCheckout-formField-backgroundColor": "white",
+        "optimizedCheckout-formField-borderColor": "#989898",
+        "geotrust-ssl-common-name": "",
+        "geotrust-ssl-seal-size": "M",
+        "price_range_display": "both",
+        "sale-badges": true,
+        "sale-price-label": "Now:",
+        "non-sale-price-label": "Was:",
+        "retail-price-label": "MSRP:",
+        "price-label": "",
+        "paymentbuttons-paypal-layout": "horizontal",
+        "paymentbuttons-paypal-color": "gold",
+        "paymentbuttons-paypal-shape": "pill",
+        "paymentbuttons-paypal-size": "small",
+        "paymentbuttons-paypal-label": "checkout",
+        "paymentbuttons-paypal-tagline": true,
+        "paymentbuttons-paypal-fundingicons": false,
+        "supported_card_type_icons": [
+          "american_express",
+          "diners",
+          "discover",
+          "mastercard",
+          "visa"
+        ]
+      }
+    },
+    {
+      "name": "Dark",
+      "id": "dark",
+      "meta": {
+        "desktop_screenshot": "venture-dark.png",
+        "mobile_screenshot": "venture-dark-mobile.png",
+        "description": "Venture is a theme for fast-growing online stores. It's ultra-powerful, versatile, and easily supports large catalogs with a wide range of products. In-depth filtering and prominent product reviews lend your store an enterprise feel, while Venture's modern design remains stylish and sophisticated.",
+        "demo_url": "http://venture-dark-demo.mybigcommerce.com",
+        "optimized_for": [
+          "multi_purpose",
+          "chrome_firefox_safari_ie_10",
+          "mobile_tablet_desktop",
+          "sales_discounts",
+          "wholesale",
+          "large_catalog",
+          "mobile"
+        ],
+        "industries": [
+          "gifts_specialty"
+        ],
+        "features": [
+          "fully_responsive",
+          "frontpage_slideshow",
+          "quick_add_to_cart",
+          "customized_checkout",
+          "switchable_product_view",
+          "product_comparison_table",
+          "complex_search_filtering",
+          "customizable_product_selector",
+          "free_customer_support",
+          "free_theme_upgrades",
+          "high_res_product_images",
+          "product_filtering",
+          "advanced_quick_view",
+          "product_showcase",
+          "persistent_cart",
+          "one_page_check_out",
+          "product_videos",
+          "google_amp",
+          "pixel_pop"
+        ]
+      },
+      "settings": {
+        "primary-font": "Google_Titillium+Web_300,400,400italic,700",
+        "body_size": 14,
+        "secondary-font": "Google_Titillium+Web",
+        "heading_size": 1.2,
+        "menu_use_headingfont": "false",
+        "price_use_headingfont": "false",
+        "text_color": "#6F6F6F",
+        "headings_color": "#212121",
+        "accent_color": "#000000",
+        "link_color": "#000000",
+        "border_color": "#E6E6E6",
+        "body_background_color": "#D8D8D8",
+        "page_background_color": "#FFFFFF",
+        "sale_text_color": "#D93F0F",
+        "sale_badge_color": "#000000",
+        "error_color": "#D93838",
+        "success_color": "#42B22A",
+        "header_background_color": "#000000",
+        "header_text_color": "#FFFFFF",
+        "footer_background_color": "#000000",
+        "footer_text_color": "#FFFFFF",
+        "footer_show_brands": true,
+        "footer_show_categories": true,
+        "footer_show_pages": true,
+        "footer_show_contactinfo": true,
+        "carousel_color": "#FFFFFF",
+        "carousel_font_size": "small",
+        "carousel_font_family": "body-font",
+        "carousel_text_justify": "left",
+        "sale_tag_style": "rectangle",
+        "categories_in_menu": true
+      }
+    }
+  ]
+}

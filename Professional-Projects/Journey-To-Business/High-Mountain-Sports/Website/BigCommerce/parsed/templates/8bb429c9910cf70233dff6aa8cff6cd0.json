@@ -1,0 +1,1 @@
+{"components/common/section-instagram":"<section class=\"section-instagram\">\n  <div class=\"container\">\n    <div class=\"section-header\">\n      <h2 class=\"section-title\">Follow us on Instagram</h2>\n      <h5 class=\"section-subtitle\">look at all our pictures</h5>\n    </div>\n    <div class=\"instagram-photo-container loading\"></div>\n  </div>\n</section>\n"}

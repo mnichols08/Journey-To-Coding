@@ -1,0 +1,40 @@
+iframe#gmap_canvas, .mapouter, .gmap_canvas{
+    height:57rem;
+    width:100%;
+}
+.mapouter{
+    position:relative;
+    text-align:right;
+
+}
+    .gmap_canvas {
+    overflow:hidden;
+    background:none!important;
+}
+#rix-car{
+    position:absolute;
+    @include breakpoint("medium"){
+        position: absolute;
+        z-index: 1;
+        right: 4em;
+    }
+    @include breakpoint("medium"){
+    & img{
+        position: relative;
+        bottom: 21em;
+        animation: run;
+        animation-duration: 3s;
+        animation-iteration-count: 1;
+        -webkit-animation-iteration-count:1;
+        -webkit-animation-name: run;
+        -webkit-animation-duration: 3s;
+        
+    }
+}
+}
+   
+@keyframes run {
+    0% { left: -2500%;}
+    1%{ left: -2000%}
+    100%{ left: 0;}
+}

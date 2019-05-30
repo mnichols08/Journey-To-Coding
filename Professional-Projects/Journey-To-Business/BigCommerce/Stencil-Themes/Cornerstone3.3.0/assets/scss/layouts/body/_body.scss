@@ -7,16 +7,27 @@
 //
 // =============================================================================
 
-
+/*
 .body {
     margin-bottom: spacing("double") * 2;
     margin-top: spacing("single"); // 1
 
     @include breakpoint("medium") {
-        margin-top: spacing("single") + spacing("base"); // 1
+        //margin-top: spacing("single") + spacing("base"); // 1
     }
 }
-
+*/
+.body {
+    background-image: repeating-linear-gradient(
+      -45deg,
+      #222,
+      #222 3px,
+      #3c3c3c 2px,
+      #3c3c3c 15px
+    );
+    background-size: cover;
+    background-attachment:fixed;
+  }
 
 .page {
     @include grid-row(

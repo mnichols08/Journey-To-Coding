@@ -1,0 +1,19 @@
+sale-tag-{{theme_settings.sale_tag_style}}
+carousel-font-size-{{theme_settings.carousel_font_size}}
+carousel-justify-{{theme_settings.carousel_text_justify}}
+
+{{#if theme_settings.carousel_aspect_ratio '===' 'use-image'}}
+  carousel-no-aspect
+{{else}}
+  carousel-has-aspect carousel-aspect-{{theme_settings.carousel_aspect_ratio}}
+{{/if}}
+
+{{#if theme_settings.product_grid_image_aspect_ratio '===' 'use-image'}}
+  product-grid-no-aspect
+{{else}}
+  product-grid-has-aspect product-grid-aspect-{{theme_settings.product_grid_image_aspect_ratio}}
+{{/if}}
+
+{{#if theme_settings.retina_logo}}retina-logo{{/if}}
+{{theme_settings.logo-position}}
+{{#unless in_production}}dev-environment{{/unless}}

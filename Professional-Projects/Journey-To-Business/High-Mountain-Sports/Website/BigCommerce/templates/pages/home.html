@@ -1,0 +1,543 @@
+---
+carousel: true
+products:
+  featured:
+    limit: {{theme_settings.homepage_featured_products_count}}
+  new:
+    limit: {{theme_settings.homepage_new_products_count}}
+blog:
+  recent_posts:
+    limit: {{theme_settings.homepage_blog_posts_count}}
+    summary: 150
+---
+
+{{#partial "page"}}
+
+  {{{snippet 'home_content'}}}
+  <style>
+.index_banners { overflow:hidden; }
+.ban_index { float:left; width:50%; position:relative; }
+.ban_index .ban_img { position:relative; overflow:hidden; }
+.ban_index .ban_img img { max-width:100%; opacity:0.8; transition: opacity 0.35s, transform 0.35s; }
+.ban_index:hover .ban_img img { opacity:0.86; -webkit-transform: scale3d(1.05,1.05,1);	transform: scale3d(1.05,1.05,1); }
+.ban_index .ban_wrap { position:absolute; top:32%; left:0; right:0; text-align:center; }
+.ban_index .ban_wrap h2 { font-size:90px; font-weight:normal; color:#fff; margin:0 0 -14px 0; transition: all 0.35s, transform 0.35s; }
+.ban_index:hover .ban_wrap h2 { -webkit-transform: scale3d(1.05,1.05,1);	transform: scale3d(1.05,1.05,1); }
+.ban_index .ban_wrap h3 { font-size:55px; font-weight:300; color:#fff; margin:0 0 0 0; transition: all 0.35s, transform 0.35s; }
+.ban_index:hover .ban_wrap h3 { -webkit-transform: scale3d(1.05,1.05,1);	transform: scale3d(1.05,1.05,1); }
+.ban_index .ban_wrap h3 {
+    -webkit-text-stroke: 0px;
+    margin: 0 0 0 0;
+    text-align:right;
+    text-shadow: 0px 0px 19px #000000;
+    color: #fff;
+    transition: all 0.35s, transform 0.35s;
+}
+.ban_index .ban_wrap h2 {
+    color:#fff;
+    background:#0000006f;
+    text-align:left;
+    text-shadow:none;
+    padding: 0 .5em 0 .5em
+}
+.index_banners img {
+    width:100%;
+}
+@media only screen and (max-width: 1600px) {
+    .ban_index .ban_wrap { top:32%; }
+    .ban_index .ban_wrap h2 { font-size:39px; margin:0 0 -14px 0; }
+    .ban_index .ban_wrap h3 {font-size: 36px; margin: 0 1em 0 0;}	
+}
+
+@media only screen and (max-width: 1400px) {
+    .ban_index .ban_wrap { top:32%; }
+    .ban_index .ban_wrap h2 { font-size:64px; margin:0 0 -14px 0; }
+    .ban_index .ban_wrap h3 { font-size:40px; margin:0 0 0 0; }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+    .ban_index .ban_wrap { top:32%; }
+    .ban_index .ban_wrap h2 { font-size:50px; margin:0 0 -4px 0; }
+    .ban_index .ban_wrap h3 { font-size:36px; margin:0 0 0 0; }
+
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    .ban_index .ban_wrap { top:28%; }
+    .ban_index .ban_wrap h2 {font-size: 28px; margin: 0 0 -5px 0; }
+    .ban_index .ban_wrap h3 {font-size: 19px; margin: -1em 1em 0 0; }	
+}
+
+@media only screen and (max-width: 767px) {
+    .ban_index .ban_wrap { top:28%; }
+    .ban_index .ban_wrap h2 { font-size:30px; margin:0 0 -4px 0; }
+    .ban_index .ban_wrap h3 { font-size:26px; margin:0 0 0 0; }
+}
+
+@media only screen and (max-width: 600px) {
+    .ban_index .ban_wrap { top:28%; }
+    .ban_index .ban_wrap h2 { font-size:24px; margin:0 0 -4px 0; }
+    .ban_index .ban_wrap h3 { font-size:20px; margin:0 0 0 0; }	
+}
+
+@media only screen and (max-width: 460px) {
+    .ban_index { float:none; width:100%; }
+    .ban_index .ban_wrap { top:32%; }
+    .ban_index .ban_wrap h2 { font-size:18px; margin:0 0 -4px 0; }
+    .ban_index .ban_wrap h3 { font-size: 14px; margin: 0 1em 0 0;}
+}
+.new_arrivals.index {
+    background-image: url(/product_images/uploaded_images/bg-new-arrivals.jpg);
+    background-position: 100% 131.9907%
+}
+
+.new_arrivals {
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center
+}
+
+.new_arrivals_wrapper {
+    overflow: hidden;
+    padding: 118px 0 136px 0
+}
+
+.new_arrivals_block {
+    float: left;
+    text-align: center
+}
+
+.new_arrivals_block h2 {
+    -webkit-text-stroke: 1px white;
+    text-shadow: 1px 1px 20px #000000cc;
+    font-size: 90px;
+    font-weight: normal;
+    color: #11A137;
+    text-shadow: 1px 1px #000000cc;
+    margin: 0 0 -10px 0
+}
+
+.new_arrivals_block h3 {
+    font-size: 55px;
+    font-weight: normal;
+    color: #fff;
+    -webkit-text-stroke: 2px black;
+    text-shadow: 1px 1px 20px #000000cc;
+    margin: 0 0 36px 0
+}
+
+.new_arrivals_block .shop_now {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    margin: 0 auto;
+    width: 236px;
+    height: 62px;
+    line-height: 56px;
+    text-align: center;
+    border: solid 1px #fff;
+    font-size: 29px;
+    font-weight: normal;
+    color: #fff;
+    transition: all 0.3s ease 0s
+}
+
+.new_arrivals_block .shop_now:after {
+    content: "";
+    position: absolute;
+    transition: all 0.3s ease 0s;
+    z-index: 0;
+    width: 100%;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    opacity: 0;
+    -webkit-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -moz-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    -ms-transform: translateX(-50%) translateY(-50%) rotate(45deg);
+    transform: translateX(-50%) translateY(-50%) rotate(45deg)
+}
+
+.new_arrivals_block .shop_now:hover, .new_arrivals_block .shop_now:active {
+    color: #333
+}
+
+.new_arrivals_block .shop_now:hover:after {
+    height: 260%;
+    opacity: 1
+}
+
+.new_arrivals_block .shop_now:active:after {
+    height: 400%
+}
+
+.title_about {
+    opacity: 1
+}
+
+.new_arrivals_block .shop_now span {
+    position: relative;
+    z-index: 2
+}
+
+.index_block {
+    background: linear-gradient(#00000057,#00000038),url(/product_images/uploaded_images/bg-block-about.jpg);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center
+}
+
+.about_block_wrapper {
+    overflow: hidden;
+    padding: 47px 0 122px 0
+}
+
+.title_about {
+    text-shadow: 0px 0px 20px #fff;
+    font-size: 78px;
+    font-weight: 300;
+    line-height: normal;
+    color: #000;
+    margin: 0 0 27px 0
+}
+
+.about_col {
+    float: left;
+    width: 370px;
+    margin: 0 30px 0 0
+}
+
+.about_col.ac3 {
+    margin: 0
+}
+
+.about_col .about_number {
+    display: block;
+    background: #0000004f;
+    width: 194px;
+    height: 194px;
+    line-height: 194px;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0 auto 35px auto;
+    border-radius: 50%;
+    transform: rotateY(0deg);
+    transition: all 0.6s ease 0s
+}
+
+.about_col:hover .about_number {
+    transform: rotateY(360deg);
+    transition: all 0.7s ease 0s;
+    background: rgba(255,255,255,0.4)
+}
+
+.about_col h2 {
+    font-size: 27px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 30px;
+    color: #000;
+    -webkit-text-stroke: .3px white;
+    margin: 0 0 13px 0
+}
+
+.about_col:hover h2 {
+    text-shadow: 0 0 5px rgba(255,255,255,0.2)
+}
+
+.about_col h3 {
+    font-size: 20px;
+    font-weight: 750;
+    line-height: 30px;
+    color: #000;
+    text-shadow: white 2px 2px 42px;
+    margin: 0 0 0 0;
+    -webkit-text-stroke: .3px white;
+    margin: 0 0 0 0
+}
+
+.index_block2 {
+    background: #fff
+}
+
+.quote_block_wrapper {
+    padding: 53px 102px 60px 102px;
+    text-align: center;
+    color: #555
+}
+
+.quote_block_wrapper .quote_icon {
+    font-size: 98px;
+    margin: 0 0 37px 0;
+    color: #A12227
+}
+
+.quote_block_wrapper p {
+    font-size: 20px;
+    font-weight: 300;
+    line-height: 30px;
+    font-style: italic;
+    color: #262626;
+    margin: 0 0 25px 0
+}
+
+.quote_block_wrapper h3 {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #555;
+    margin: 0 0 0 0
+}
+
+.quote_block_wrapper h3 a {
+    color: #A12227
+}
+
+.quote_block_wrapper h3 a:hover {
+    color: #000;
+    text-decoration: underline
+}
+
+.index_block.about.business {
+    color: #000;
+    background-repeat: no-repeat;
+    background: linear-gradient(#ffffffe0, #ffffff96), url(/product_images/uploaded_images/slider-pic1.jpg)
+  }
+  
+.about_col:hover .about_number.about,.about_number.about {
+    background: url(/product_images/uploaded_images/smallbizz.png);
+    background-position: center;
+    background-attachment: initial;
+    background-size: 150px 150px;
+    background-repeat: no-repeat
+}
+
+.about_col:hover .about_number.rental,.about_number.rental {
+    background: url(/product_images/uploaded_images/rentals.png);
+    background-position: center;
+    background-attachment: initial;
+    background-size: 150px 150px;
+    background-repeat: no-repeat
+}
+
+.about_col:hover .about_number.tunes,.about_number.tunes {
+    background: url(/product_images/uploaded_images/tunes.png);
+    background-position: center;
+    background-attachment: initial;
+    background-size: 150px 150px;
+    background-repeat: no-repeat
+}
+
+.about_col:hover .about_number.service,.about_number.service {
+    background: url(/product_images/uploaded_images/service.png);
+    background-position: center;
+    background-attachment: initial;
+    background-size: 150px 150px;
+    background-repeat: no-repeat
+}
+
+.title-text {
+    width: 319px;
+    padding-top: 4px;
+    height: 13px;
+    font-family: OpenSans;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    margin: auto
+}
+.container-custom{
+  display:inline-grid;
+}
+</style>
+  <div class="index_banners"><div class="ban_index b0"><div class="ban_img"><img class="dyn" src="/product_images/uploaded_images/Dynastar.jpg" alt="Dynastar - Agility, Lightness, Power"></div><div class="ban_wrap"><a href="https://www.highmountainsports.com/snow/downhill-skiing/skis.html?brand=151"><h2>Dynastar</h2><h3 style="padding-top: 3em;">Agility, Lightness, Power</h3></a></div></div><div class="ban_index b1"><div class="ban_img"><img class="sal" src="/product_images/uploaded_images/SalomonSnowBoards.jpg" alt="Salomon - Snowboards For All Terrain"></div><div class="ban_wrap"><a href="https://www.highmountainsports.com/snow/snowboarding/snowboards.html?brand=405"><h2>Salomon</h2><h3 style="padding-top: 3em;">Snowboards For All Terrain</h3></a></div></div><div class="ban_index b2"><div class="ban_img"><img class="vol" src="/product_images/uploaded_images/Volcom.jpg" alt="Volcom - True to This"></div><div class="ban_wrap"><a href="https://www.highmountainsports.com/brand/volcom.html"><h2>Volcom</h2><h3 style="padding-top: 3em;">True to This</h3></a></div></div><div class="ban_index b3"><div class="ban_img"><img class="tev" src="/product_images/uploaded_images/Teva.jpg" alt="Teva - Built for Adventure"></div><div class="ban_wrap"><a href="https://www.highmountainsports.com/footwear.html?brand=425"><h2>Teva</h2><h3 style="padding-top: 3em;">Built for Adventure</h3></a></div></div><div class="ban_index b4"><div class="ban_img"><img class="wrent" src="/product_images/uploaded_images/winterrentalstore.jpg" alt="Winter Rental Store - Learn More"></div><div class="ban_wrap"><a href="https://www.highmountainsports.com/rentals/winter-rentals.html"><h2>Winter Rental Store</h2><h3 style="padding-top: 3em;">Learn More</h3></a></div></div><div class="ban_index b5"><div class="ban_img"><img class="hosports" src="/product_images/uploaded_images/HOSports.jpg" alt="HO Sports, Inc - Water Sports"></div><div class="ban_wrap"><a href="https://www.highmountainsports.com/h20.html?brand=15741"><h2>HO Sports, Inc</h2><h3 style="padding-top: 3em;">Water Sports</h3></a></div></div></div>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.min.js"></script>
+  <script type="text/javascript">
+  /* Objective: Modify our existing 2 x 6 Grid Pattern into a rotating banner gallery that changes randomly on load, just like the Quote Machine.*/
+var first = [], second = [], third = [], fourth = [], fifth = [], sixth = [];
+var	banners = [first, second, third, fourth, fifth, sixth];
+function getBanners() {
+	var anchor = document.querySelector('.index_banners');
+	anchor.innerHTML = ``;
+ Tabletop.init( { key: '1YeNsXioinHU7GTwWjDUb3WhDFyPk8AB1GoOeuiKBK2M',
+ callback: function(data, tabletop) {
+	 for (let i = 0; i < data.length; i++){
+		 let pos = data[i].pos, enb = data[i].enabled, link = data[i].link;
+	 if ((pos === 'first' || pos === 'skis') && (link != 'https://' && link != undefined) && (enb == true || enb == 'TRUE' || enb == 'yes' && (enb != undefined || enb != false || enb != 'FALSE'))){
+	 first.push(data[i]);
+		 }
+		 		 else if ((pos === 'second' || pos === 'snowboards') && (link != 'https://' && link != undefined) && (enb == true || enb == 'TRUE' || enb == 'yes' && (enb != undefined || enb != false || enb != 'FALSE'))){
+	 second.push(data[i]);
+		 }
+		 		 else if ((pos === 'third' || pos === 'softgoods') && (link != 'https://' && link != undefined) && (enb == true || enb == 'TRUE' || enb == 'yes' && (enb != undefined || enb != false || enb != 'FALSE'))){
+	 third.push(data[i]);
+		 }
+		 		 		 else if ((pos === 'fourth' || pos === 'footwear') && (link != 'https://' && link != undefined) && (enb == true || enb == 'TRUE' || enb == 'yes' && (enb != undefined || enb != false || enb != 'FALSE'))){
+	 fourth.push(data[i]);
+		 }
+		 		 		 else if ((pos === 'fifth' || pos === 'service') && (link != 'https://' && link != undefined) && (enb == true || enb == 'TRUE' || enb == 'yes' && (enb != undefined || enb != false || enb != 'FALSE'))){
+	 fifth.push(data[i]);
+		 }
+		 		 		 else if ((pos === 'sixth' || pos === 'clearance') && (link != 'https://' && link != undefined) && (enb == true || enb == 'TRUE' || enb == 'yes' && (enb != undefined || enb != false || enb != 'FALSE'))){
+	 sixth.push(data[i]);
+		 }
+	 }
+	 for (let l = 0; l < banners.length; l++){
+	let grid = document.createElement('div');
+	grid.className = 'ban_index b' + l;
+	anchor.append(grid);
+	let ban_img = document.createElement('div');
+	ban_img.className = 'ban_img';
+	grid.append(ban_img);
+	let img = document.createElement('img');
+	ban_img.append(img);
+	let ban_wrap = document.createElement('div');
+	ban_wrap.className = 'ban_wrap';
+	grid.append(ban_wrap);
+	let a = document.createElement('a');
+	ban_wrap.append(a);
+	let h2 = document.createElement('h2');
+	a.append(h2);
+	let h3 = document.createElement('h3');
+	a.append(h3);
+		 	var r = Math.floor(Math.random() * banners[l].length);
+	document.querySelector('.b' + l +' img').className = banners[l][r].classname;
+		let banImg = banners[l][r].imgsrc;
+		if (banImg == undefined){
+			banImg = 'https://via.placeholder.com/960l525&telt='+banners[l][r].title + "+-+" + banners[l][r].subtitle;
+		}
+		else if (banImg.length < 34 && banImg != undefined){
+			banImg = "/product_images/uploaded_images/" + banners[l][r].imgsrc;
+		}
+		else {
+		banImg = banImg.imgsrc;
+		}
+		document.querySelector(".b" + l + " img").src = banImg;
+		document.querySelector(".b" + l + " a").href = banners[l][r].link;
+		document.querySelector(".b" + l + " img").alt =	banners[l][r].title + " - " + banners[l][r].subtitle;
+		document.querySelector(".b" + l + " h2").innerHTML = banners[l][r].title;
+		h3 = document.querySelector(".b" + l + " h3")
+		h3.innerHTML = banners[l][r].subtitle;
+			if (banners[l][r].subtitle.length <= 34){
+		h3.style = 'padding-top:3em';
+	}
+	else {
+		h3.style = 'padding-top:2em';
+	}
+	
+ //Checks whether images loaded or not and updates them to a black background if needed. Reports mising images to console.
+	img.onerror = function(e){
+	error.log('Error.\n\"' + img.src + '" is invalid.');
+		img.src = 'https://via.placeholder.com/960x525/262626/262626';
+	};	 
+} 
+	 },		 
+ simpleSheet: true } )
+			
+}
+document.bodyonload = getBanners();
+  </script>
+  {{> components/sections/products-new}}
+  {{> components/sections/products-featured}}
+  <div class="new_arrivals index" data-source-url="/product_images/uploaded_images/bg-new-arrivals.jpg" style="background-image: url(&quot;/product_images/uploaded_images/bg-new-arrivals.jpg&quot;); background-attachment: fixed; background-position: 50% 42.3977%;">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+      <div class="new_arrivals_wrapper">
+        <div class="new_arrivals_block">
+         <h2>Winter Clearance</h2>
+        <h3>Save up to 50% off</h3>
+        <a href="https://www.highmountainsports.com/outlet.html" class="shop_now"><span>Shop now!</span></a>
+       </div>
+      </div>
+     </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="index_block about header" data-source-url="/product_images/uploaded_images/bg-block-about.jpg" style="background-image: url(&quot;/product_images/uploaded_images/bg-block-about.jpg&quot;); background-attachment: fixed; background-position: 50% 49.4394%;">
+    <div class="container-custom">
+      <div class="row">
+        <div class="col-xs-12">
+      <div class="about_block_wrapper">
+        
+       <div class="title_about">Learn About Us</div>
+       <div class="about_col ac1">
+         <a href="about#smallbizz">
+        <div class="about_number about"></div>
+        <h2>Small Business</h2>
+        <h3>Although our store has evolved over the years, we continue to stay true to our roots and are still catering to our core customer.  </h3>
+        </a>
+       </div>
+       <div class="about_col ac2">
+         <a href="about#rentals">
+        <div class="about_number rental"></div>
+        <h2>Superb Rentals</h2>
+        <h3>The seasons change, but we always offer rentals for whatever the weather. We only stock top brands in our fleet.</h3>
+        </a>
+       </div>
+       <div class="about_col ac3">
+         <a href="about#tunes">
+        <div class="about_number tunes"></div>
+        <h2>Incredible Tunes</h2>
+        <h3>We are equipped with state-of-the-art equipment to tune everything from skis and snowboards to bikes in summer.</h3>
+        </a>
+       </div>
+       <div class="about_col ac4">
+         <a href="about#staff">
+        <div class="about_number service"></div>
+        <h2>Customer Support</h2>
+        <h3>Proud to offer best in class customer service. Call us up any day between 9am and 7pm EST to reach a real human!</h3>
+        </a>
+       </div>
+       
+      </div>
+     </div>
+      </div>
+      <div class="clear"></div>
+    </div>
+  </div>
+  <div class="index_block2">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12">
+    <div class="widget widget-static-block"><div class="quote_block_wrapper">
+          
+         <div class="quote_icon"><i class="fa fa-quote-left"></i></div>
+         <p>Well begun is half done.</p>
+         <h3><a href="/about">Aristotle</a></h3>
+         
+    </div>
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript">
+      var $j = jQuery.noConflict();
+      $j(document).ready(function() {
+      $j.getJSON("https://codepen.io/mnichols08/pen/ZoVZmy.js", function(quotes) {
+        var randomNumber = Math.floor(Math.random() * quotes.length);
+        currentQuote = quotes[randomNumber].quoteText;
+        currentAuthor = quotes[randomNumber].quoteAuthor;
+        document.querySelector(".quote_block_wrapper p").innerHTML = currentQuote;
+        document.querySelector(".quote_block_wrapper h3 a").innerHTML = currentAuthor;
+      });
+    });
+    </script></div>
+    
+    </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+    </div>
+  {{> components/sections/recent-posts}}
+
+{{/partial}}
+
+{{> layout/base}}

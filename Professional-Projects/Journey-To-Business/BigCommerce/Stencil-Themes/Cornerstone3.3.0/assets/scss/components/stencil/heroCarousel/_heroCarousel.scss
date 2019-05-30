@@ -20,11 +20,11 @@
 .heroCarousel {
     width: 1px;
     min-width: 100%;
-    margin-bottom: (spacing("double") + spacing("single"));
-    margin-top: -(spacing("single")); // 3
+   // margin-bottom: (spacing("double") + spacing("single"));
+    //margin-top: -(spacing("single")); // 3
 
     @include breakpoint("medium") {
-        margin-top: -(spacing("single") + spacing("base")); // 3
+       // margin-top: -(spacing("single") + spacing("base")); // 3
     }
 
     &.slick-initialized { // 2
@@ -158,6 +158,6 @@
     margin: 0;
 
     @include breakpoint("medium") {
-        margin-top: spacing("single");
+        //margin-top: spacing("single");
     }
 }

@@ -2,7 +2,7 @@
 
 {{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
 
-<main class="page">
+<main class="page rix container pos">
     {{#unless theme_settings.hide_page_heading }}
         <h1 class="page-heading">{{ page.title }}</h1>
     {{/unless}}
@@ -17,7 +17,7 @@
     </nav>
     {{/if}}
 
-    <div class="page-content page-content--centered">
+    <div class="page-content page-content--centered container">
         {{#replace '%%Syndicate%%' page.content}}
             {{> components/page/rss_feed}}
         {{else}}

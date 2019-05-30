@@ -357,6 +357,67 @@
     }
 }
 
+
+h4.contact-rix{
+    @include breakpoint("medium"){
+        font-size: 125px;
+        letter-spacing:-.25em;
+        text-transform:uppercase;
+        margin-bottom: .25em;
+    }
+    margin-top:0;
+    font-family: "Speculum";
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+h5.contact-rix {
+    @include breakpoint("medium"){
+        font-size: 58.333px;
+    }
+    font-family: "Acumin Pro";
+    color: rgb(255, 255, 255);
+    text-align: center;
+    text-transform:none;
+    margin-top:-1em;
+  }
+  
+  
+#contact-us-page {
+    & label.form-label {
+    position: absolute;
+    font-size: 200%;
+    text-transform: uppercase;
+    margin-left: 1em;
+ &[for="contact_question"] {
+    margin-top: 1em;
+    }
+}
+
+    background:linear-gradient(rgba(0, 31, 255, 0.41), rgba(0, 60, 226, 0.233)),url(stencilString("contact_bg"));
+    height: 57em;
+    background-size:cover;
+    background-attachment:fixed;
+
+    & form{
+        padding: 2%;
+        opacity:.6;
+    }
+
+& .form-row--half > .form-field {
+    @include breakpoint("small") {
+        clear: none;
+        width:33%;
+        
+    } 
+}
+}
+textarea#contact_question{
+    min-height: 16em;
+    max-width: 99%;
+    min-width: 99%;
+    max-height: 360px;
+}
+
 // Out of stock product attributes
 [data-product-attribute] {
     .form-option {

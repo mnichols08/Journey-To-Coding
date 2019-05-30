@@ -1,0 +1,44 @@
+
+{{#partial "page"}}
+
+<div class="container">
+    <style>
+        main.container-fluid {
+            background: url(/product_images/uploaded_images/crew.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position-y: -627px;}
+        iframe#events {
+            height: 500px;
+            width: 100%;
+            opacity: .94;
+            border-radius: 5px }
+        h1.page-heading {
+            color: #fff;}
+        .section-subscription-form{
+            border:none;
+        }
+    </style>
+    <h1 class="page-heading">{{page.title}}</h1>
+      {{#replace '%%Syndicate%%' page.content}}
+        {{> components/page/rss-feed}}
+      {{else}}
+      <iframe id='events' src="https://www.google.com/calendar/embed?title=High%20Mountain%20Sports%20Events%20Calendar&amp;mode=AGENDA&amp;height=600&amp;wkst=2&amp;bgcolor=%23FFFFFF&amp;src=highmountainsports.com_p0a5c1usp21gddcbkquc3du4a8%40group.calendar.google.com&amp;color=%23182C57&amp;ctz=America%2FNew_York" frameborder="0" scrolling="no"></iframe>
+      {{/replace}}
+
+      {{#if page.feed}}
+        <ul class="rss-feed">
+          {{#each page.feed}}
+            <li class="rss-feed-item">
+              <h3><a href="{{url}}" target="_blank">{{title}}</a></h3>
+              <p>{{{content}}}</p>
+            </li>
+          {{/each}}
+        </ul>
+      {{/if}}
+</div>
+
+{{/partial}}
+
+{{> layout/base}}

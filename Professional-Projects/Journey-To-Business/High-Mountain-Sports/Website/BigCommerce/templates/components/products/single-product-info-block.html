@@ -1,0 +1,179 @@
+<div class="product-info-column">
+
+  <div data-product-cart-message class="cart-messages-upper"></div>
+  <div data-product-wishlist-message class="cart-messages-upper"></div>
+  <h1 class="product-title">{{product.title}}</h1>
+
+  {{#if product.brand}}
+    <a class="product-brand" href="{{product.brand.url}}">
+      <span>{{product.brand.name}}</span>
+    </a>
+  {{/if}}
+
+  <div class="product-price">
+
+    {{#if product.call_for_price}}
+      <span class="call-for-price">{{product.call_for_price}}</span>
+    {{/if}}
+    {{#if product.price}}
+      {{> core/products/price
+        price=product.price
+        retail_price_label=theme_settings.retail-price-label
+        non_sale_price_label=theme_settings.non-sale-price-label
+        sale_price_label=theme_settings.sale-price-label
+        price_label=theme_settings.price-label
+        show_tax_labels=true
+        price_range_display=theme_settings.price_range_display
+        show_savings=true
+      }}
+    {{/if}}
+  </div>
+
+  {{#if settings.show_product_reviews}}
+    <div class="product-rating-block">
+      <div class="product-rating">
+        {{{snippet 'product_rating'}}}
+
+        {{#if settings.show_product_rating}}
+          {{> components/products/ratings rating=product.rating size="medium"}}
+
+          {{#if product.reviews.list.length}}
+            <span>
+              <span class="total-score">
+                <span>{{product.rating}}</span>/<span>5</span>
+              </span>
+              <span class="total-votes">(<a href="#write_review"><span>{{product.num_reviews}}</span></a>)</span>
+            </span>
+          {{/if}}
+        {{/if}}
+      </div>
+      {{#unless quick_shop}}
+        <div class="review-link-block {{#if product.num_reviews}} has-reviews {{/if}}">
+          {{#compare product.num_reviews 0}}{{lang 'product.reviews.no_reviews'}}{{/compare}} <a href="#modal-review-form" class="review-link">{{ lang 'product.reviews.leave_review' }}</a>
+        </div>
+      {{/unless}}
+    </div>
+  {{/if}}
+
+  {{#each product.reviews.messages}}
+    {{#if error}}
+      {{> components/alerts/alert-error message=error dismissable=true}}
+    {{/if}}
+    {{#if success}}
+      {{> components/alerts/alert-success message=success dismissable=true}}
+    {{/if}}
+  {{/each}}
+
+  {{#unless quick_shop}}
+    {{> components/products/details}}
+  {{/unless}}
+
+  {{#if quick_shop}}
+    {{> components/quick-shop/quick-shop-description-block}}
+  {{/if}}
+
+  <div data-variation-preview></div>
+
+  <hr>
+
+  <div data-product-option-message></div>
+
+  <form method="post" action="{{product.cart_url}}" enctype="multipart/form-data" data-cart-item-add>
+    <input type="hidden" name="action" value="add">
+    <input type="hidden" name="product_id" value="{{product.id}}" />
+
+    {{#if product.customizations.length}}
+      <div class="product-options-container">
+        {{#each product.customizations}}
+          {{{dynamicComponent 'core/forms/customizations'}}}
+        {{/each}}
+      </div>
+    {{/if}}
+
+    {{#if product.options.length}}
+      <div class="product-options-container" data-product-option-change>
+        {{#each product.options}}
+          {{{dynamicComponent 'core/forms/options'}}}
+        {{/each}}
+      </div>
+    {{/if}}
+
+    {{#if product.event_date}}
+      {{> core/products/event}}
+    {{/if}}
+
+    <div class="product-purchase-message-container">
+      {{> components/alerts/alert-error ''}}
+    </div>
+
+    {{#if product.out_of_stock}}
+      {{#if product.out_of_stock_message}}
+        {{> components/alerts/alert-error product.out_of_stock_message}}
+      {{else}}
+        {{> components/alerts/alert-error (lang 'products.sold_out')}}
+      {{/if}}
+    {{/if}}
+
+    {{#if product.release_date}}
+      {{> components/alerts/alert-info product.release_date}}
+    {{/if}}
+
+    {{> components/products/bulk-pricing}}
+
+    <div class="product-quantity-submit-columns">
+      {{#if product.can_purchase}}
+
+        {{#if product.show_quantity_input}}
+          <div class="product-quantity-container">
+            <div class="form-field form-inline">
+              <label class="form-label">
+                <div class="form-label-text">{{ lang 'product.quantity'}}</div>
+                {{> components/products/quantity product}}
+              </label>
+            </div>
+          </div>
+        {{/if}}
+
+        <div data-product-add>
+          <button class="button button-primary button-large button-wide add-to-cart button-progress" type="submit" data-button-purchase data-progress-text="{{lang 'product.add_to_cart_progress'}}">
+            {{> components/common/spinner}}
+            <span class="button-text">
+              {{#if product.pre_order}}
+                <span class="button-text">{{lang 'product.pre_order'}}</span>
+              {{else}}
+                {{lang 'product.add_to_cart'}}
+              {{/if}}
+            </span>
+          </button>
+        </div>
+      {{else}}
+        {{!-- keep a quantity value for unpurchasable products, so they can be added to wishlists --}}
+        <input type="hidden" name="qty[]" value="{{#if min_purchase_quantity}}{{min_purchase_quantity}}{{else}}1{{/if}}">
+      {{/if}}
+    </div>
+  </form>
+
+  {{#if settings.show_wishlist}}
+    <div class="wishlist-form">
+      <input type="hidden" name="variation_id" value="{{id}}">
+      <button
+        type="button"
+        class="button button-secondary button-wide add-to-wishlist"
+        data-wishlist-button
+      >
+        {{lang 'product.add_to_wishlist'}}
+      </button>
+      <div class="wishlist-modal" data-wishlist-modal>
+        {{> components/wishlist/wishlist-modal}}
+      </div>
+    </div>
+  {{/if}}
+
+  {{#unless quick_shop}}
+    {{#if settings.add_this.buttons.length}}
+      <div class="single-product-share">
+        {{> components/common/share-links share_buttons=settings.add_this.buttons url=product.url title=product.title image=(getImage product.main_image 'share')}}
+      </div>
+    {{/if}}
+  {{/unless}}
+</div>

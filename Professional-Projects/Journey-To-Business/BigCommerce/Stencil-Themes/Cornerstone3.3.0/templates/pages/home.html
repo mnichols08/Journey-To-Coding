@@ -25,17 +25,92 @@ blog:
     {{/each}}
 
 <div class="main full">
-    {{#if products.featured}}
-        {{> components/products/featured products=products.featured columns=theme_settings.homepage_featured_products_column_count}}
-    {{/if}}
-
-    {{#if products.top_sellers}}
-        {{> components/products/top products=products.top_sellers columns=theme_settings.homepage_top_products_column_count}}
-    {{/if}}
-
-    {{#if products.new}}
-        {{> components/products/new products=products.new columns=theme_settings.homepage_new_products_column_count}}
-    {{/if}}
+    <div id="rix-categories container">
+            <ul class="rixGrid">
+                          <li class="rix-category garage">
+                            <article class="card {{#if alternate}}card--alternate{{/if}}">
+                                <figure class="card-figure">
+                                    <a href="{{url}}">
+                                        <div class="rix  card-img-container">
+                                            <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
+                                        </div>
+                                    </a>
+                                </figure>
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <a href="{{url}}">{{name}}</a>
+                                    </h4>
+                                </div>
+                            </article>
+                        </li>
+                        <li class="rix-category shop">
+                                <article class="card {{#if alternate}}card--alternate{{/if}}">
+                                    <figure class="card-figure">
+                                        <a href="{{url}}">
+                                            <div class="rix card-img-container">
+                                                <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
+                                            </div>
+                                        </a>
+                                    </figure>
+                                    <div class="card-body">
+                                        <h4 class="card-title">
+                                            <a href="{{url}}">{{name}}</a>
+                                        </h4>
+                                    </div>
+                                </article>
+                            </li>
+                            <li class="rix-category dyno">
+                                    <article class="card {{#if alternate}}card--alternate{{/if}}">
+                                        <figure class="card-figure">
+                                            <a href="{{url}}">
+                                                <div class="rix card-img-container">
+                                                    <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
+                                                </div>
+                                            </a>
+                                        </figure>
+                                        <div class="card-body">
+                                            <h4 class="card-title">
+                                                <a href="{{url}}">{{name}}</a>
+                                            </h4>
+                                        </div>
+                                    </article>
+                                </li>
+                                <li class="rix-category empty"></li>
+                                <li class="rix-category gallery">
+                                        <article class="card {{#if alternate}}card--alternate{{/if}}">
+                                            <figure class="card-figure">
+                                                <a href="{{url}}">
+                                                    <div class="rix card-img-container">
+                                                        <img class="card-image lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{getImage image 'brand_size' (cdn ../theme_settings.default_image_brand)}}" alt="{{name}}" title="{{name}}">
+                                                    </div>
+                                                </a>
+                                            </figure>
+                                            <div class="card-body">
+                                                <h4 class="card-title">
+                                                    <a href="{{url}}">{{name}}</a>
+                                                </h4>
+                                            </div>
+                                        </article>
+                                    </li>
+                                    <li class="rix-category empty"></li>
+       
+                </ul>
+    </div>
+    <div id="rix-car">
+            <img class="lazyload" data-sizes="auto" src="{{cdn 'img/loading.svg'}}" data-src="{{cdn 'img/rix-car.png'}}" alt="Like us on Facebook!" title="Like us on Facebook!">
+    </div>
+    <div id="rix-map">
+            <div class="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" src="https://maps.google.com/maps?q=morgantown%20wv%20area&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div></div>
+    </div>
+    <div id="contact-us-page"> 
+            {{#if forms.contact.success}}
+                <div id="contact-us-success">{{{lang 'forms.contact_us.successful' shopPath=urls.home}}}</div>
+            {{else}}
+                {{> components/page/contact-rix-form}}
+            {{/if}}
+    
+    </div>
 </div>
+
 {{/partial}}
 {{> layout/base}}

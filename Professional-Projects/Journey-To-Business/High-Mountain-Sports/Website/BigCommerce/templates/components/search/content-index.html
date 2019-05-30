@@ -1,0 +1,20 @@
+{{#each content_results}}
+  <article class="search-result content-result {{#if @last}}last-item{{/if}}">
+    <h2 class="content-result-title"><a href="{{url}}">{{title}}</a></h2> 
+    {{#if content}}
+      <p>{{content}}</p>
+    {{/if}}
+    <span class="content-result-type">{{type}}</span>
+  </article>
+{{/each}}
+
+{{#if content_results.length}}
+  {{> components/common/pagination pagination=pagination.content_results}}
+{{/if}}
+
+<div class="collection-progress-overlay">
+  <div class="inner">
+    {{> components/common/spinner spinner_class='spinner-dark'}}
+    {{lang 'common.loading'}}
+  </div>
+</div>

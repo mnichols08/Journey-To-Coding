@@ -16,7 +16,7 @@ product:
         {{> components/common/alert-info message}}
     {{/each}}
 
-    <div itemscope itemtype="http://schema.org/Product">
+    <div itemscope itemtype="http://schema.org/Product" class="rix container">
         {{> components/products/product-view schema=true  }}
 
         {{#if product.videos.list.length}}

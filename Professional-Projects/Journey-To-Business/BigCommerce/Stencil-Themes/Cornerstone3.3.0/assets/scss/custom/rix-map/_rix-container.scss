@@ -1,0 +1,29 @@
+.rix.container{
+    background: #fff;
+    box-shadow: 0 0 72px rgba(53, 6, 6, 0.274);
+&.brand{
+        top: 2em;
+        margin-bottom:2em;
+}
+&.pos{
+    margin-top: 3em;
+    //margin-bottom:2em;
+}
+}
+
+
+.rixGrid {
+
+    display: grid;
+    grid-column-gap:2em;
+    padding: 2em;
+    margin-left: -.5em;
+    grid-template-columns: auto auto auto;
+    grid-template-areas: 
+    "garage shop dyno"
+    "empty gallery empty";
+
+}
+.rix.card-img-container{
+    height:400px;
+}

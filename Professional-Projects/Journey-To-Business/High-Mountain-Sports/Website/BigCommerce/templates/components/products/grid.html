@@ -1,0 +1,31 @@
+{{#if products.length}}
+  <form action="/compare" class="product-grid-container {{#if show_compare}}compare-enabled{{/if}}" method="POST" data-product-compare>
+    {{#each products}}
+      {{> components/products/product-item
+        grid_class=grid_class
+        show_compare=../show_compare
+        enable_quick_shop=../enable_quick_shop
+        show_sale_badges=../theme_settings.sale-badges
+        default_image=../theme_settings.default_image
+        show_ratings=../settings.show_product_rating
+        image_has_aspect=../theme_settings.product_grid_image_aspect_ratio
+        price_range_display=../theme_settings.price_range_display
+        retail_price_label=../theme_settings.retail-price-label
+        non_sale_price_label=../theme_settings.non-sale-price-label
+        sale_price_label=../theme_settings.sale-price-label
+        price_label=../theme_settings.price-label
+      }}
+    {{/each}}
+
+    <div class="compare-tab" id="compare-tab">
+      <div class="compare-tab-upper">
+        <div class="item-limit">{{lang 'compare.compare_up_to_x_items' num=4}}</div>
+        <a href="#" class="clear-compare">{{lang 'compare.clear_compare' num=4}}</a>
+      </div>
+      <ul class="compare-items-list" id="compare-items-wrapper"></ul>
+      <input type="submit" value="{{lang 'compare.compare_submit'}}" class="button button-primary compare-submit">
+    </div>
+  </form>
+{{else}}
+  <div class="product-empty-notice">{{lang 'product.no_products'}}</div>
+{{/if}}

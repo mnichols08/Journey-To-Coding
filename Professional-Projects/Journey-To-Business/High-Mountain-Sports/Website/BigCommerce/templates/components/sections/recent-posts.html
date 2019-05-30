@@ -1,0 +1,14 @@
+{{#if blog.recent_posts.length}}
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">{{lang 'blog.recent_posts'}}</h2>
+      </div>
+      <div class="blog-items-list">
+        {{#each blog.recent_posts}}
+          {{> components/blog/blog-item this show_thumb=../theme_settings.show_blog_thumbnails}}
+        {{/each}}
+      </div>
+    </div>
+  </section>
+{{/if}}

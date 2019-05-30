@@ -17,6 +17,7 @@
     border-top: container("border");
     padding: spacing("double") 0;
     padding-bottom:0;
+    margin-top:-2em;
 }
 
 .footer-info {
@@ -181,13 +182,15 @@
 }
 
 h5.stayConnected {
-    text-align:right;
     font-size: 25px;
     font-family: "Speculum Outline";
     color: #000;
+    @include breakpoint("large") {
+        text-align:right;
+    }
 }
 .footer-info-list.social{
-    text-align:right;
+    
     & li{
         display:inline;
         font-size:3em;
@@ -198,5 +201,8 @@ h5.stayConnected {
     }
     & a:hover{
         color:stencilColor("navPages-subMenu-backgroundColor");
+    }
+    @include breakpoint("large") {
+        text-align:right;
     }
 }

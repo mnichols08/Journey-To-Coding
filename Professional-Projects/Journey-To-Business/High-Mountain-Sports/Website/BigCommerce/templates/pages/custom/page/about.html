@@ -1,0 +1,1525 @@
+{{#partial "page"}}
+<style>
+  .breadcrumbs-container {
+    display: none;
+  }
+
+  .rTableCell.top.col.col-1,
+  .Bold {
+    font-weight: bold
+  }
+
+  .rTable {
+    display: table;
+    width: 100%
+  }
+
+  .rTableRow {
+    display: table-row
+  }
+
+  .rTableHeading {
+    display: table-header-group;
+    background-color: #ddd
+  }
+
+  .rTableCell,
+  .rTableHead {
+    display: table-cell;
+    padding: 3px 10px;
+    border: 1px solid #999
+  }
+
+  .rTableHeading {
+    display: table-header-group;
+    background-color: #ddd;
+    font-weight: bold
+  }
+
+  .rTableFoot {
+    display: table-footer-group;
+    font-weight: bold;
+    background-color: #ddd
+  }
+
+  .rTableBody {
+    display: table-row-group
+  }
+
+  img.pontoontours {
+    content: url("/media/wysiwyg/Images/pontoontours.jpg")
+  }
+
+  img.summer_rentals {
+    content: url("/media/wysiwyg/Images/summer_rentals.jpg")
+  }
+
+  img.dockrentals {
+    content: url("/product_images/uploaded_images/holder_index4.jpg")
+  }
+
+  img.services {
+    content: url("/product_images/uploaded_images/holder_index3.jpg")
+  }
+
+  img.banner_1st {
+    content: url("/product_images/uploaded_images/holder_index1.jpg")
+  }
+
+  img.banner_2nd {
+    content: url("/product_images/uploaded_images/holder_index2.jpg")
+  }
+
+  .summer459 {
+    margin-left: -10px
+  }
+
+  .about.support h2 {
+    color: black;
+    font-size: 2em
+  }
+
+  .index_block.about.winter_rentals {
+    background: linear-gradient(#00000061, white), url(/product_images/uploaded_images/winterrentalstore.jpg)
+  }
+
+  .index_block.about.rentals {
+    background: linear-gradient(#00000061, white), url(/product_images/uploaded_images/slider-pic2.jpg)
+  }
+
+  .index_block.about.tunes {
+    background: linear-gradient(#00000061, white), url(/product_images/uploaded_images/tunebg.jpg)
+  }
+
+  .index_block.about.support {
+    background: linear-gradient(#ffffffe0, #ffffff96), url(/product_images/uploaded_images/crew.jpg);
+    top: 0px
+  }
+
+  #smallbizz {
+    color: black
+  }
+
+  .index_block.about.business {
+    color: #000;
+    background-repeat: no-repeat;
+    background: linear-gradient(#ffffffe0, #ffffff96), url(/product_images/uploaded_images/slider-pic1.jpg)
+  }
+
+  div#rentals {
+    color: black
+  }
+
+  .about.rentals h2,
+  h3 {
+    color: #000
+  }
+
+  .about.business p {
+    text-align: justify;
+    text-indent: 40px
+  }
+
+  .about h3 {
+    font-size: 30px
+  }
+
+  .about h2 {
+    font-variant-caps: all-small-caps;
+    margin-top: -20px;
+    font-size: 23px
+  }
+
+  @media screen and (max-width: 491px) {
+    .tour.content {
+      padding: 0;
+      margin-top: -66px;
+      margin-left: 0;
+      font-size: 12px;
+      margin-right: 0
+    }
+  }
+
+  .title_about.support {
+    color: black;
+    text-shadow: none
+  }
+
+  .bio_img,
+  .employee_name,
+  .employee_title,
+  .employee_blurb {
+    text-align: center;
+    color: #000
+  }
+
+  .about.tunes h2 {
+    color: black;
+    font-size: 30px
+  }
+
+  .about.tunerates {
+    color: #fff6009e;
+    border: 3px dashed #ffbc00;
+    font-size: 2em;
+    background: #0000007d;
+    border-radius: 8px;
+    box-shadow: 0px 24px 30px -15px black
+  }
+
+  .peekportal button.button>span {
+    padding-left: 8px;
+    padding-right: 8px
+  }
+
+  .peekportal h4 {
+    color: #a11227
+  }
+
+  ul#no-route-buttons.buttons button.button>span {
+    margin: 7px;
+    box-shadow: 0 20px 36px -10px #000000a8
+  }
+
+  .index_block.about.winter_rentals {
+    background: linear-gradient(#00000061, white), url(/product_images/uploaded_images/winterrentalstore.jpg)
+  }
+
+  .index_block.about.rentals {
+    background: linear-gradient(#00000061, white), url(/product_images/uploaded_images/slider-pic2.jpg)
+  }
+
+  .index_block.about.tunes {
+    background: linear-gradient(#00000061, white), url(/product_images/uploaded_images/tunebg.jpg)
+  }
+
+  .index_block.about.support {
+    background: linear-gradient(#ffffffe0, #ffffff96), url(/product_images/uploaded_images/crew.jpg);
+    top: 0px
+  }
+
+  #smallbizz {
+    color: black
+  }
+
+  .index_block.about.business {
+    color: #000;
+    background-repeat: no-repeat;
+    background: linear-gradient(#ffffffe0, #ffffff96), url(/product_images/uploaded_images/slider-pic1.jpg)
+  }
+
+  div#rentals {
+    color: black
+  }
+
+  .about.rentals h2,
+  h3 {
+    color: #000
+  }
+
+  .about.business p {
+    text-align: justify;
+    text-indent: 40px
+  }
+
+  .about h3 {
+    font-size: 30px
+  }
+
+  .about h2 {
+    font-variant-caps: all-small-caps;
+    margin-top: -20px;
+    font-size: 23px
+  }
+
+  .employee_name {
+    text-align: center
+  }
+
+  .bio_img {
+    align-content: center
+  }
+
+  .employee_blurb {
+    text-align: center
+  }
+
+  .employee_title {
+    text-align: center
+  }
+
+  .main-container label {
+    font-weight: normal
+  }
+
+  .col-left-tune {
+    align-content: center;
+    margin: auto;
+    padding: 75px;
+    padding-bottom: 0
+  }
+
+  .lg-69 {
+    height: 59px;
+    color: #f8df11;
+    font-size: 72px;
+    font-weight: 400
+  }
+
+  .desc {
+    color: #f8df11;
+    margin-top: -20px
+  }
+
+  .desc-top {
+    color: #f8df11;
+    font-weight: 400;
+    font-size: 12px;
+    margin-bottom: 5px
+  }
+
+  .desc-bottom {
+    margin-top: -10px;
+    text-align: center;
+    height: 20px;
+    color: #f8df11;
+    font-weight: 400;
+    font-size: 8px
+  }
+
+  .col-right-tune {
+    margin: auto;
+    padding-top: 5px;
+    padding-right: 20px
+  }
+
+  .col-right-details li {
+    list-style-type: none
+  }
+
+  .col-right-title {
+    margin-right: 5px;
+    color: #f8df11;
+    font-size: 19px;
+    font-weight: 400
+  }
+
+  .col-right-details {
+    color: #f8df11;
+    font-size: 16px;
+    font-weight: 400
+  }
+
+  .nl.content {
+    padding: 46px;
+    font-size: 14px;
+    color: #f8df11;
+    text-indent: 50px;
+    text-align: justify;
+    text-shadow: 0 0 11px #000000e3
+  }
+
+  .service-right {
+    font-size: 41px
+  }
+
+  #ratetable_320 {
+    margin-left: 0 !important
+  }
+
+  div#wintertune,
+  div#summertune {
+    text-align: center;
+    font-size: 3em;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-shadow: 2px 2px black;
+    padding: 8px
+  }
+
+  .description {
+    text-align: left;
+    padding-top: 30px
+  }
+
+  div#smallbus {
+    background: linear-gradient(transparent, lightgrey);
+    margin-top: 40px;
+    padding-bottom: 20px
+  }
+
+  .c4_r2 {
+    font: normal normal 500 normal 18px / 18px "Open Sans", Arial, sans-serif;
+    padding: 10px
+  }
+
+  .c4_r3 {
+    padding: 9px;
+    font: normal normal 500 normal 14px / 14px "Open Sans", Arial, sans-serif;
+    text-align: left;
+    max-width: 100%
+  }
+
+  div#sg_img {
+    background-image: url(/product_images/uploaded_images/sgimg2.jpg)
+  }
+
+  div#bh_img {
+    background-image: url(/product_images/uploaded_images/bhimg2.jpg);
+    background-size: initial;
+    background-position-y: -300px;
+    background-position-x: -270px
+  }
+
+  div#ec_img {
+    background-size: 500px;
+    background-position-y: 1px;
+    /*background-image: url(/product_images/uploaded_images/ecimg.jpg)*/
+  }
+
+  div#jf_img {
+    background-image: url(/product_images/uploaded_images/jfimg.jpg)
+  }
+
+  div#aj_img {
+    background-position-x: -315px;
+    background-size: 700px;
+    background-image: url(/product_images/uploaded_images/ajimg.jpg)
+  }
+
+  div#mn_img {
+    background-image: url(/product_images/uploaded_images/mnimg.jpg)
+  }
+
+  div#hc_img {
+    background-image: url(/product_images/uploaded_images/hcimg.jpg)
+  }
+
+  div#kb_img {
+    background-image: url(/product_images/uploaded_images/twimg.png)
+  }
+
+  .row4 {
+    padding-top: 20px;
+    padding-bottom: 20px
+  }
+
+  .column4 {
+    float: left;
+    width: 25%
+  }
+
+  .row4:after {
+    content: "";
+    display: table;
+    clear: both
+  }
+
+  .c4_r1 {
+    background: rgba(255, 255, 255, 0.43);
+    border: 3px rgba(42, 160, 35, 0.67) dashed;
+    border-radius: 100%;
+    height: 125px;
+    width: 125px;
+    padding: 25px;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain
+  }
+
+  .column2 {
+    float: left;
+    width: 50%
+  }
+
+  .row2:after {
+    content: "";
+    display: table;
+    clear: both
+  }
+
+  .column3 {
+    float: left;
+    width: 33.33%
+  }
+
+  .row3:after {
+    content: "";
+    display: table;
+    clear: both
+  }
+
+  div.bio_img {
+    margin: auto;
+    position: relative;
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 100%;
+    height: 250px;
+    width: 250px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover
+  }
+
+  .title,
+  .employee_title {
+    font: normal normal 700 normal 17px / 19px "Open Sans", Arial, sans-serif;
+    margin-top: -13px
+  }
+
+  .subtitle,
+  .employee_name {
+    font: normal normal 500 normal 18px / 18px "Open Sans", Arial, sans-serif;
+    padding: 10px;
+    z-index: 999
+  }
+
+  .description,
+  .employee_blurb {
+    text-align: left;
+    font: normal normal 500 normal 14px / 14px "Open Sans", Arial, sans-serif;
+    padding: 9px
+  }
+
+  @media (min-width: 768px) and (max-width: 1050px) {
+    .column4 {
+      width: 50%
+    }
+
+    .column3 {
+      width: 50%
+    }
+  }
+
+  @media (min-width: 500px) and (max-width: 767px) {
+    .column4 {
+      width: 100%
+    }
+
+    .column2 {
+      width: 100%
+    }
+
+    .column3 {
+      width: 100%
+    }
+  }
+
+  @media (max-width: 499px) {
+    .column4 {
+      width: 100%
+    }
+
+    .column2 {
+      width: 100%
+    }
+
+    .column3 {
+      width: 100%
+    }
+  }
+
+  @media only screen and (max-width: 2561px) {
+    .slide-title.scottslide {
+      font-size: 50px;
+      margin-top: -100px
+    }
+
+    .lg-69.scottslide {
+      font-size: 200px;
+      margin-top: 100px;
+      margin-bottom: 40px
+    }
+
+    .right_slider_side .shop_now {
+      margin-top: 15px
+    }
+
+    .desc.scottslide {
+      margin-top: 4px
+    }
+  }
+
+  @media only screen and (max-width: 1441px) {
+    .slide-title.scottslide {
+      font-size: 46px;
+      margin-top: -80px
+    }
+
+    .lg-69.scottslide {
+      font-size: 122px;
+      margin-top: 80px;
+      margin-bottom: 20px
+    }
+
+    .right_slider_side .shop_now {
+      margin-top: 25px
+    }
+
+    .desc.scottslide {
+      margin-top: -5px
+    }
+  }
+
+  @media only screen and (max-width: 1025px) {
+    .slide-title.scottslide {
+      font-size: 35px;
+      margin-top: -70px
+    }
+
+    .lg-69.scottslide {
+      font-size: 128px;
+      margin-top: 60px;
+      margin-bottom: 0px
+    }
+
+    .right_slider_side .shop_now {
+      margin-top: 5px
+    }
+  }
+
+  @media only screen and (max-width: 769px) {
+    .slide-title.scottslide {
+      font-size: 20px;
+      margin-top: -50px
+    }
+
+    .lg-69.scottslide {
+      font-size: 72px;
+      margin-top: 10px;
+      margin-bottom: -25px
+    }
+
+    .right_slider_side .shop_now {
+      margin-top: -5px
+    }
+  }
+
+  @media only screen and (max-width: 426px) {
+    .slide-title.scottslide {
+      font-size: 16px;
+      margin-top: -50px
+    }
+
+    .lg-69.scottslide {
+      margin-top: 30px;
+      margin-bottom: -25px
+    }
+  }
+
+  @media only screen and (max-width: 376px) {
+    .slide-title.scottslide {
+      display: none
+    }
+  }
+
+  @media only screen and (max-width: 321px) {
+    .slide-title.scottslide {
+      display: none
+    }
+
+    .lg-69.scottslide {
+      margin-top: 20px
+    }
+
+    .desc.scottslide {
+      margin-top: 4px
+    }
+  }
+
+  .section-subscription-form {
+    border: none;
+  }
+
+  .index_block {
+    background: linear-gradient(#00000057, #00000038), url(/product_images/uploaded_images/bg-block-about.jpg);
+    background-position: 50% 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    text-align: center
+  }
+
+  .about_block_wrapper {
+    overflow: hidden;
+    padding: 47px 0 122px 0
+  }
+
+  .title_about {
+    text-shadow: 0px 0px 20px #fff;
+    font-size: 78px;
+    font-weight: 300;
+    line-height: normal;
+    color: #000;
+    margin: 0 0 27px 0
+  }
+
+  .about_col {
+    float: left;
+    width: 370px;
+    margin: 0 30px 0 0
+  }
+
+  .about_col.ac3 {
+    margin: 0
+  }
+
+  .about_col .about_number {
+    display: block;
+    background: #0000004f;
+    width: 194px;
+    height: 194px;
+    line-height: 194px;
+    text-align: center;
+    font-size: 80px;
+    font-weight: 300;
+    color: #fff;
+    margin: 0 auto 35px auto;
+    border-radius: 50%;
+    transform: rotateY(0deg);
+    transition: all 0.6s ease 0s
+  }
+
+  .about_col:hover .about_number {
+    transform: rotateY(360deg);
+    transition: all 0.7s ease 0s;
+    background: rgba(255, 255, 255, 0.4)
+  }
+
+  .about_col h2 {
+    font-size: 27px;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 30px;
+    color: #000;
+    -webkit-text-stroke: .3px white;
+    margin: 0 0 13px 0
+  }
+
+  .about_col:hover h2 {
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2)
+  }
+
+  .about_col h3 {
+    font-size: 20px;
+    font-weight: 750;
+    line-height: 30px;
+    color: #000;
+    text-shadow: white 2px 2px 42px;
+    margin: 0 0 0 0;
+    -webkit-text-stroke: .3px white;
+    margin: 0 0 0 0
+  }
+
+  .index_block2 {
+    background: #fff
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 359px) {
+    .summer320 {
+      display: block
+    }
+
+    .summer459 {
+      display: none
+    }
+
+    .summer768 {
+      display: none
+    }
+
+    .summer950 {
+      display: none
+    }
+  }
+
+  @media screen and (min-width: 360px) and (max-width: 559px) {
+    .summer320 {
+      display: none
+    }
+
+    .summer459 {
+      display: block
+    }
+
+    .summer768 {
+      display: none
+    }
+
+    .summer950 {
+      display: none
+    }
+  }
+
+  @media screen and (min-width: 560px) and (max-width: 949px) {
+    .summer320 {
+      display: none
+    }
+
+    .summer459 {
+      display: none
+    }
+
+    .summer768 {
+      display: block
+    }
+
+    .summer950 {
+      display: none
+    }
+  }
+
+  @media screen and (min-width: 950px) {
+    .summer320 {
+      display: none
+    }
+
+    .summer459 {
+      display: none
+    }
+
+    .summer768 {
+      display: none
+    }
+
+    .summer950 {
+      display: block
+    }
+  }
+
+  .block .block-title {
+    color: #000
+  }
+
+  .body {
+    margin: auto
+  }
+
+  @media screen and (min-width: 768px) {
+    #ratetable_320 {
+      display: none
+    }
+
+    #ratetable_479 {
+      display: none
+    }
+
+    #ratetable_767 {
+      display: none
+    }
+
+    #ratetable_dt {
+      display: block
+    }
+  }
+
+  @media screen and (min-width: 480px) and (max-width: 767px) {
+    #ratetable_320 {
+      display: none
+    }
+
+    #ratetable_479 {
+      display: none
+    }
+
+    #ratetable_767 {
+      display: block
+    }
+
+    #ratetable_dt {
+      display: none
+    }
+  }
+
+  .footnotes_767 {
+    color: white;
+    font-size: 10px;
+    background-color: #3e3e3e
+  }
+
+  .belownotes_767 {
+    background-color: #c8c8c8
+  }
+
+  @media screen and (min-width: 321px) and (max-width: 479px) {
+    #ratetable_320 {
+      display: none
+    }
+
+    #ratetable_479 {
+      display: block;
+      margin-left: -78px
+    }
+
+    #ratetable_767 {
+      display: none
+    }
+
+    #ratetable_dt {
+      display: none
+    }
+
+    .topline_479 {
+      width: 479px
+    }
+
+    .img_479 {
+      height: 100px;
+      width: 470px
+    }
+
+    .rentlogo_479 {
+      background-color: #004974;
+      height: 105px;
+      width: 479px
+    }
+
+    .rowtitle_479 {
+      margin: auto;
+      background-color: #3e3e3e;
+      height: 25px;
+      width: 479px
+    }
+
+    .rowsubtitle_479 {
+      background-color: #3e3e3e;
+      height: 25px;
+      width: 479px
+    }
+
+    .columntitle1_479 {
+      background-color: #c8c8c8;
+      width: 479px;
+      height: 30px
+    }
+
+    .row1_479 {
+      background-color: #009f0a;
+      height: 30px;
+      width: 479px
+    }
+
+    .row2_479 {
+      height: 30px;
+      width: 479px
+    }
+
+    .footnotes_479 {
+      margin-left: 37px;
+      color: white;
+      font-size: 10px;
+      background-color: #3e3e3e
+    }
+
+    .belownotes_479 {
+      margin-left: 37px;
+      background-color: #c8c8c8
+    }
+
+    .body {
+      margin: auto
+    }
+  }
+
+  @media screen and (min-width: 0px) and (max-width: 320px) {
+    #ratetable_dt {
+      display: none
+    }
+
+    #ratetable_767 {
+      display: none
+    }
+
+    #ratetable_479 {
+      display: none
+    }
+
+    #ratetable_320 {
+      display: block;
+      width: 320px;
+      margin-left: -15px
+    }
+
+    .topline_320 {
+      width: 320px
+    }
+
+    .img_320 {
+      height: 100px;
+      width: 315px
+    }
+
+    .rentlogo_320 {
+      background-color: #004974;
+      height: 105px;
+      width: 320px
+    }
+
+    .rowtitle_320 {
+      margin: auto;
+      background-color: #3e3e3e;
+      height: 25px;
+      width: 320px
+    }
+
+    .rowsubtitle_320 {
+      background-color: #3e3e3e;
+      height: 25px;
+      width: 320px
+    }
+
+    .columntitle1_320 {
+      background-color: #c8c8c8;
+      width: 320px;
+      height: 30px
+    }
+
+    .row1_320 {
+      background-color: #009f0a;
+      height: 30px;
+      width: 320px
+    }
+
+    .row2_320 {
+      height: 30px;
+      width: 320px
+    }
+
+    .footnotes_320 {
+      width: 299px;
+      color: white;
+      font-size: 10px;
+      background-color: #3e3e3e
+    }
+
+    .belownotes_320 {
+      width: 299px;
+      background-color: #c8c8c8
+    }
+
+    .body {
+      margin: auto
+    }
+  }
+
+  @media screen and (min-width: 950px) {
+    #summer950 {
+      display: block
+    }
+
+    #summer768 {
+      display: none
+    }
+
+    #summer459 {
+      display: none
+    }
+
+    #summer320 {
+      display: none
+    }
+  }
+
+  @media screen and (max-width: 949px) {
+    #summer950 {
+      display: none
+    }
+
+    #summer768 {
+      display: block
+    }
+
+    #summer320 {
+      display: none
+    }
+
+    #summer459 {
+      display: none
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    #summer950 {
+      display: none
+    }
+
+    #summer768 {
+      display: none
+    }
+
+    #summer459 {
+      display: block
+    }
+
+    #summer320 {
+      display: none
+    }
+  }
+
+  @media screen and (max-width: 360px) {
+    #summer950 {
+      display: none
+    }
+
+    #summer768 {
+      display: none
+    }
+
+    #summer459 {
+      display: none
+    }
+
+    #summer320 {
+      display: block
+    }
+  }
+
+  .about_col:hover .about_number.about,
+  .about_number.about {
+    background: url(/product_images/uploaded_images/smallbizz.png);
+    background-position: center;
+    background-attachment: initial;
+    background-size: 150px 150px;
+    background-repeat: no-repeat
+  }
+
+  .about_col:hover .about_number.rental,
+  .about_number.rental {
+    background: url(/product_images/uploaded_images/rentals.png);
+    background-position: center;
+    background-attachment: initial;
+    background-size: 150px 150px;
+    background-repeat: no-repeat
+  }
+
+  .about_col:hover .about_number.tunes,
+  .about_number.tunes {
+    background: url(/product_images/uploaded_images/tunes.png);
+    background-position: center;
+    background-attachment: initial;
+    background-size: 150px 150px;
+    background-repeat: no-repeat
+  }
+
+  .about_col:hover .about_number.service,
+  .about_number.service {
+    background: url(/product_images/uploaded_images/service.png);
+    background-position: center;
+    background-attachment: initial;
+    background-size: 150px 150px;
+    background-repeat: no-repeat
+  }
+
+  .title-text {
+    width: 319px;
+    padding-top: 4px;
+    height: 13px;
+    font-family: OpenSans;
+    color: #000;
+    font-size: 16px;
+    font-weight: 400;
+    margin: auto
+  }
+
+  p.footnote {
+    font-size: 8px;
+    padding-right: 40px;
+    text-align: right
+  }
+
+  .col-xs-3 {
+    width: 33%
+  }
+
+  img.banner_1st,
+  img.banner_2nd,
+  img.pontoontours,
+  img.summer_rentals,
+  img.services,
+  img.dockrentals {
+    width: 100%
+  }
+
+  @media only screen and (min-width: 1702px) {
+    .ban_index .ban_wrap h2 {
+      font-size: 75px;
+      font-weight: normal;
+      text-shadow: 0PX 0px 20PX #fff;
+      color: #000;
+      margin: 0 0 -14px 0;
+      transition: all 0.35s, transform 0.35s
+    }
+
+    .ban_index .ban_wrap h3 {
+      font-size: 59px;
+      color: #fff;
+      -webkit-text-stroke: 2px black
+    }
+  }
+
+  @media only screen and (min-width: 1200px) {
+    .about_col {
+      width: 270px
+    }
+  }
+
+  @media only screen and (max-width: 1199px) {
+    .about_col.ac4 {
+      display: none
+    }
+  }
+
+  @media (min-width:1177px) {
+    .container-custom {
+      display: inline-flex;
+    }
+  }
+
+  @media (max-width: 1176px) {
+    .container-custom {
+      display: flex;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .container-custom {
+      display: block;
+      margin: auto 25%;
+    }
+  }
+
+  table,
+  td,
+  tr {
+    border: none;
+  }
+
+  h4.findus {
+    font-size: 18px;
+    color: #000;
+  }
+
+  h4.andH {
+    position: relative;
+    top: -4em;
+    left: -1em;
+    color: #000;
+    font-size: 12px;
+  }
+
+
+  h2.title {
+    text-align: center;
+  }
+
+  .index_block.winter_rentals {
+    background: linear-gradient(#ffffffcc, #ffffff66), url('/product_images/uploaded_images/winterrentalstore.jpg')
+  }
+
+  ;
+
+  .WinterRentals {
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  }
+
+  .prices {
+    text-align: right;
+    margin-right: 2em;
+  }
+
+  .packages,
+  .subHeading,
+  .title,
+  .Nh {
+    color: #000;
+  }
+
+  .title,
+  .data,
+  .Nh,
+  .footnotes {
+    text-align: left;
+  }
+
+  .Nh {
+    position: relative;
+    top: -1em;
+    left: 4em;
+    font-size: 10px;
+  }
+
+  .footnotes {
+    background: #ffffffaa;
+    color: #000;
+    font-size: 16px;
+    line-height: 1em;
+  }
+
+  .inline {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+
+  .title {
+    padding: 0;
+  }
+
+  .packages {
+    font-weight: 800;
+    margin: 0 0 1em 0;
+    font-size: 24px;
+  }
+
+  .tablet {
+    grid-column-gap: 2em;
+    grid-row-gap: 2em;
+  }
+
+  h2.subHeading {
+    font-size: 17px;
+    font-weight: 100;
+  }
+
+  h2.title,
+  h2.packages {
+    font-size: 29px;
+    font-variant-caps: all-small-caps;
+    font-weight: 600;
+  }
+
+  h1.heading {
+    font-weight: 900;
+    font-size: 17px;
+    color: #000;
+    margin: 1em 0 1em 0;
+  }
+
+  .sport h3,
+  .demo h3,
+  .blades h3 {
+    font-size: 22px;
+    font-family: sans-serif;
+  }
+
+  .extras h3 {
+    font-size: 15px;
+    font-family: sans-serif;
+  }
+
+
+  @media only screen and (min-width:1400px) {
+    h1.heading {
+      margin: 0;
+      font-size: 5em
+    }
+
+    h2.subHeading {
+      font-size: 4em;
+    }
+
+    h2.packages,
+    .h2.title {
+      font-size: 3em
+    }
+
+    .tablet {
+      grid-column-gap: 9px;
+      display: grid;
+      grid-template-columns: 25% 25% 25% 25%;
+    }
+  }
+
+  @media only screen and (min-width:768px) and (max-width:1399px) {
+    .index_block.winter_rentals {
+      margin-bottom: -6em;
+    }
+
+    h1.heading {
+      margin: 0;
+      font-size: 3.3vw;
+    }
+
+    h2.subHeading {
+      font-size: 3.2vw
+    }
+
+    h3.data,
+    h3.prices {
+      font-size: 19px;
+    }
+
+    .tablet {
+      grid-column-gap: 1em;
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+  }
+
+  @media only screen and (max-width:767px) {
+
+    h2.title,
+    h2.packages {
+      text-align: center;
+    }
+  }
+
+  p.price {
+    text-align: center;
+  }
+
+  #tunes {
+    padding: 10em 0 10em 0;
+  }
+
+  #tunes h1 {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    top: 1em;
+  }
+
+  .winter_tunes {
+    background: linear-gradient(#ffffffcc, #ffffffaa);
+  }
+
+  .summer_tunes {
+    background: linear-gradient(#ffffffcc, #ffffffaa);
+  }
+
+  .winter_tunes,
+  .summer_tunes {
+    color: #000;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .winter_tunes,
+  .summer_tunes {
+    height: max-content;
+    border-radius: 1em;
+    box-shadow: 0px 0px 4em #00000073;
+  }
+
+  .footnotes,
+  .footnotesC {
+    color: #000;
+    line-height: 1em;
+    font-size: 10px;
+    margin: 5%;
+    text-align: left;
+  }
+
+  .key {
+    font-weight: 800;
+  }
+
+  .product {
+    text-align: right;
+  }
+
+  .tunes h1 {
+    font-size: 36px;
+    margin: 1em;
+    padding: .5em;
+  }
+
+  .dsc {
+    text-align: left;
+  }
+
+  .grid-row:nth-child(odd) {
+    background: #cccccccc
+  }
+
+  .grid-row:nth-child(even) {
+    background: #ffffff66
+  }
+
+  .grid-row:last-child {
+    border-bottom-left-radius: 10em;
+    border-bottom-right-radius: 10em;
+  }
+
+  .grid-container {
+    display: grid;
+    grid-template-columns: 100%;
+  }
+
+  .grid-row {
+    display: grid;
+    grid-template-columns: 4fr 2fr 10fr;
+  }
+
+  #smallbizz {
+    margin-top: 1em;
+  }
+
+  .index_block,
+  .index_block.about.business,
+  .index_block.about.rentals,
+  .index_block.winter_rentals,
+  .index_block.about.tunes,
+  .index_block.about.support {
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+</style>
+<div class="container-fluid">
+  {{#replace '%%Syndicate%%' page.content}}
+  {{> components/page/rss-feed}}
+  {{else}}
+  {{{page.content}}}
+  {{/replace}}
+
+  {{#if page.feed}}
+  <ul class="rss-feed">
+    {{#each page.feed}}
+    <li class="rss-feed-item">
+      <h3><a href="{{url}}" target="_blank">{{title}}</a></h3>
+      <p>{{{content}}}</p>
+    </li>
+    {{/each}}
+  </ul>
+  {{/if}}
+</div>
+
+{{/partial}}
+
+{{> layout/base}}
+
+
+<!--Loads tabletop.js for extracting sheets data -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.2/tabletop.min.js"></script>
+<!-- Script to extract Winter Rental Prices -->
+<script type="text/javascript">
+  function init() {
+    Tabletop.init({
+      key: '1wUgDq1t5GZxg1EnrUuKiTLNXF8TIW0EPnYDwDJhGSsk',
+      callback: getRates,
+      simpleSheet: true
+    });
+  }
+  const getRates = (data, tabletop) => {
+    document.querySelector('.WinterRentals h1.heading').innerHTML = data[0].subtitle;
+    document.querySelector('.WinterRentals h2.subHeading').innerHTML = data[0].title;
+    document.querySelector('.WinterRentals h2.packages').innerHTML = data[0].heading;
+    document.querySelector('.WinterRentals .sport h2.title').innerHTML = data[0].equipment;
+    document.querySelector('.WinterRentals .demo h2.title').innerHTML = data[1].equipment;
+    document.querySelector('.WinterRentals .blades h2.title').innerHTML = data[2].equipment;
+    document.querySelector('.WinterRentals .sport h3.prices').innerHTML = '$' + data[0].midweek + '/day<br>$' + data[
+      0].midevening + '/day<br>$' + data[0].weekend + '/day<br>$' + data[0].satevening + '/day';
+    document.querySelector('.WinterRentals .demo h3.prices').innerHTML = '$' + data[1].midweek + '/day<br>$' + data[1]
+      .midevening + '/day<br>$' + data[1].weekend + '/day<br>$' + data[1].satevening + '/day';
+    document.querySelector('.WinterRentals .blades h3.prices').innerHTML = '$' + data[2].midweek + '/day<br>$' + data[
+      2].midevening + '/day<br>$' + data[2].weekend + '/day<br>$' + data[2].satevening + '/day';
+    document.querySelector('.WinterRentals .extras h3.prices').innerHTML = '$' + data[3].everyday + '/day<br>$' +
+      data[4].everyday + '/day<br>$' + data[5].everyday + '/day<br>$' + data[6].everyday + '/day<br>$' + data[7]
+      .everyday + '/day<br>$' + data[8].everyday + '/day<br>$' + data[9].everyday + '/day';
+    document.querySelector('.WinterRentals p.footnotes').innerHTML = data[0].footnotes + '<br>' + data[1].footnotes +
+      '<br>' + data[2].footnotes + '<br>' + data[3].footnotes + '<br>' + data[4].footnotes + '<br>' + data[5]
+      .footnotes + '<br>' + data[6].footnotes + '<br>' + data[7].footnotes + '<br>' + data[8].footnotes + '<br>' +
+      data[9].footnotes;
+  }
+  window.addEventListener('DOMContentLoaded', init);
+</script>

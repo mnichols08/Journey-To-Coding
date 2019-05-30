@@ -1,0 +1,115 @@
+
+{{#partial "page"}}
+<style>
+table.HMSBikeTable a {
+    color: #000
+}
+
+td.HMSBikeTableTitle {
+    font-size: large;
+    color: #f7f7f7;
+    text-align: center;
+    background-color: rgba(0,0,0,0.4);
+    font-weight: bolder;
+    padding: 10px
+}
+
+td.HMSBikeRouteTitle {
+    font-size: medium;
+    color: #f7f7f7;
+    background-color: #37820294;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center
+}
+
+td.HMSBikeRouteLink {
+    font-size: small;
+    color: black;
+    background-color: #3782028f;
+    text-align: center
+}
+
+td.HMSBikeDetailTitle {
+    font-size: medium;
+    color: black;
+    background-color: #787878b3;
+    font-weight: bold;
+    text-align: right;
+    padding: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: thin
+}
+
+td.HMSBikeDetail {
+    font-size: medium;
+    color: black;
+    background-color: #b2b2b287;
+    font-weight: 100;
+    text-align: left;
+    padding: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: thin
+}
+
+td.HMSBikeNotes {
+    width: 50%;
+    font-size: small;
+    color: black;
+    background-color: #ffffffbf;
+    padding: 5px;
+    border-style: solid;
+    border-color: black;
+    border-width: thin
+}
+
+td.HMSBikeRouteSpacer {
+    height: 10px;
+    background-color: transparent;
+    border: none
+}
+
+a.HMSBikeRouteLink {
+    color: blue
+}
+
+table.HMSBikeTable a:hover {
+    color: #ab1f25
+}
+
+main.container-fluid {
+    background: linear-gradient(#ffffff,#ffffff17), url('/product_images/uploaded_images/bikeroutebg.jpg');
+    background-attachment:fixed;
+    background-size:cover;
+    background-repeat:no-repeat;
+    }
+.section-subscription-form{
+        border:none;
+    }
+
+</style>
+<div class="container">
+    <h1 class="page-heading">{{page.title}}</h1>
+      {{#replace '%%Syndicate%%' page.content}}
+        {{> components/page/rss-feed}}
+      {{else}}
+        {{{page.content}}}
+      {{/replace}}
+
+      {{#if page.feed}}
+        <ul class="rss-feed">
+          {{#each page.feed}}
+            <li class="rss-feed-item">
+              <h3><a href="{{url}}" target="_blank">{{title}}</a></h3>
+              <p>{{{content}}}</p>
+            </li>
+          {{/each}}
+        </ul>
+      {{/if}}
+</div>
+
+{{/partial}}
+
+{{> layout/base}}
