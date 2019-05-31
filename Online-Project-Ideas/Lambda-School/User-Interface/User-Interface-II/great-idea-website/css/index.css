@@ -224,7 +224,7 @@ nav li a:hover {
 }
 
 .header-right{
-	background-image: url(../img/header-img.png);
+	background-image: url(img/header-img.png);
 	margin-bottom:2em;
     background-repeat: no-repeat;
 	background-attachment: local;
@@ -275,7 +275,7 @@ section.first article {
 
 
 .img-break{
-    background: url(../img/mid-page-accent.jpg);
+    background: url(img/mid-page-accent.jpg);
     background-repeat: no-repeat;
     background-attachment: local;
     background-size: contain;
