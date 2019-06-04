@@ -1,0 +1,65 @@
+html,body{
+    height: 100%;
+    animation: saturate 3s;
+}
+
+
+
+.section {
+    &-about {
+    background-color: $color-grey-light-1;
+    padding: 25rem 0;
+    margin-top: -28vh;
+}
+
+&-features {
+    padding: 20rem 0;
+    background-image:linear-gradient(45deg,rgba($color-primary,.1),rgba($color-primary-dark,.5)), url('../img/nat-4.jpg');
+    background-size: cover;
+    background-attachment:fixed;
+    transform: skewY(7deg);
+    margin-top:-16rem;
+    @include backface-visibility;
+
+    & > * {
+        transform: skewY(-7deg);
+    }
+}
+
+&-tours {
+    background: $color-grey-light-1;
+    padding: 25rem 0 15rem 0;
+    margin-top: -10rem;
+}
+
+&-stories {
+    position:relative;
+    padding: 15rem 0;
+}
+
+&-book {
+    padding: 15rem 0;
+    background-image: linear-gradient(45deg, $color-primary-light, $color-primary-dark);
+}
+} // .section
+
+.book {
+    margin: auto;
+    background: linear-gradient(105deg, rgba($color-white,.9) 50%,
+                                       rgba($color-white, .9) 50%,
+                                       rgba(#0fb8e2,.2) 40%), 
+                                       url(../img/nat-10.jpg);
+    box-shadow: 0 1.5 4rem;
+    height: 50rem;
+    background-attachment: local;
+    background-height: 100%;
+    overflow:hidden;
+    transform: translate(50% 50%);
+    box-shadow: 0 1.5rem 4rem rgba($color-white, .2);
+
+
+    &__form {
+        width: 50%;
+        padding: 6rem;
+    }
+}

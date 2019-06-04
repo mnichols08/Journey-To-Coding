@@ -1,7 +1,7 @@
 {
-  "name": "natours",
+  "name": "user-interface-iii",
   "version": "1.0.0",
-  "description": "Landing page for Garrett County Adventures",
+  "description": "My third Lambda Project",
   "main": "index.js",
   "scripts": {
     "watch:sass": "node-sass sass/main.scss css/style.css -w",
