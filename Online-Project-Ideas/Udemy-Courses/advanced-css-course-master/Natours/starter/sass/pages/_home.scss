@@ -1,8 +1,3 @@
-html,body{
-    height: 100%;
-    animation: saturate 3s;
-}
-
 
 
 .section {
@@ -24,6 +19,10 @@ html,body{
     & > * {
         transform: skewY(-7deg);
     }
+
+    @include respond(tab-port) {
+        padding: 10rem 0;
+    }
 }
 
 &-tours {
@@ -35,6 +34,11 @@ html,body{
 &-stories {
     position:relative;
     padding: 15rem 0;
+
+    @include respond(tab-port) {
+        padding: 15rem 0;
+        background-image: linear-gradient(-45deg, $color-primary-light, $color-primary-dark);
+    }
 }
 
 &-book {
@@ -50,7 +54,6 @@ html,body{
                                        rgba(#0fb8e2,.2) 40%), 
                                        url(../img/nat-10.jpg);
     box-shadow: 0 1.5 4rem;
-    height: 50rem;
     background-attachment: local;
     background-height: 100%;
     overflow:hidden;

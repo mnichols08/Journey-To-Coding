@@ -1,0 +1,16 @@
+{
+  "name": "product_landing_page",
+  "version": "1.0.0",
+  "description": "Product Landing Page for free code camp",
+  "main": "index.js",
+  "scripts": {
+    "start": "less-watch-compiler less css less/index.less"
+  },
+  "author": "Mikey Nichols",
+  "license": "ISC",
+  "devDependencies": {
+    "less": "^3.9.0",
+    "less-watch-compiler": "^1.13.0"
+  },
+  "dependencies": { }
+}

@@ -7,6 +7,10 @@
     @include transition;
     @include border-radius-leaf;
     @include backface-visibility;
+
+    @include respond(tab-port) {
+        padding: 2rem;
+    }
     
     &__icon {
         font-size: 6rem;
