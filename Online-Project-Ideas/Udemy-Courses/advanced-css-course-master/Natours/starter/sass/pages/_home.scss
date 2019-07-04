@@ -44,6 +44,9 @@
 &-book {
     padding: 15rem 0;
     background-image: linear-gradient(45deg, $color-primary-light, $color-primary-dark);
+    .flex{
+        flex-grow: 2;
+    }
 }
 } // .section
 
@@ -55,14 +58,24 @@
                                        url(../img/nat-10.jpg);
     box-shadow: 0 1.5 4rem;
     background-attachment: local;
-    background-height: 100%;
+    background-size: 100%;
     overflow:hidden;
     transform: translate(50% 50%);
     box-shadow: 0 1.5rem 4rem rgba($color-white, .2);
 
-
+        @include respond(tab-land) {
+            background: linear-gradient(105deg, rgba($color-white,.9) 50%,
+            rgba($color-white, .9) 50%,
+            rgba(#0fb8e2,.2) 40%), 
+            url(../img/nat-10.jpg);
+            background-size: cover;
+        }
     &__form {
         width: 50%;
         padding: 6rem;
+
+        @include respond(tab-land) {
+            width: 70%;
+        }
     }
 }

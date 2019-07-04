@@ -31,7 +31,8 @@ function hueRotate() {
     }
 }
 document.onload = hueRotate();
-let home = document.querySelector('.page-container').innerHTML;
+let container = document.querySelector('.page-container');
+let home = container.innerHTML;
 let links = document.querySelectorAll('nav ul li a');
 logoContainer.addEventListener("click", function () {
     window.scrollTo(0, 0);
@@ -42,8 +43,9 @@ logoContainer.addEventListener("click", function () {
 links[0].addEventListener("click", function() {
     window.scrollTo(0, 0);
     hueRotate();
+    
     document.querySelector('.page-container').innerHTML =
-        `
+        `<div style="animation: fadeIn 1s">
         <img class="flex flex-w-100" src="img/services-header.jpg" alt="Header Image">
         <div class="flex flex-column flex-w-100">
             <h1>Services</h1>
@@ -132,6 +134,7 @@ links[0].addEventListener("click", function() {
             <div class="flex-w-50 flex-justify-center flex-content-center flex-items-center">
                 <img src="img/services-info.png" alt="Woman Coding" class="flex-w-100">
             </div>
+    </div>
     `;
     
 

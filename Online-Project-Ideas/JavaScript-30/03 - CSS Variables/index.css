@@ -1,0 +1,49 @@
+:root {
+    --base: #111111;
+    --spacing: 0px;
+    --blur: 0px;
+    --border-radius-2: 50%;
+    --border-radius-1: 1%;
+    --bg-2: #333333;
+    --bg-1: #aaaaaa;
+    --degrees: 70deg;
+    --opacity: 1;
+  }
+  
+  img {
+    max-width: 50%;
+    opacity: var(--opacity);
+    padding: var(--spacing);
+    background: var(--base);
+    filter: blur(var(--blur));
+    box-shadow: 0 0 200px #00000078;
+    border-top-left-radius: var(--border-radius-1);
+    border-bottom-right-radius: var(--border-radius-1);
+    border-bottom-left-radius: var(--border-radius-2);
+    border-top-right-radius: var(--border-radius-2);
+    border-bottom: 2px solid #eee;
+    border-top: 2px solid #111;
+  }
+  /*
+        misc styles, nothing to do with CSS variables
+      */
+  html{height:100%}
+  body {
+    background: linear-gradient(var(--degrees), var(--bg-1), var(--bg-2));
+    height: 100%;
+    padding-top: 1%;
+    padding-bottom: 5%;
+    text-shadow: 0px 0px 10px #000000;
+    text-align: center;
+    color: #ffffff;
+    font-family: "helvetica neue", sans-serif;
+    font-weight: 100;
+    font-size: 1em;
+  }
+  .controls {
+    margin-bottom: 10px;
+  }
+  input {
+    width: 100px;
+  }
+  

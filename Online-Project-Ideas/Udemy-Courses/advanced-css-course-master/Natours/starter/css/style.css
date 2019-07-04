@@ -325,6 +325,14 @@ body {
   .composition:hover .composition__photo:not(:hover) {
     transform: scale(0.95); }
 
+@media (max-width: 56.25em) {
+  .section-features .row {
+    padding: 0 5%; } }
+
+@media (max-width: tab-port) {
+  .section-features .row {
+    padding: 0 5%; } }
+
 .feature-box {
   background: rgba(255, 255, 255, 0.8);
   font-size: 1.5rem;
@@ -338,12 +346,6 @@ body {
   -moz-backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden; }
-  @media (max-width: 56.25em) {
-    .feature-box {
-      padding: 2rem; } }
-  @media (max-width: tab-port) {
-    .feature-box {
-      padding: 2rem; } }
   .feature-box__icon {
     font-size: 6rem;
     margin-bottom: .5rem;
@@ -450,52 +452,80 @@ body {
   .card__price-value {
     font-size: 6rem;
     font-weight: 100; }
-
-@media (max-width: 56.25em) {
-  height: auto;
-  border-radius: 3px;
-  __side {
-    height: auto;
-    position: relative;
-    border-radius: 3px; }
-    __side--back {
-      transform: rotateY(0);
-      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
-  :hover __side--front {
-    transform: rotateY(0); }
-  __cta {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translate(0);
-    width: 100%; }
-  __price-box {
-    margin-bottom: 8rem; }
-  __price-value {
-    font-size: 6rem; } }
-
-@media (max-width: tab-port) {
-  height: auto;
-  border-radius: 3px;
-  __side {
-    height: auto;
-    position: relative;
-    border-radius: 3px; }
-    __side--back {
-      transform: rotateY(0);
-      clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%); }
-  :hover __side--front {
-    transform: rotateY(0); }
-  __cta {
-    position: relative;
-    top: 0;
-    left: 0;
-    transform: translate(0);
-    width: 100%; }
-  __price-box {
-    margin-bottom: 8rem; }
-  __price-value {
-    font-size: 6rem; } }
+  @media (max-width: 56.25em) {
+    .card {
+      height: auto;
+      position: relative; }
+      .card__side {
+        height: auto;
+        position: relative; }
+        .card__side--back {
+          transform: rotateY(0);
+          -webkit-clip-path: polygon(0 85%, 85% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+          margin-top: -6rem;
+          border-radius: 0;
+          border-bottom-left-radius: 2pt;
+          border-bottom-right-radius: 1pt; }
+          .card__side--back-1 {
+            background-image: linear-gradient(30deg, #ffb900, #ff7730); }
+          .card__side--back-2 {
+            background-image: linear-gradient(30deg, #2998ff, #5643fa); }
+          .card__side--back-3 {
+            background-image: linear-gradient(30deg, #04ad01, #0a7412); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__details {
+        padding: 0 5rem 6rem; }
+      .card__cta {
+        position: relative;
+        top: 0%;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        text-align: center;
+        padding: 4rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-value {
+        font-size: 4rem; } }
+  @media (max-width: tab-port) {
+    .card {
+      height: auto;
+      position: relative; }
+      .card__side {
+        height: auto;
+        position: relative; }
+        .card__side--back {
+          transform: rotateY(0);
+          -webkit-clip-path: polygon(0 85%, 85% 0, 100% 100%, 0 100%);
+          clip-path: polygon(0 0, 100% 15%, 100% 100%, 0 100%);
+          margin-top: -6rem;
+          border-radius: 0;
+          border-bottom-left-radius: 2pt;
+          border-bottom-right-radius: 1pt; }
+          .card__side--back-1 {
+            background-image: linear-gradient(30deg, #ffb900, #ff7730); }
+          .card__side--back-2 {
+            background-image: linear-gradient(30deg, #2998ff, #5643fa); }
+          .card__side--back-3 {
+            background-image: linear-gradient(30deg, #04ad01, #0a7412); }
+      .card:hover .card__side--front {
+        transform: rotateY(0); }
+      .card__details {
+        padding: 0 5rem 6rem; }
+      .card__cta {
+        position: relative;
+        top: 0%;
+        left: 0;
+        transform: translate(0);
+        width: 100%;
+        text-align: center;
+        padding: 4rem; }
+      .card__price-box {
+        margin-bottom: 3rem; }
+      .card__price-value {
+        font-size: 4rem; } }
 
 .story {
   width: 75%;
@@ -508,6 +538,22 @@ body {
   background-color: rgba(255, 255, 255, 0.6);
   transition: all .2s;
   border-radius: 3px; }
+  @media (max-width: 56.25em) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media (max-width: tab-port) {
+    .story {
+      width: 100%;
+      padding: 4rem;
+      padding-left: 7rem; } }
+  @media (max-width: 37.5em) {
+    .story {
+      transform: skewX(0); } }
+  @media (max-width: phone) {
+    .story {
+      transform: skewX(0); } }
   .story > * {
     transform: skewX(12deg); }
   .story__shape {
@@ -520,12 +566,24 @@ body {
     -webkit-clip-path: circle(50% at 50% 50%);
     transform: translateX(-3rem) skewX(12deg);
     position: relative; }
+    @media (max-width: 37.5em) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
+    @media (max-width: phone) {
+      .story__shape {
+        transform: translateX(-3rem) skewX(0); } }
   .story img {
     height: 100%;
     transform: translateX(-4rem) scale(1.4);
     transition: all .2s; }
   .story__text {
     transform: skewX(12deg); }
+    @media (max-width: 37.5em) {
+      .story__text {
+        transform: skewX(0); } }
+    @media (max-width: phone) {
+      .story__text {
+        transform: skewX(0); } }
   .story__caption {
     position: absolute;
     top: 50%;
@@ -1102,16 +1160,32 @@ body {
 .section-book {
   padding: 15rem 0;
   background-image: linear-gradient(45deg, #04ad01, #0a7412); }
+  .section-book .flex {
+    flex-grow: 2; }
 
 .book {
   margin: auto;
   background: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, rgba(15, 184, 226, 0.2) 40%), url(../img/nat-10.jpg);
   box-shadow: 0 1.5 4rem;
   background-attachment: local;
-  background-height: 100%;
+  background-size: 100%;
   overflow: hidden;
   transform: translate(50% 50%);
   box-shadow: 0 1.5rem 4rem rgba(255, 255, 255, 0.2); }
+  @media (max-width: 75em) {
+    .book {
+      background: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, rgba(15, 184, 226, 0.2) 40%), url(../img/nat-10.jpg);
+      background-size: cover; } }
+  @media (max-width: tab-land) {
+    .book {
+      background: linear-gradient(105deg, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.9) 50%, rgba(15, 184, 226, 0.2) 40%), url(../img/nat-10.jpg);
+      background-size: cover; } }
   .book__form {
     width: 50%;
     padding: 6rem; }
+    @media (max-width: 75em) {
+      .book__form {
+        width: 70%; } }
+    @media (max-width: tab-land) {
+      .book__form {
+        width: 70%; } }
