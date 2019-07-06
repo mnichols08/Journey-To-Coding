@@ -52,7 +52,7 @@
         }
         setName(name){
             console.log('test')
-            name == undefined || name === '' ? name : this.firstName = name
+            name === undefined || name === '' ? name : this.firstName = name
             return this
         }
         setLang(lang) {

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    :root{
+        font-size: 62.5%;
+        font-family: 'Open Sans', serif;
+    }
+    h1{
+        position:absolute;
+        color: #fff;
+        top:50%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        padding: 5rem;
+        background: rgba(0,0,0,.5);
+        border-radius: 6pt;
+        box-shadow: 0 0 1rem rgba(0,0,0,.5);
+        transition: all .5s;
+        -webkit-user-select: none;  
+        -moz-user-select: none;    
+        -ms-user-select: none;      
+        user-select: none;
+    }
+    h1:hover{
+        transform:scale(1.1) translate(-50%,-50%);
+        cursor: pointer;
+    }
+    h2{
+        position:absolute;
+        top:35%;
+        left:50%;
+        transform: translate(-50%,-50%);
+        display:inline-block;
+        background: rgba(0,0,0,0);
+        -webkit-background-clip: text;
+        color:transparent;
+        text-shadow: 0 0 1px rgba(0,0,0,.5);
+        
+
+    }
+    </style>
+</head>
+<body>
+    <h1>Click to Generate a Random Background</h1>
+    <h2></h2>
+    <script src="jslib.js"></script>
+    <script src="moviecollection.js"></script>
+</body>
+</html>
