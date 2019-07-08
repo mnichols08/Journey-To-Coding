@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>The Great Linear Gradient Guessing Game</title>
+</head>
+<body>
+    <div class="app">
+            <header>
+                <h1>The Great <span id="colorDisplay">Linear Gradient</span> Guessing Game</h1>
+                
+            <div><span id="message"></span></div>
+                <div id="stripe">
+                    <button id="reset">New Colors</button>
+                    <span id="message"></span>
+                    <button id="easyBtn" class="mode">Easy</button>
+                    <button id="hardBtn" class="mode selected">Hard</button>
+                </div>
+            </header>
+            <div class="game">
+                <div data-color="0"></div>
+                <div data-color="1"></div>
+                <div data-color="2"></div>
+                <div data-color="3"></div>
+                <div data-color="4"></div>
+                <div data-color="5"></div>
+        </div>
+    <script src="app.js"></script>
+</body>
+</html>

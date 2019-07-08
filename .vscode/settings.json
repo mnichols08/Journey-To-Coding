@@ -16,5 +16,8 @@
 "css.validate": false,
 "scss.validate": false,
 "less.validate": false,
-"editor.wordWrap": "on"
+"editor.wordWrap": "on",
+"cSpell.words": [
+  "moviecollection"
+]
 }

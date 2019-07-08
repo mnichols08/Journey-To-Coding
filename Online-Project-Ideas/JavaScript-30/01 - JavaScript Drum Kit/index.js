@@ -1,39 +1,41 @@
-function keyNoise(e){
-    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
-    const key = document.querySelector(`button.key[data-key="${e.keyCode}"]`);
-    if(!audio) return;  // stops the function from running
-    makeNoise(audio,key);
-  }
-  
-  function clickNoise(e){
-    e.preventDefault();
-    if (isNaN(e.path[1].outerHTML.slice(18,21).charAt(2))){
-    e = Number(e.path[1].outerHTML.slice(18,20));
-    } else {
-    e = Number(e.path[1].outerHTML.slice(18,21));
+(function(global){
+const keys = document.querySelectorAll('.key');
+class DrumKit {
+    makeNoise(audio,key){
+    if(!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add('playing');
     }
-    const audio = document.querySelector(`audio[data-key="${e}"]`);
-    const key = document.querySelector(`button.key[data-key="${e}"]`);
-    if(!audio) return;  // stops the function from running
-    makeNoise(audio,key)
-  }
-  
-  function makeNoise(a,k){
-    a.currentTime = 0; 
-    a.play();
-    k.classList.add('playing');
-  }
-  
-  function removeTransition(e){
-    if (e.propertyName !== 'transform') return; // skips if it is not a transition
+    removeTransition(e) {
+    if (e.propertyName !== 'transform') return;
     this.classList.remove('playing');
-  }
-  const keys = document.querySelectorAll('button.key');
-  keys.forEach(key => {
-    key.addEventListener('click',clickNoise);
+    }
+}
+const drumKit = new DrumKit();
+class Sound extends DrumKit{
+    constructor(){
+        super()
+    }
+    keyNoise(keypress) {
+    const audio = document.querySelector(`audio[data-key="${keypress.keyCode}"]`);
+    const key = document.querySelector(`.key[data-key="${keypress.keyCode}"`);
+    drumKit.makeNoise(audio,key)
+    }
+    clickNoise(click) {    
+    click = click.path[1].dataset.key;
+    const audio = document.querySelector(`audio[data-key="${click}"]`);
+    const key = document.querySelector(`button.key[data-key="${click}"]`);
+    drumKit.makeNoise(audio,key);
+}
+}
+const sound = new Sound();
+global.addEventListener('keydown', sound.keyNoise);
+keys.forEach(function(key) {
+    key.addEventListener('click',sound.clickNoise);
     key.addEventListener('contextmenu',function(e){
       e.preventDefault();
-    })
-    key.addEventListener('transitionend',removeTransition);
-  });
-  window.addEventListener('keydown',keyNoise);
+    });
+    key.addEventListener('transitionend',drumKit.removeTransition);
+});
+})(window)

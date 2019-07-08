@@ -1,0 +1,90 @@
+:root {
+    height: 100%;
+    font-size: 62.5%;
+  }
+  :root body {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    background: linear-gradient(15deg, #363030, #1a1c17);
+    font-size: 1.6rem;
+    font-family: "Open Sans", serif;
+    color: #9cc059;
+    transition: all .2s;
+  }
+  @media (max-width: 56.25em) {
+    :root body {
+      top: 35%;
+      width: 100%;
+    }
+  }
+  @media (max-width: tab-port) {
+    :root body {
+      top: 35%;
+      width: 100%;
+    }
+  }
+  :root body .app {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 75%;
+  }
+  :root body .app header {
+    margin-top: 6rem;
+  }
+  :root body .app header h1 {
+    font-size: 4rem;
+    text-align: center;
+    color: transparent;
+    display: inline-block;
+    background: linear-gradient(320deg, #9cc059, #9cc059);
+    -webkit-background-clip: text;
+  }
+  :root body .app header #stripe {
+    height: 3rem;
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+    margin: 1rem -25%;
+  }
+  :root body .app header #stripe button {
+    background: transparent;
+    border-radius: 1rem;
+    color: #633fa6;
+    font-weight: 400;
+    padding: 2rem;
+    align-self: center;
+    transition: .2s all;
+  }
+  :root body .app header #stripe button.selected {
+    background: linear-gradient(320deg, #9cc059, #9cc059);
+  }
+  :root body .app header #stripe button:hover {
+    background: linear-gradient(320deg, #9cc059, #9cc059);
+    transform: translateY(-1px);
+  }
+  :root body .app header #stripe button:active {
+    transform: translateY(2px);
+  }
+  :root body .app header #stripe button:focus, :root body .app header #stripe button:active {
+    outline: none;
+  }
+  :root body .app .game {
+    margin-top: 3rem;
+  }
+  :root body .app .game div {
+    width: 30%;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+    border-radius: 1rem;
+    box-shadow: 0 0 1rem #ffffff;
+    width: 30%;
+    transition: background 0.6s;
+    -webkit-transition: background 0.6s;
+    -moz-transition: background 0.6s;
+  }
+  
