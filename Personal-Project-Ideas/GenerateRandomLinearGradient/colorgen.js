@@ -1,4 +1,6 @@
+"use strict";
 (function (global) {
+    console.log(a);
     class Collection {
         constructor() {
             this.collection = []; // Creates an array on the parent object to store values created.
