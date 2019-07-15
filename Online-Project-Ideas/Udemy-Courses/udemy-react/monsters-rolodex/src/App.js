@@ -1,55 +1,50 @@
 import React  from 'react';
 import logo from './logo.svg';
 import './App.css';
+import { SearchBox } from './components/search-box/search-box.component'
+import { CardList } from './components/card-list/card-list.component'
+
+
+// function filterByValue (array, string) {
+//   return array.filter(o =>
+//       Object.keys(o).some(k => o[k].toLowerCase().includes(string.toLowerCase())));
+// }
 
 class App extends React.Component {
   constructor() {
     super();
-
-    this.constant = `this variable is set in stone`
-
     this.state = {
-      monsters: []
+      monsters: [],
+      searchField: ''
     }
   }
 
+
+  handleChange = e => {
+    this.setState({ searchField: e.target.value })
+  }
+
   componentDidMount() {
-    fetch('https://jsonplaceholder.typicode.com/users')
+    fetch('https://codepen.io/mnichols08/pen/KjLzNd.js')
     .then(response => response.json())
     .then(users => this.setState({ monsters: users }))
   }
 
   render() {
+    const { monsters, searchField } = this.state;
+    // const filteredMonsters = monsters.filter(monster => monster.first_name.toLowerCase().includes(searchField.toLowerCase()));
+    const filteredMonsters = monsters.filter(o => Object.keys(o).some(k => o[k].toString().toLowerCase().includes(searchField.toString().toLowerCase())));
     return (
       <div className="App">
-        {
-          this.state.monsters.map(monster => <h1 key={ monster.id }> { monster.name } </h1>)
-        }
+        <h1>Runners Rolodex</h1>
+        <SearchBox 
+        placeholder='search monsters'
+        handleChange={this.handleChange}
+        />
+        <CardList monsters={filteredMonsters} />
       </div>
     );
   }
-}
-
-
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
 }
 
 export default App;

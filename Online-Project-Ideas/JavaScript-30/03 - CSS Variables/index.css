@@ -6,6 +6,7 @@
     --border-radius-1: 1%;
     --bg-2: #333333;
     --bg-1: #aaaaaa;
+    --bg-3: #eeeeee;
     --degrees: 70deg;
     --opacity: 1;
   }
@@ -29,7 +30,7 @@
       */
   html{height:100%}
   body {
-    background: linear-gradient(var(--degrees), var(--bg-1), var(--bg-2));
+    background: linear-gradient(var(--degrees), var(--bg-1), var(--bg-2), var(--bg-3));
     height: 100%;
     padding-top: 1%;
     padding-bottom: 5%;

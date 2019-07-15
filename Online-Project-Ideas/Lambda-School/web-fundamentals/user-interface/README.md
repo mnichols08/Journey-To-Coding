@@ -6,4 +6,5 @@
     * [Git for Web Development](./git-for-web-dev)
     * [User Interface Sprint](./sprint)
 
-2. 
+2. Sprint: 
+    * []

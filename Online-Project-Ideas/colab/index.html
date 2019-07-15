@@ -1,0 +1,188 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>JS IV</title>
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+</head>
+
+<body>
+  <h1 style="display: none">JS IV - Check your work in the console!</h1>
+  <div class="header">
+    <h1>Welcome to Lambda School.</h1>
+    <p>here we make your web dev dreams come true</p>
+  </div>
+  <div class="main">
+    <div class="info">
+      <div class="student-div">
+        <h5>Are you trying to become a next level generation </h5>
+        <a href="#" id="student-form">Click here</a>
+      </div>
+      <div class="team-lead-div">
+        <h5>Are you trying to become a term lead and teach others while in schoola and making some extra cash </h5>
+        <a href="#" id="team-lead-form">Click Here</a>
+      </div>
+      <div class="instructor-div">
+        <h5>Are You a Pro in the field and you are looking to help others get into the field </h5>
+        <a href="#" id="instructor-form">Click here</a>
+      </div>
+    </div>
+    <div class="lambda-forms">
+      
+    </div>
+    <div class="all-cards">
+      
+    </div>
+
+  </div>
+  <!-- <script src="prototype-refactor.js"></script>
+  <script src="lambda-classes.js"></script> -->
+  <!-- <script src="forms.js"></script> -->
+  <script>
+      class Init {
+          constructor() {
+              this.formValues = {};
+              this.instructorArray = [];
+                       };
+          getFormInfo(){
+            e.preventDefault()
+            // assigning values to our empty form object so that we are able to pass the object into our  class constructor 
+            this.formValues.name = document.getElementById("name").value;
+            this.formValues.age = document.getElementById("age").value;
+            this.formValues.email = document.getElementById("email").value;
+            this.formValues.location = document.getElementById("location").value;
+            this.formValues.specialty = document.getElementById("specialty").value;
+            this.formValues.favLanguage = document.getElementById("favLanguage").value;
+            this.formValues.catchPhrase= document.getElementById("catchPhrase").value;
+            // push pass our form as a function argument
+            Instructor.prototype.instructorHandler(this.formValues)
+          }
+      }
+      const init = new Init();
+        class Instructor extends Init() {
+            constructor(){
+                super();
+                delete this.formValues;
+                delete this.instructorArray;
+            }
+            instructorHandler(obj){
+            // create an instance of instructor
+            instructorArray.push(new Init(obj));
+            // push data received from calling the function into our empty array
+            console.log(init.instructorArray);
+        }
+        }
+      const newResponse = new Init().getFormInfo();
+      const schoolForm = document.getElementById("schoolForm");
+      schoolForm.addEventListener('submit',newResponse);
+      
+      class Student extends Instructor() {
+          constructor(age,email,subject,location,name,background){
+              super();
+              this.age = age;
+              this.email = email;
+              this.favSubject = subject;
+              this.location = location;
+              this.previousBackground = background;
+              delete this.formValues;
+              delete this.instructorArray;
+          }
+          studentHandler(obj){
+        // create an instance of instructor
+        let newStudent = new Student(obj);
+        // push data received from calling the function into our empty array
+        studentArray.push(new Instructor);
+      }
+      }
+
+
+
+
+
+
+
+    // STUDENT functionality 
+    function student(){
+      // grabbing the form element so that we are able to submit 
+      const schoolForm = document.getElementById("schoolForm");
+      // adding an event listener to our schoolForm 
+      schoolForm.addEventListener("submit", function(e){
+        //preventing the form from refreshing the page after every submit
+        e.preventDefault();
+        // asigning values to our empty form object so that we are able to pass the object into our  class constructor 
+        formValues.name = document.getElementById("name").value;
+        formValues.age = document.getElementById("age").value;
+        formValues.email = document.getElementById("email").value;
+        formValues.location = document.getElementById("location").value;
+        formValues.previousBackground = document.getElementById("previousBackground").value;
+        formValues.favSubject = document.getElementById("favSubject").value;
+        // push pass our form as a function argument
+        studentHandler(formValues);
+        studentCardFunction(studentArray)
+      })
+
+      // create a function so to grab our data from the form submit 
+      function studentHandler(obj){
+        // create an instance of instructor
+        let newStudent = new Student(obj);
+        // push data received from calling the function into our empty array
+        studentArray.push(newStudent);
+      }
+    }
+    function studentCardFunction(arr){
+
+      let studentCard;
+      arr.forEach(studentObj=>{
+  
+          let allCards = document.querySelector(".all-cards")
+          allCards.innerHTML = studentCard;
+          console.log(allCards)
+          
+      })
+    // End Of Student Functionality
+    function teamLead(){
+      // creating an empty object so that we can pass in information from our from
+      let formValues = {};
+      // Creating an empty array to hold data after submitting
+      let teamLeadArray = [];
+      // grabbing the form element so that we are able to submit 
+      const schoolForm = document.getElementById("schoolForm");
+      // adding an event listener to our schoolForm 
+      schoolForm.addEventListener("submit", function(e){
+        //preventing the form from refreshing the page after every submit
+        e.preventDefault();
+        // asigning values to our empty form object so that we are able to pass the object into our  class constructor 
+        formValues.name = document.getElementById("name").value;
+        formValues.age = document.getElementById("age").value;
+        formValues.email = document.getElementById("email").value;
+        formValues.location = document.getElementById("location").value;
+        formValues.specialty = document.getElementById("specialty").value;
+        formValues.gradClassName = document.getElementById("gradClassName").value;
+        formValues.favInstructor = document.getElementById("favInstructor").value;
+        formValues.catchPhrase= document.getElementById("catchPhrase").value;
+        // push pass our form as a function argument
+        teamLeadHandler(formValues);
+      })
+      // create a function so to grab our data from the form submit 
+      function teamLeadHandler(obj){
+        // create an instance of instructor
+        let newTeamLead = new TeamLeads(obj);
+        // push data received from calling the function into our empty array
+        teamLeadArray.push(newTeamLead);
+        console.log(teamLeadArray);
+      }
+    }
+    
+
+
+    
+
+  </script>
+  <!-- <script src="cards.js"></script> -->
+</body>
+
+</html>

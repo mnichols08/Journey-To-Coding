@@ -1,0 +1,143 @@
+html {
+    height: 100%;
+    background: linear-gradient(45deg, #1f1414, #382e2e);
+    background-attachment: fixed;
+  }
+  
+  div.inline-blocl .box {
+    border-radius: 50%;
+  }
+  
+  body {
+    margin: 0;
+    font-family: 'open sans', serif;
+    color: #ccc;
+  }
+  
+  .inline-block > div {
+    display: inline-block;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-two-col {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .flex-two-col > div {
+    width: 50%;
+  }
+  
+  .flex-three-col {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .flex-three-col > div {
+    width: 33%;
+  }
+  
+  .flex-four-col {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .flex-four-col > div {
+    width: 25%;
+  }
+  
+  .flex-five-col {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .flex-five-col > div {
+    width: 20%;
+  }
+  
+  .flex-inline {
+    display: inline-flex;
+  }
+  
+  .flex-inline > div {
+    height: 100%;
+  }
+  
+  .inline-block {
+    display: inline-block;
+  }
+  
+  .display-properties > div {
+    margin: 0;
+  }
+  
+  .flex .box, .flex-inline .box {
+    width: 100%;
+  }
+  
+  .block .box {
+    width: 100%;
+  }
+  
+  .box {
+    border-radius: 6px;
+    height: 5em;
+    width: 5em;
+  }
+  
+  .box:first-of-type, .box:nth-of-type(11), .box:nth-of-type(21) {
+    background: #b31a1a;
+    color: #ccc;
+  }
+  
+  .box:nth-of-type(2), .box:nth-of-type(12), .box:nth-of-type(22) {
+    background: #53acac;
+  }
+  
+  .box:nth-of-type(3), .box:nth-of-type(13) {
+    background: #fa7d00;
+  }
+  
+  .box:nth-of-type(4), .box:nth-of-type(14) {
+    background: #ff00aa;
+  }
+  
+  .box:nth-of-type(5), .box:nth-of-type(15) {
+    background: #00ff6a;
+    color: #111;
+  }
+  
+  .box:nth-of-type(6), .box:nth-of-type(16) {
+    background: #0015ff;
+  }
+  
+  .box:nth-of-type(7), .box:nth-of-type(17) {
+    background: #0a1f0e;
+    color: #ccc;
+  }
+  
+  .box:nth-of-type(8), .box:nth-of-type(18) {
+    background: #5aaf1d;
+  }
+  
+  .box:nth-of-type(9), .box:nth-of-type(19) {
+    background: #ce64ce;
+  }
+  
+  .box:nth-of-type(10), .box:nth-of-type(20) {
+    background: #a0b54a;
+    color: #111;
+  }
+  
+  .display-properties {
+    width: 50%;
+    padding: 2.5%;
+    margin: 5% auto;
+    background: linear-gradient(174deg, #b059c0, #220080);
+    border-radius: 6px;
+    box-shadow: 0 0 2rem 2rem rgba(0, 0, 0, 0.25);
+  }
+  
