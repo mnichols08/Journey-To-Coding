@@ -44,7 +44,15 @@
                 <kbd>;</kbd>
                 <span class='sound'>tink</span>
             </button>
+            <button data-key='13' id="replay" class="key">
+                <kbd>return</kbd>
+                <span class='sound'>replay</span>
+            </button>
         </div>
+      
+
+    
+   
 
         <audio data-key='65' src='sounds/clap.wav'></audio>
         <audio data-key="83" src="sounds/hihat.wav"></audio>
@@ -60,8 +68,14 @@
 (function(global){
 const keys = document.querySelectorAll('.key');
 class DrumKit {
+    constructor() {
+        this.state = {
+            memory: []
+        }
+    }
     makeNoise(audio,key){
     if(!audio) return;
+    this.state.memory.push(audio);
     audio.currentTime = 0;
     audio.play();
     key.classList.add('playing');
@@ -77,6 +91,7 @@ class Sound extends DrumKit{
         super()
     }
     keyNoise(keypress) {
+    if (keypress.keyCode === 13) {new Sound().playBack()};
     const audio = document.querySelector(`audio[data-key="${keypress.keyCode}"]`);
     const key = document.querySelector(`.key[data-key="${keypress.keyCode}"`);
     drumKit.makeNoise(audio,key)
@@ -87,6 +102,16 @@ class Sound extends DrumKit{
     const key = document.querySelector(`button.key[data-key="${click}"`);
     drumKit.makeNoise(audio,key);
 }
+    playBack(){
+    const audio = drumKit.state.memory; 
+    let i = 0;
+        setInterval(() => {
+            if (i < audio.length ){    
+                audio[i].play();
+                i++;
+            };
+        }, 375) // Replays audio from memory every 375ms 
+    }  
 }
 const sound = new Sound()
 
@@ -98,9 +123,8 @@ keys.forEach(function(key) {
     });
     key.addEventListener('transitionend',drumKit.removeTransition);
 });
+document.querySelector('#replay').addEventListener('click', sound.playBack)
 })(window)
 </script>
-
-
 </body>
 </html>
