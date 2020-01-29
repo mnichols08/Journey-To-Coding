@@ -1,4 +1,3 @@
-
 //I wrote this section from scratch. go me!
 var menuCategory = [
   {"name": "home"},
